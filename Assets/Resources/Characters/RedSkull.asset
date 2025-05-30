@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
+  m_Name: RedSkull
+  m_EditorClassIdentifier: 
+  CharacterName: Red Skull
+  CharacterClarifier: 
+  ChracterImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  ChracterDtlImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  Type: 2
+  Sex: 1
+  Season: 2
+  Boxs:
+  - Box: 1
+    Default: 1
+  IsExclusive: 0
+  Teams: 
+  RequiredIfMode: 
+  Owned: 0
+  HeroSymblesMove: 0
+  HeroSymblesAttack: 0
+  HeroSymblesHeroic: 0
+  HeroSymblesWild: 0
+  HeroSpecialCards: 0
+  HeroWins: 0
+  HeroLosses: 0
+  HeroRating: 0
+  VillainSymblesMove: 0
+  VillainSymblesAttack: 0
+  VillainSymblesHeroic: 2
+  VillainSymblesWild: 2
+  VillainWins: 0
+  VillainLosses: 0
+  VillainRating: 0
+  Dtls: 
+  Comments: 
