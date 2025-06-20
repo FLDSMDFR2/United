@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: AdamWarlock
   m_EditorClassIdentifier: 
-  CharacterName: Adam Warlock
-  CharacterClarifier: 
-  ChracterImage: {fileID: 21300000, guid: 2384dab7366adf446b873545405c0c05, type: 3}
-  ChracterDtlImage: {fileID: 21300000, guid: f74259cfc8d3d234e8c209b3b1385c24, type: 3}
-  Type: 1
-  Sex: 1
-  Season: 2
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
   Boxs:
   - Box: 2
     Default: 0
-  - Box: 9
+  - Box: 10
     Default: 1
+  MainImage: {fileID: 0}
+  DtlImage: {fileID: 0}
+  Season: 02000000
+  CharacterName: Adam Warlock
+  CharacterClarifier: 
+  Type: 1
+  Sex: 1
   IsExclusive: 1
-  Teams: 010000001200000013000000
-  RequiredIfMode: 
-  Owned: 0
+  Teams: 
   HeroSymblesMove: 4
   HeroSymblesAttack: 4
   HeroSymblesHeroic: 3

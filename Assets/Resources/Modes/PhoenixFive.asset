@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
+  m_Name: PhoenixFive
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  DtlImage: {fileID: 0}
+  Season: 03000000
+  Boxs:
+  - Box: 28
+    Default: 1
+  ModeTag: 6
+  UseSameHerosForAllGames: 0
+  AllowVillainSelection: 0
+  AllowChallengeSelection: 1
+  Games:
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

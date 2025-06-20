@@ -2,7 +2,8 @@ public enum CharacterSex
 {
     None = 0,
     Male,
-    Female
+    Female,
+    Both
 }
 
 public static class CharacterSexExtensions
@@ -17,10 +18,10 @@ public static class CharacterSexExtensions
                 return "MALE";
             case CharacterSex.Female:
                 return "FEMALE";
+            case CharacterSex.Both:
+                return "BOTH";
             default:
                 return "";
         }
     }
 }
-
-

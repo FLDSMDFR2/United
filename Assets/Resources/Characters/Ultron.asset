@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Ultron
   m_EditorClassIdentifier: 
-  CharacterName: Ultron
-  CharacterClarifier: 
-  ChracterImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
-  ChracterDtlImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
-  Type: 2
-  Sex: 1
-  Season: 2
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
   Boxs:
   - Box: 1
     Default: 1
+  MainImage: {fileID: 21300000, guid: 933e2a70c25ec6d4e9339d182ad94ab9, type: 3}
+  DtlImage: {fileID: 21300000, guid: 9912e6107b544a447b93cde140e451ec, type: 3}
+  Season: 02000000
+  CharacterName: Ultron
+  CharacterClarifier: 
+  Type: 2
+  Sex: 1
   IsExclusive: 0
   Teams: 
-  RequiredIfMode: 
-  Owned: 0
   HeroSymblesMove: 0
   HeroSymblesAttack: 0
   HeroSymblesHeroic: 0

@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoxImage: {fileID: 141014388937672893}
+  BackGround: {fileID: 1504179394848697760}
   BoxName: {fileID: 142421689927995397}
   OwnedSlider: {fileID: 7219496415116284631}
 --- !u!1 &6593793273774464633

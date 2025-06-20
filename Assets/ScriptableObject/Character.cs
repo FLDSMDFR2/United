@@ -3,34 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Character : ScriptableObject
+public class Character : BoxOwnable
 {
-    [Serializable]
-    public class CharacterBoxDtl
-    { 
-        public Box Box;
-        public bool Default; // default for this box
-    }
-
-    public delegate void CharacterUpdate();
-    public event CharacterUpdate OnCharacterUpdate;
-
+    [Header("Character")]
     public string CharacterName;
     public string CharacterClarifier;
-    public Sprite ChracterImage;
-    public Sprite ChracterDtlImage;
     public CharacterType Type;
     public CharacterSex Sex;
-    public Seasons Season;
-    public List<CharacterBoxDtl> Boxs = new List<CharacterBoxDtl>();
     public bool IsExclusive;
     public List<Teams> Teams = new List<Teams>();
-    public List<GameModes> RequiredIfMode = new List<GameModes>();
-    public bool Owned;
 
     public int HeroSymblesMove;
-    public int HeroSymblesAttack;
     public int HeroSymblesHeroic;
+    public int HeroSymblesAttack;
     public int HeroSymblesWild;
     public int HeroSpecialCards;
 
@@ -38,6 +23,8 @@ public class Character : ScriptableObject
     public int HeroLosses;
     public float HeroRating;
 
+    public bool IsStandAloneVillain = true;
+    public bool IsSuperVillainModeAllowed = true;
     public int VillainSymblesMove;
     public int VillainSymblesAttack;
     public int VillainSymblesHeroic;
@@ -50,66 +37,68 @@ public class Character : ScriptableObject
     public string Dtls;
     public string Comments;
 
-    public virtual void Init()
+    public override void Init()
     {
-        GetChracterImage();
-        GetChracterDtlImage();
+        base.Init();
+
+        InitImage("CharacterImages/", DisplayName());
+        InitDtlImage("ChracterDtlImages/", DisplayName());
     }
 
-    protected virtual void GetChracterImage()
+    protected override void InitFilter()
     {
-        var filename = CharacterName.Replace(" ", string.Empty) + CharacterClarifier.Replace(" ", string.Empty);
-        filename = filename.Replace("-", string.Empty);
-        var image = Resources.Load<Sprite>("CharacterImage/" + filename);
-        if (image != null) ChracterImage = image;
+        base.InitFilter();
+
+        filter[typeof(CharacterType).Name] = new List<string>() { Enum.GetName(typeof(CharacterType), Type) };
+        filter[typeof(CharacterSex).Name] = new List<string>() { Enum.GetName(typeof(CharacterSex), Sex) };
     }
 
-    protected virtual void GetChracterDtlImage()
+    public override string DisplayName()
     {
-        var filename = CharacterName.Replace(" ", string.Empty) + CharacterClarifier.Replace(" ", string.Empty);
-        filename = filename.Replace("-", string.Empty);
-        var image = Resources.Load<Sprite>("ChracterDtlImage/" + filename);
-        if (image != null) ChracterDtlImage = image;
+        return CharacterName + " " + CharacterClarifier;
     }
-    public virtual void SetOwned(bool owned)
+    public override string SearchName()
     {
-        Owned = owned;
-        OnCharacterUpdate?.Invoke();
+        return CharacterName + " " + CharacterClarifier;
+    }
+    public override string Clarifier()
+    {
+        return CharacterClarifier;
     }
 
     public virtual void SetHeroWins(int wins)
     {
         HeroWins = wins;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
 
     public virtual void SetHeroLosses(int losses)
     {
         HeroLosses = losses;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
 
     public virtual void SetHeroRating(float rating)
     {
         HeroRating = rating;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
 
     public virtual void SetVillainWins(int wins)
     {
         VillainWins = wins;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
 
     public virtual void SetVillainLosses(int losses)
     {
         VillainLosses = losses;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
     public virtual void SetVillainRating(float rating)
     {
         VillainRating = rating;
-        OnCharacterUpdate?.Invoke();
+        RaiseOnOwnableUpdate();
     }
 
 }

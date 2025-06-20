@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static Collection;
 
 public class ColorManager : MonoBehaviour
 {
@@ -38,9 +37,6 @@ public class ColorManager : MonoBehaviour
     [Header("Character Type")]
     public List<CharacterTypeColorMap> CharacterType = new List<CharacterTypeColorMap>();
     [SerializeField]
-    [Header("Box")]
-    public Collection BoxCollection;
-    [SerializeField]
     [Header("Game Mode")]
     public List<GameModesColorMap> GameModes = new List<GameModesColorMap>();
     [SerializeField]
@@ -51,18 +47,18 @@ public class ColorManager : MonoBehaviour
     public List<TeamsColorMap> Teams = new List<TeamsColorMap>();
 
     protected static Dictionary<CharacterType, CharacterTypeColorMap> characterType = new Dictionary<CharacterType, CharacterTypeColorMap>();
-    protected static Dictionary<Box, BoxDtls> box = new Dictionary<Box, BoxDtls>();
+    protected static Dictionary<Boxs, Box> box = new Dictionary<Boxs, Box>();
     protected static Dictionary<GameModes, GameModesColorMap> gameModes = new Dictionary<GameModes, GameModesColorMap>();
     protected static Dictionary<Seasons, SeasonsColorMap> seasons = new Dictionary<Seasons, SeasonsColorMap>();
     protected static Dictionary<Teams, TeamsColorMap> teams = new Dictionary<Teams, TeamsColorMap>();
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         foreach (var c in CharacterType)
         {
             characterType[c.Name] = c;
         }
-        foreach (var b in BoxCollection.BoxList)
+        foreach (var b in DataLoader.GetBoxsBySystem())
         {
             box[b.BoxTag] = b;
         }
@@ -90,7 +86,7 @@ public class ColorManager : MonoBehaviour
         }
         return Color.red;
     }
-    public static Color GetColor(Box name, out bool isDarkText)
+    public static Color GetColor(Boxs name, out bool isDarkText)
     {
         isDarkText = false;
         if (box.ContainsKey(name))

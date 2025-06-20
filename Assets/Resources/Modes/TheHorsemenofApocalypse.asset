@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
+  m_Name: TheHorsemenofApocalypse
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 0cc74ec2eaaec434b813a6c3665fa4e4, type: 3}
+  DtlImage: {fileID: 21300000, guid: 0cc74ec2eaaec434b813a6c3665fa4e4, type: 3}
+  Season: 03000000
+  Boxs:
+  - Box: 25
+    Default: 1
+  ModeTag: 5
+  UseSameHerosForAllGames: 1
+  AllowVillainSelection: 0
+  AllowChallengeSelection: 0
+  Games:
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 4
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - {fileID: 11400000, guid: f9892a60a37be954ebaf1ead2e5c40e6, type: 2}
+    - {fileID: 11400000, guid: 3ec3d4f4e33836a4ebb2044f4ffbb2aa, type: 2}
+    - {fileID: 11400000, guid: ef70a3f201ba2db4e8f7dbc570351502, type: 2}
+    - {fileID: 11400000, guid: 36a3831037ff5ac4dba8eee064e6cf2c, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHerosExclusively: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains:
+    - {fileID: 11400000, guid: 234e3fb908650a744b717cde280993a7, type: 2}
+    ExcludedVillains: []
+    RequiaredLocationsExclusively: 0
+    RequiaredLocations:
+    - {fileID: 11400000, guid: c5c0a5a1c3e317140ad3dac080afa32a, type: 2}
+    - {fileID: 11400000, guid: 76417722b5ae33046a178ae6268727fa, type: 2}
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

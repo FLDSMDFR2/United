@@ -1,39 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UI;
-using static Character;
 
-public class UI_CharacterDetailsController : MonoBehaviour, IDialog
+public class UI_CharacterDetailsController : UI_SearchDetailController
 {
-    [Header("Background")]
-    public Image Background;
-    public Color HeroBackground;
-    public Color VillainBackground;
-    public Color AntiHeroBackground;
-
     [Header("Type Tag")]
     public UI_Tag TypeTag;
-
-    [Header("Character Image")]
-    public Image CharacterImage;
-
-    [Header("Owned")]
-    public GameObject OwnedImage;
-
-    [Header("Character Name")]
-    public TextMeshProUGUI Clarifier;
-    public TextMeshProUGUI Name;
-
-    [Header("Season Tag")]
-    public UI_Tag SeasonTag;
-
-    [Header("Box Tag")]
-    public List<UI_Tag> BoxTags;
-    public TextMeshProUGUI BoxOverFlow;
 
     [Header("Team Tag")]
     public List<UI_Tag> TeamTags;
@@ -65,69 +37,21 @@ public class UI_CharacterDetailsController : MonoBehaviour, IDialog
     public TextMeshProUGUI VillainAttackSymble;
     public TextMeshProUGUI VillainWildSymble;
 
-    [Header("Character Dtl Image")]
-    public Image CharacterDtlImage;
+    protected Character getData => (Character)data;
 
-    protected Character data;
-
-    public virtual void SetData(Character character)
+    public override void SetData(Searchable searchable)
     {
-        data = character;
+        base.SetData(searchable);
 
-        //SetBackgroundColor(data);
-        OwnedImage.SetActive(data.Owned);
-        TypeTag.SetTagDisplay(ColorManager.GetColor(data.Type, out bool darkText), data.Type.ToFriendlyString(), darkText);
-        CharacterImage.sprite = data.ChracterImage;
-        Clarifier.text = data.CharacterClarifier;
-        Name.text = data.CharacterName;
-        SeasonTag.SetTagDisplay(ColorManager.GetColor(data.Season, out darkText), data.Season.ToFriendlyString(), darkText);
-        SetBoxTags(data.Boxs);
-        ExclusiveLabel.gameObject.SetActive(data.IsExclusive);
-        SetTeamTags(data.Teams);
-        SetHeroData(data);
-        SetVillainData(data);
-        SetSymbleDispaly(data);
+        TypeTag.SetTagDisplay(ColorManager.GetColor(getData.Type, out bool darkText), getData.Type.ToFriendlyString(), darkText);
+        Clarifier.text = getData.Clarifier();
+        ExclusiveLabel.gameObject.SetActive(getData.IsExclusive);
+        SetTeamTags(getData.Teams);
+        SetHeroData(getData);
+        SetVillainData(getData);
+        SetSymbleDispaly(getData);
 
-        CharacterDtlImage.sprite = data.ChracterDtlImage;
-    }
-
-    protected virtual void SetBackgroundColor(Character data)
-    {
-        if (data.Type == CharacterType.Hero) Background.color = HeroBackground;
-        else if (data.Type == CharacterType.Villain) Background.color = VillainBackground;
-        else if (data.Type == CharacterType.AntiHero) Background.color = AntiHeroBackground;
-    }
-    protected virtual void SetBoxTags(List<CharacterBoxDtl> boxes)
-    {
-        foreach (var team in BoxTags)
-        {
-            team.gameObject.SetActive(false);
-        }
-
-        if (boxes == null || boxes.Count <= 0)
-        {
-            BoxOverFlow.text = "NONE";
-            BoxOverFlow.gameObject.SetActive(true);
-            return;
-        }
-
-        var lowCount = boxes.Count < BoxTags.Count ? boxes.Count : BoxTags.Count;
-
-        for (int i = 0; i < lowCount; i++)
-        {
-            BoxTags[i].SetTagDisplay(ColorManager.GetColor(boxes[i].Box, out bool darkText), boxes[i].Box.ToFriendlyString(), darkText);
-            BoxTags[i].gameObject.SetActive(true);
-        }
-
-        if (boxes.Count > BoxTags.Count)
-        {
-            BoxOverFlow.text = "+" + (boxes.Count - BoxTags.Count);
-            BoxOverFlow.gameObject.SetActive(true);
-        }
-        else
-        {
-            BoxOverFlow.gameObject.SetActive(false);
-        }
+        DtlImage.sprite = getData.GetDtlImage();
     }
 
     protected virtual void SetTeamTags(List<Teams> teams)
@@ -171,6 +95,7 @@ public class UI_CharacterDetailsController : MonoBehaviour, IDialog
         HeroLosses.text = data.HeroLosses.ToString();
         HeroRating.SetRating(data.HeroRating);
     }
+
     protected virtual void SetVillainData(Character data)
     {
         if (data.Type != CharacterType.Villain && data.Type != CharacterType.AntiHero) return;
@@ -196,7 +121,7 @@ public class UI_CharacterDetailsController : MonoBehaviour, IDialog
             HeroSymbles.SetActive(false);
         }
 
-        if (data.Type == CharacterType.Villain || data.Type == CharacterType.AntiHero)
+        if (data.IsSuperVillainModeAllowed && (data.Type == CharacterType.Villain || data.Type == CharacterType.AntiHero))
         {
             VillianSymbles.SetActive(true);
             VillainMoveSymble.text = data.VillainSymblesMove.ToString();
@@ -223,32 +148,19 @@ public class UI_CharacterDetailsController : MonoBehaviour, IDialog
 
         if (field == HeroWins)
         {
-            data.SetHeroWins(numberBoxValue);   
+            getData.SetHeroWins(numberBoxValue);   
         }
         else if (field == HeroLosses)
         {
-            data.SetHeroLosses(numberBoxValue);
+            getData.SetHeroLosses(numberBoxValue);
         }
         else if(field == VillainWins)
         {
-            data.SetVillainWins(numberBoxValue);
+            getData.SetVillainWins(numberBoxValue);
         }
         else if (field == VillainLosses)
         {
-            data.SetVillainLosses(numberBoxValue);
+            getData.SetVillainLosses(numberBoxValue);
         }
     }
-
-
-    #region IDialog
-    public virtual void Open()
-    {
-        this.gameObject.SetActive(true);
-    }
-    public virtual void Close()
-    {
-        this.gameObject.SetActive(false);
-    }
-    #endregion
-
 }

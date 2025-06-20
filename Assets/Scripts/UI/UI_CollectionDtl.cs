@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Collection;
 
 public class UI_CollectionDtl : MonoBehaviour
 {
@@ -9,39 +8,72 @@ public class UI_CollectionDtl : MonoBehaviour
     public TextMeshProUGUI BoxName;
     public ToggleSwitch OwnedSlider;
 
-    protected BoxDtls data;
+    protected Box data;
+    protected bool forGameBuild;
 
-    public virtual void SetData(BoxDtls box)
+    public virtual void SetData(Box box, bool isForGameBuild)
     {
         data = box;
+        forGameBuild = isForGameBuild;
 
-        BoxImage.sprite = data.Image;
+        BoxImage.sprite = data.GetDisplayImage();
         BoxName.text = data.BoxTag.ToFriendlyString();
-        OwnedSlider.ToggleByGroupManager(data.Owned);
+
+        if (forGameBuild) OwnedSlider.ToggleByGroupManager(data.IncludeInGameBuild, false);
+        else OwnedSlider.ToggleByGroupManager(data.Owned, false);
+    }
+
+    public virtual void SetSliderValue(bool sliderValue)
+    {
+        if (data == null) return;
+
+        OwnedSlider.ToggleByGroupManager(sliderValue);
     }
 
     public virtual void SliderToggled()
     {
-        data.Owned = OwnedSlider.CurrentValue;
-        UpdateBoxCharacters(data.Owned);
-    }
-    protected virtual void UpdateBoxCharacters(bool owned)
-    {
-        foreach (var character in DataLoader.GetAllCharactersByBox(data.BoxTag))
+        if (forGameBuild)
         {
-            foreach(var box in character.Boxs)
+            data.IncludeInGameBuild = OwnedSlider.CurrentValue;
+            UpdateBoxContent(data.IncludeInGameBuild);
+        }
+        else
+        {
+            data.Owned = OwnedSlider.CurrentValue;
+            UpdateBoxContent(data.Owned);
+        }
+    }
+
+    protected virtual void UpdateBoxContent(bool owned)
+    {
+        foreach (var item in data.GetAllBoxItems())
+        {
+            if (forGameBuild)
             {
-                if (box.Box == data.BoxTag && box.Default)
+                UpdateContentDtls(item, owned);
+            }
+            else
+            {
+                foreach (var box in item.Boxs)
                 {
-                    character.SetOwned(owned);
-                    break;
+                    if (box.Box == data.BoxTag && box.Default)
+                    {
+                        UpdateContentDtls(item, owned);
+                        break;
+                    }
                 }
             }
         }
     }
 
+    protected virtual void UpdateContentDtls(Searchable searchable, bool owned)
+    {
+        if (forGameBuild) searchable.IncludeInGameBuild = owned;
+        else searchable.SetOwned(owned);
+    }
+
     public virtual void BoxSelected()
     {
-        GameEventSystem.UI_OnBoxSelected(data);
+        GameEventSystem.UI_OnBoxSelected(data, forGameBuild);
     }
 }

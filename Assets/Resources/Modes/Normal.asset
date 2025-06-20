@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
+  m_Name: Normal
+  m_EditorClassIdentifier: 
+  GameSystem: 1
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 6b291564722288d4fa16119f733ad94c, type: 3}
+  DtlImage: {fileID: 21300000, guid: 6b291564722288d4fa16119f733ad94c, type: 3}
+  Season: 020000000300000004000000
+  Boxs:
+  - Box: 1
+    Default: 1
+  - Box: 20
+    Default: 1
+  - Box: 50
+    Default: 1
+  ModeTag: 1
+  ChallengesAllowed: 1
+  Games:
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 1
+    RequiaredHeros: []
+    RequiaredVillains: []
+    RequiaredLocations: []

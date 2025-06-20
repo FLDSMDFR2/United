@@ -1,19 +1,12 @@
 public enum GameModes
 {
     None = 0,
-    ModerateChallenge,
-    HardChallenge,
-    HeroicChallenge,
+    Normal,
     ThanosGauntlet,
-    EndangeredLocationsChallenge,
-    HiddenIdenityChallenge,
-    PlanBChallenge,
-    TraitorMechanic,
-    SinisterSixMode,
-    DeadpoolChaosChallenge,
-    SentinalChallenge,
-    TakeoverChallenge,
-    HazardousLocationChallenge
+    SinisterSix,
+    GoldvsBlueTeam,
+    TheHorsemenofApocalypse,
+    PhoenixFive,
 }
 
 public static class GameModesExtensions
@@ -24,12 +17,18 @@ public static class GameModesExtensions
         {
             case GameModes.None:
                 return "NONE";
-            case GameModes.ModerateChallenge:
-                return "Moderate Challenge";
-            case GameModes.HardChallenge:
-                return "Hard Challenge";
-            case GameModes.HeroicChallenge:
-                return "Heroic Challenge";
+            case GameModes.Normal:
+                return "Normal";
+            case GameModes.ThanosGauntlet:
+                return "Thanos Gauntlet";
+            case GameModes.SinisterSix:
+                return "Sinister Six";
+            case GameModes.GoldvsBlueTeam:
+                return "Gold vs Blue Team";
+            case GameModes.TheHorsemenofApocalypse:
+                return "The Horsemen of Apocalypse";
+            case GameModes.PhoenixFive:
+                return "Phoenix Five";
             default:
                 return "";
         }

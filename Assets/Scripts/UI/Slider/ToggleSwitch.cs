@@ -82,12 +82,12 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public virtual void ToggleByGroupManager(bool valueToSetTo)
+    public virtual void ToggleByGroupManager(bool valueToSetTo, bool animate = true)
     {
-        SetStateAndStartAnimation(valueToSetTo);
+        SetStateAndStartAnimation(valueToSetTo, animate);
     }
 
-    protected virtual void SetStateAndStartAnimation(bool valueToSetTo)
+    protected virtual void SetStateAndStartAnimation(bool valueToSetTo, bool animate = true)
     {
         CurrentValue = valueToSetTo;
 
@@ -98,7 +98,15 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
 
         if (animationSliderCoroutine != null) StopCoroutine(animationSliderCoroutine);
 
-        animationSliderCoroutine = StartCoroutine(AnimateSlider());
+        if (animate)
+        {
+            animationSliderCoroutine = StartCoroutine(AnimateSlider());
+        }
+        else
+        {
+            slider.value = CurrentValue ? 1 : 0;
+            InvokeTransitionEffect();
+        }
     }
 
     protected virtual IEnumerator AnimateSlider()

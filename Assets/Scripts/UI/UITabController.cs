@@ -30,6 +30,8 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public Transform TabPanelParent;
     protected Vector3 tabpanelLocation;
 
+    protected bool inTransition = false;
+
     public  virtual void Start() 
     {
         if (Tabs != null && Tabs.Count > 0)
@@ -51,7 +53,7 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public virtual void OnTabSelected(Button tab)
     {
-        if (tab == null || Tabs == null || Tabs.Count <= 0) return;
+        if (tab == null || Tabs == null || Tabs.Count <= 0 || inTransition) return;
 
         var data = Tabs.Find(x => x.TabButton == tab);
 
@@ -80,6 +82,7 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     protected virtual IEnumerator TransitionToNewTab(int endIndex)
     {
+        inTransition = true;
         if (IsIndexOutOfBounds(endIndex)) endIndex = currentIndex;
 
         var time = 0f;
@@ -97,6 +100,7 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
         tabpanelLocation = TabPanelParent.transform.position;
         currentIndex = endIndex;
+        inTransition = false;
     }
 
     protected virtual bool IsIndexOutOfBounds(int index)
