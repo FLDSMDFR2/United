@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
+  m_Name: ClashofHeroes(PvP)
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: e86026054a46dfe4cb544a632caddfad, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: e86026054a46dfe4cb544a632caddfad, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  Boxs:
+  - Box: 52
+    Default: 1
+  ModeTag: 7
+  UseSameHerosForAllGames: 0
+  AllowVillainSelection: 0
+  AllowChallengeSelection: 0
+  Games:
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations:
+    - {fileID: 11400000, guid: 724936939fda3d343ad3f8a975c5399e, type: 2}
+    - {fileID: 11400000, guid: 5c055d0c9330dd94cb0cc19d4d8f01c1, type: 2}
+    - {fileID: 11400000, guid: 598945a067da35546aa54c5c410d7062, type: 2}
+    - {fileID: 11400000, guid: cc5287760278f1b408c9e979b8fd2484, type: 2}
+    - {fileID: 11400000, guid: 04c5892bf6164ee4f9f03cc270b01dc9, type: 2}
+    - {fileID: 11400000, guid: ab31d45eed91b7643b1f4eb1cea029ca, type: 2}
+    - {fileID: 0}
+    RequiaredChallenges: []
+    ExcludedChallenges:
+    - {fileID: 11400000, guid: 5d807da96b01f47498d1990f4a7e6a22, type: 2}

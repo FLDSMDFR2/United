@@ -31,6 +31,7 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     public UI_Rating VillainRating;
 
     [Header("Villain Symbols")]
+    public GameObject VillianData;
     public GameObject VillianSymbles;
     public TextMeshProUGUI VillainMoveSymble;
     public TextMeshProUGUI VillainHeroicSymble;
@@ -43,15 +44,13 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     {
         base.SetData(searchable);
 
+        Name.text = getData.CharacterName;
         TypeTag.SetTagDisplay(ColorManager.GetColor(getData.Type, out bool darkText), getData.Type.ToFriendlyString(), darkText);
-        Clarifier.text = getData.Clarifier();
         ExclusiveLabel.gameObject.SetActive(getData.IsExclusive);
         SetTeamTags(getData.Teams);
         SetHeroData(getData);
         SetVillainData(getData);
         SetSymbleDispaly(getData);
-
-        DtlImage.sprite = getData.GetDtlImage();
     }
 
     protected virtual void SetTeamTags(List<Teams> teams)
@@ -121,16 +120,25 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
             HeroSymbles.SetActive(false);
         }
 
-        if (data.IsSuperVillainModeAllowed && (data.Type == CharacterType.Villain || data.Type == CharacterType.AntiHero))
+        if ((data.Type == CharacterType.Villain || data.Type == CharacterType.AntiHero))
         {
-            VillianSymbles.SetActive(true);
-            VillainMoveSymble.text = data.VillainSymblesMove.ToString();
-            VillainHeroicSymble.text = data.VillainSymblesHeroic.ToString();
-            VillainAttackSymble.text = data.VillainSymblesAttack.ToString();
-            VillainWildSymble.text = data.VillainSymblesWild.ToString();
+            VillianData.SetActive(true);
+            if (data.IsSuperVillainModeAllowed)
+            {
+                VillianSymbles.SetActive(true);
+                VillainMoveSymble.text = data.VillainSymblesMove.ToString();
+                VillainHeroicSymble.text = data.VillainSymblesHeroic.ToString();
+                VillainAttackSymble.text = data.VillainSymblesAttack.ToString();
+                VillainWildSymble.text = data.VillainSymblesWild.ToString();
+            }
+            else
+            {
+                VillianSymbles.SetActive(false);
+            }
         }
         else
         {
+            VillianData.SetActive(false);
             VillianSymbles.SetActive(false);
         }
     }

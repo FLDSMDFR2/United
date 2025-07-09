@@ -8,19 +8,25 @@ public class GameDtl
     public int AdditionalHeros;
     public int NumberOfVillains;
 
-    public bool RequiaredHerosExclusively;
-    public List<Character> RequiaredHeros = new List<Character>();
+    public bool RequiredHerosExclusively;
+    public List<Required> RequiredHeros = new List<Required>();
     public List<Character> ExcludedHeros = new List<Character>();
 
     public bool RequiaredVillainsExclusively;
-    public List<Character> RequiaredVillains = new List<Character>();
+    public List<Required> RequiaredVillains = new List<Required>();
     public List<Character> ExcludedVillains = new List<Character>();
 
-    public bool RequiaredLocationsExclusively;
-    public int NumberRequiaredLocations;
-    public List<Location> RequiaredLocations = new List<Location>();
+    public List<Required> RequiaredLocations = new List<Required>();
     public List<Location> ExcludedLocations = new List<Location>();
 
-    public List<Challenge> RequiaredChallenges = new List<Challenge>();
+    public List<Required> RequiaredChallenges = new List<Required>();
     public List<Challenge> ExcludedChallenges = new List<Challenge>();
 }
+
+[Serializable]
+public class Required
+{
+    public int NumberRequired;
+    public List<BoxOwnable> RequiredObjects = new List<BoxOwnable>();
+}
+

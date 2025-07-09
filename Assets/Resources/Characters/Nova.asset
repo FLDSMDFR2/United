@@ -16,7 +16,11 @@ MonoBehaviour:
   Owned: 0
   IncludeInGameBuild: 1
   MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
   Boxs:
   - Box: 2
@@ -35,6 +39,7 @@ MonoBehaviour:
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +50,19 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiaredHerosExclusively: 0
+    NumberRequiaredHeros: 0
+    RequiaredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    NumberRequiaredLocations: 0
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

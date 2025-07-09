@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Search;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UI_Filter : MonoBehaviour, IDialog
@@ -14,9 +14,13 @@ public class UI_Filter : MonoBehaviour, IDialog
     protected Vector3 closePos;
 
     protected Dictionary<string, Dictionary<string, Filter>> filterDictionary = new Dictionary<string, Dictionary<string, Filter>>();
+    protected Dictionary<SortTypes, Filter> sortDictionary = new Dictionary<SortTypes, Filter>();
+
+    protected Filter sortIsAscending;
 
     protected virtual void Awake()
     {
+        BuildSort();
         BuildFilterGameSystems();
         BuildFilterSeasons();
         BuildFilterOwned();
@@ -32,6 +36,51 @@ public class UI_Filter : MonoBehaviour, IDialog
     }
 
     #region Build Filters
+    protected virtual void BuildSort()
+    {
+        var dropdown = Instantiate(GroupHeaderPrefab, Content.transform).GetComponent<UI_DropDownHeader>();
+        var groupManager = dropdown.AddComponent<ToggleSwitchGroupManager>();
+        groupManager.AllCanBeToggleOff = false;
+        groupManager.AllCanBeToggleOn = false;
+        groupManager.CanMultipleGroupsBeToggleOn = false;
+
+        var group = new List<GameObject>();
+
+        sortIsAscending = new Filter();
+        sortIsAscending.Name = "Ascending";
+        sortIsAscending.FilterValue = true;
+
+        var filterObj = Instantiate(FilterPrefab, Content.transform).GetComponent<UI_FilterOption>();
+        filterObj.SetData(sortIsAscending);
+        group.Add(filterObj.gameObject);
+        filterObj.gameObject.SetActive(false);
+
+        foreach (SortTypes enumValue in Enum.GetValues(typeof(SortTypes)))
+        {
+            if (enumValue == SortTypes.None) continue;
+
+            var filter = new Filter();
+            filter.Name = enumValue.ToFriendlyString();
+            if (enumValue == SortTypes.Name) filter.FilterValue = true;
+            else filter.FilterValue = false;
+
+            sortDictionary[enumValue] = filter;
+            var filterObj1 = Instantiate(FilterPrefab, Content.transform).GetComponent<UI_FilterOption>();
+            filterObj1.SetData(filter);
+            group.Add(filterObj1.gameObject);
+            filterObj1.gameObject.SetActive(false);
+
+            var groupDtls = new ToggleSwitchGroupManager.ToggleGroupDtls();
+            groupDtls.Toggle = filterObj1.OwnedSlider;
+            groupDtls.GroupNumber = 1;
+            groupManager.ToggleSwitches.Add(groupDtls);
+        }
+
+        groupManager.RegisterToggleButtonsToGroup();
+        groupManager.StartUpConfig();
+        dropdown.SetData("Sort", group, HeaderColor, false, 55);
+    }
+
     protected virtual void BuildFilterGameSystems()
     {
         var dropdown = Instantiate(GroupHeaderPrefab, Content.transform).GetComponent<UI_DropDownHeader>();
@@ -184,6 +233,21 @@ public class UI_Filter : MonoBehaviour, IDialog
     }
     #endregion
 
+    public virtual Sort GetSort()
+    {
+        return new Sort(sortIsAscending.FilterValue, GetSortType());
+    }
+
+    protected virtual SortTypes GetSortType()
+    {
+        foreach(var key in sortDictionary.Keys)
+        {
+            if (sortDictionary[key].FilterValue) return key;
+        }
+
+        return SortTypes.Name;
+    }
+
     // return true if included in filter
     public virtual bool CheckFilter(Searchable searchable)
     {
@@ -224,6 +288,7 @@ public class UI_Filter : MonoBehaviour, IDialog
     }
     public virtual void Close()
     {
+        GameEventSystem.UI_OnCloseFilterPopup();
         LeanTween.move(this.gameObject, closePos, 0.2f);
     }
     #endregion

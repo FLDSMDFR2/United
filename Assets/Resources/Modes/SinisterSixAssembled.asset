@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
+  m_Name: SinisterSixAssembled
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 0
+  MainImage: {fileID: 21300000, guid: 5c9cc6ed8c41d734d9d61cb67b61d7c1, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 5c9cc6ed8c41d734d9d61cb67b61d7c1, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 54
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 0
+  ModeTag: 9
+  UseSameHerosForAllGames: 0
+  AllowVillainSelection: 0
+  AllowChallengeSelection: 1
+  Games:
+  - AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 6
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 1
+    RequiaredVillains:
+    - NumberRequired: 6
+      RequiredObjects:
+      - {fileID: 11400000, guid: 4b97bbe8d4486b3439c6146c6d41415d, type: 2}
+      - {fileID: 11400000, guid: f7fe5af18f1866146996fd3378588cc9, type: 2}
+      - {fileID: 11400000, guid: 49c4d4d952b57254da0f9162a57d6ea3, type: 2}
+      - {fileID: 11400000, guid: c83acb0fa1ce26b4c9f938fc087ada89, type: 2}
+      - {fileID: 11400000, guid: a168fec512fcb0740a3a38276584ae95, type: 2}
+      - {fileID: 11400000, guid: aefe3c5543bb7bd44853488da130e363, type: 2}
+      - {fileID: 11400000, guid: 87ec5d9867437bf4db38af8bd620bc08, type: 2}
+      - {fileID: 11400000, guid: 588dd996aa68fbb4b942a6f363602a64, type: 2}
+      - {fileID: 11400000, guid: fa5510eabc8dd0e49a00dc905719a75c, type: 2}
+      - {fileID: 11400000, guid: 2450e8040e970ec4a968f6428707d039, type: 2}
+      - {fileID: 11400000, guid: 31cf553204ad2be479545128702bc68e, type: 2}
+      - {fileID: 11400000, guid: f5b96ac88243ad247b64fd6d5f951c58, type: 2}
+      - {fileID: 11400000, guid: 3f4969cefa5ec39448ed7d0ddd1def62, type: 2}
+      - {fileID: 11400000, guid: 0b05ebeced9b08c438d39f2b07873553, type: 2}
+      - {fileID: 11400000, guid: 9e3cf2c33d7bb254b956cdb739f60dff, type: 2}
+      - {fileID: 11400000, guid: fdef2eb70cab19c4ebdce09defcd4082, type: 2}
+      - {fileID: 11400000, guid: 96499291e741de24eb0db8e25c462573, type: 2}
+      - {fileID: 11400000, guid: 7d1b577c4f0d52b449e978da0a2e2be7, type: 2}
+      - {fileID: 11400000, guid: 769c2eef6da54364e99b8eacd10171ce, type: 2}
+      - {fileID: 11400000, guid: 1553016df4eccb949b7ad2e347f8c5ce, type: 2}
+      - {fileID: 11400000, guid: fe85513b5d67f054f9adf33e7e592324, type: 2}
+      - {fileID: 11400000, guid: 289f6235be06fa14d922d6ee91d0f2cc, type: 2}
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

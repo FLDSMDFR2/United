@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
+  m_Name: WreckingCrew
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: a69e4459a106ed846a52c4aa46393d80, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames:
+  - Wrecker
+  - Bulldozer
+  - Piledriver
+  - Thunderball
+  DtlImages:
+  - {fileID: 21300000, guid: 6d568bd7d3e1203418553ad593ad1bf7, type: 3}
+  - {fileID: 21300000, guid: b582d0eb327774a4bbf065594f31d9f1, type: 3}
+  - {fileID: 21300000, guid: d47805ddc972bf1459bf5bb858b6a429, type: 3}
+  - {fileID: 21300000, guid: dd4541358b9b6364e859d93071efb87b, type: 3}
+  AutoGetDtlImage: 0
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+  CharacterName: Wrecking Crew
+  CharacterClarifier: 
+  Type: 2
+  Sex: 1
+  Teams: 
+  HeroSymblesMove: 0
+  HeroSymblesHeroic: 0
+  HeroSymblesAttack: 0
+  HeroSymblesWild: 0
+  HeroSpecialCards: 0
+  HeroWins: 0
+  HeroLosses: 0
+  HeroRating: 0
+  IsStandAloneVillain: 1
+  IsSuperVillainModeAllowed: 0
+  VillainSymblesMove: 0
+  VillainSymblesAttack: 0
+  VillainSymblesHeroic: 0
+  VillainSymblesWild: 0
+  VillainWins: 0
+  VillainLosses: 0
+  VillainRating: 0
+  Dtls: 
+  Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 4
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains:
+    - NumberRequired: 4
+      RequiredObjects:
+      - {fileID: 11400000, guid: f8c89aaf53e853441a3d9440583d5441, type: 2}
+      - {fileID: 11400000, guid: 1c5827cb52bd71c45bff9187cc8692f0, type: 2}
+      - {fileID: 11400000, guid: bc45094f75c38624c84b0fdd96dd15ab, type: 2}
+      - {fileID: 11400000, guid: 9b5a086d05457b047b9d3f87b3386097, type: 2}
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

@@ -28,7 +28,7 @@ public class UI_BoxDtl : MonoBehaviour
         var isOn = false;
         if (isForGameBuild)
         {
-            isOn = ownable.IncludeInGameBuild;
+            isOn = ownable.GetIncludeInBuild(box.BoxTag);
         }
         else
         {
@@ -57,12 +57,12 @@ public class UI_BoxDtl : MonoBehaviour
     {
         if (forGameBuild)
         {
-            data.IncludeInGameBuild = true;
+            data.SetIncludeInBuild(box.BoxTag, true);
         }
         else
         {
             if (data != null && referanceIndex >= 0) data.Boxs[referanceIndex].Default = true;
-            if (box.Owned) data.SetOwned(true);
+            if (box.Owned) data.SetOwned(box.BoxTag, true);
         }
     }
 
@@ -70,12 +70,12 @@ public class UI_BoxDtl : MonoBehaviour
     {
         if (forGameBuild)
         {
-            data.IncludeInGameBuild = false;
+            data.SetIncludeInBuild(box.BoxTag, false);
         }
         else
         {
             if (data != null && referanceIndex >= 0) data.Boxs[referanceIndex].Default = false;
-            if (box.Owned) data.SetOwned(false);
+            if (box.Owned) data.SetOwned(box.BoxTag, false);
         }
     }
 }

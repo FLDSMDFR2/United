@@ -15,8 +15,13 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 6dfdb02b7a34bcf469e1a6f7438af74d, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 6dfdb02b7a34bcf469e1a6f7438af74d, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
   Boxs:
   - Box: 28
@@ -24,23 +29,30 @@ MonoBehaviour:
   ModeTag: 6
   UseSameHerosForAllGames: 0
   AllowVillainSelection: 0
-  AllowChallengeSelection: 1
+  AllowChallengeSelection: 0
   Games:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
-    ExcludedHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros:
+    - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+    - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+    - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+    - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+    - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+    - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
     RequiaredVillainsExclusively: 1
     RequiaredVillains:
-    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
-    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
-    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
-    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
-    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    - NumberRequired: 1
+      RequiredObjects:
+      - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+      - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+      - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+      - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+      - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
     NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
@@ -49,18 +61,25 @@ MonoBehaviour:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
-    ExcludedHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros:
+    - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+    - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+    - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+    - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+    - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+    - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
     RequiaredVillainsExclusively: 1
     RequiaredVillains:
-    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
-    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
-    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
-    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
-    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    - NumberRequired: 1
+      RequiredObjects:
+      - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+      - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+      - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+      - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+      - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
     NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
@@ -69,18 +88,25 @@ MonoBehaviour:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
-    ExcludedHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros:
+    - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+    - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+    - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+    - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+    - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+    - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
     RequiaredVillainsExclusively: 1
     RequiaredVillains:
-    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
-    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
-    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
-    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
-    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    - NumberRequired: 1
+      RequiredObjects:
+      - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+      - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+      - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+      - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+      - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
     NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
@@ -89,18 +115,25 @@ MonoBehaviour:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
-    ExcludedHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros:
+    - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+    - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+    - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+    - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+    - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+    - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
     RequiaredVillainsExclusively: 1
     RequiaredVillains:
-    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
-    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
-    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
-    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
-    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    - NumberRequired: 1
+      RequiredObjects:
+      - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+      - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+      - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+      - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+      - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
     NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
@@ -109,18 +142,25 @@ MonoBehaviour:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
-    ExcludedHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros:
+    - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+    - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+    - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+    - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+    - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+    - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
     RequiaredVillainsExclusively: 1
     RequiaredVillains:
-    - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
-    - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
-    - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
-    - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
-    - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
+    - NumberRequired: 1
+      RequiredObjects:
+      - {fileID: 11400000, guid: e9e997028c498fb48b801c4895c16065, type: 2}
+      - {fileID: 11400000, guid: 52fc50707fc6d1f42876f17288b54f7b, type: 2}
+      - {fileID: 11400000, guid: d23ed69b3beb7ee4ca054dad143efeaf, type: 2}
+      - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
+      - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
     NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []

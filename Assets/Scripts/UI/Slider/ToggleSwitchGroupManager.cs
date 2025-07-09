@@ -25,6 +25,11 @@ public class ToggleSwitchGroupManager : MonoBehaviour
 
     protected virtual void Awake()
     {
+        RegisterToggleButtonsToGroup();
+    }
+
+    public virtual void RegisterToggleButtonsToGroup()
+    {
         foreach (var ts in ToggleSwitches)
         {
             RegisterToggleButtonToGroup(ts.Toggle);
@@ -33,8 +38,13 @@ public class ToggleSwitchGroupManager : MonoBehaviour
 
     protected virtual void Start()
     {
+        StartUpConfig();
+    }
+
+    public virtual void StartUpConfig()
+    {
         var areAllToggledOff = true;
-        foreach(var ts in ToggleSwitches)
+        foreach (var ts in ToggleSwitches)
         {
             if (!ts.Toggle.CurrentValue) continue;
 
@@ -48,7 +58,6 @@ public class ToggleSwitchGroupManager : MonoBehaviour
             InitialToggleSwitch.ToggleByGroupManager(true);
         else if (ToggleSwitches.Count > 0)
             ToggleSwitches[0].Toggle.ToggleByGroupManager(true);
-
     }
 
     protected virtual void RegisterToggleButtonToGroup(ToggleSwitch toggleSwitch)
@@ -83,9 +92,13 @@ public class ToggleSwitchGroupManager : MonoBehaviour
 
                 if (ts.Toggle == toggleSwitch)
                     ts.Toggle.ToggleByGroupManager(!currentValue);
-                else if (group.GroupNumber != ts.GroupNumber)
+                else if (group.GroupNumber == ts.GroupNumber)
                     ts.Toggle.ToggleByGroupManager(currentValue);
             }
+        }
+        else if (!CanMultipleGroupsBeToggleOn && toggleSwitch.CurrentValue)
+        {
+
         }
         else
         {

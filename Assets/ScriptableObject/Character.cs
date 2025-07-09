@@ -10,7 +10,6 @@ public class Character : BoxOwnable
     public string CharacterClarifier;
     public CharacterType Type;
     public CharacterSex Sex;
-    public bool IsExclusive;
     public List<Teams> Teams = new List<Teams>();
 
     public int HeroSymblesMove;
@@ -36,6 +35,7 @@ public class Character : BoxOwnable
 
     public string Dtls;
     public string Comments;
+    public GameDtl GameDtl;
 
     public override void Init()
     {
@@ -51,6 +51,17 @@ public class Character : BoxOwnable
 
         filter[typeof(CharacterType).Name] = new List<string>() { Enum.GetName(typeof(CharacterType), Type) };
         filter[typeof(CharacterSex).Name] = new List<string>() { Enum.GetName(typeof(CharacterSex), Sex) };
+    }
+
+    protected override void InitSort()
+    {
+        base.InitSort();
+
+        sort[SortTypes.HeroMoveIcons] = HeroSymblesMove.ToString();
+        sort[SortTypes.HeroAttackIcons] = HeroSymblesAttack.ToString();
+        sort[SortTypes.HeroHeroicIcons] = HeroSymblesHeroic.ToString();
+        sort[SortTypes.HeroWildIcons] = HeroSymblesWild.ToString();
+        sort[SortTypes.HeroSpecailCards] = HeroSpecialCards.ToString();
     }
 
     public override string DisplayName()

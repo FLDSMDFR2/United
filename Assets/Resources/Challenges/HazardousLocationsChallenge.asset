@@ -16,7 +16,11 @@ MonoBehaviour:
   Owned: 0
   IncludeInGameBuild: 1
   MainImage: {fileID: 21300000, guid: a7404d3c91d63314fa99a2115aa20e39, type: 3}
-  DtlImage: {fileID: 21300000, guid: 24eaf64dd1d8ec043bef6a32a1484a81, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
   Boxs:
   - Box: 27
@@ -26,19 +30,20 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    RequiaredLocationsExclusively: 0
-    NumberRequiaredLocations: 3
     RequiaredLocations:
-    - {fileID: 11400000, guid: c5c0a5a1c3e317140ad3dac080afa32a, type: 2}
-    - {fileID: 11400000, guid: cb649c17f3625ed40b7a55c7bc9c284e, type: 2}
-    - {fileID: 11400000, guid: dfe54852e4065cc46a0bd7931d1c896e, type: 2}
-    - {fileID: 11400000, guid: ab31d45eed91b7643b1f4eb1cea029ca, type: 2}
+    - NumberRequired: 3
+      RequiredObjects:
+      - {fileID: 11400000, guid: c5c0a5a1c3e317140ad3dac080afa32a, type: 2}
+      - {fileID: 11400000, guid: cb649c17f3625ed40b7a55c7bc9c284e, type: 2}
+      - {fileID: 11400000, guid: dfe54852e4065cc46a0bd7931d1c896e, type: 2}
+      - {fileID: 11400000, guid: ab31d45eed91b7643b1f4eb1cea029ca, type: 2}
+      - {fileID: 11400000, guid: 9ca80e95bcdb8174a83e5b60fd28e509, type: 2}
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []

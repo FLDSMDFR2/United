@@ -40,7 +40,7 @@ public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
 
     protected virtual UI_CollectionDtl TryCreateCollection(int index)
     {
-        if (index <= collectionDtls.Count)
+        if (index < collectionDtls.Count)
         {
             collectionDtls[index].gameObject.SetActive(true);
             return collectionDtls[index];
@@ -84,6 +84,7 @@ public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
     }
     public virtual void Close()
     {
+        if (IsForGameBuild) GameEventSystem.UI_OnCloseGameIncludePopup();
         this.gameObject.SetActive(false);
     }
     #endregion

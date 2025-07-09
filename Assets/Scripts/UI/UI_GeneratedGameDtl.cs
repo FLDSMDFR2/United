@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
 {
+    public ScrollRect GameScrollRect;
     public GameObject BoxHeader;
     public GameObject GroupView;
     public GameObject ChracterUIPrefab;
@@ -9,6 +11,8 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
 
     public virtual void SetData(BuildGameData data)
     {
+        GameScrollRect.verticalNormalizedPosition = 1f;
+
         ClearGameObjectChildren(GroupView);
 
         if (data.Games.Count <= 0) return;

@@ -1,13 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_SearchDetailController : MonoBehaviour, IDialog
 {
+    [Header("Scrollview")]
+    public GameObject CollectionView;
+
     [Header("Images")]
-    public Image Image; 
-    public Image DtlImage;
+    public Image Image;
+    public GameObject DtlImagePrefab;
+    protected List<Image> dtlImages = new List<Image>();
 
     [Header("Owned")]
     public GameObject OwnedImage;
@@ -38,7 +44,7 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
         SetSeasonTags();
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
-        DtlImage.sprite = data.GetDtlImage();
+        SetDtlImages();
     }
 
     protected virtual void SetBoxTags(List<BoxAssociationDtl> boxes)
@@ -104,6 +110,40 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
         else
         {
             SeasonOverFlow.gameObject.SetActive(false);
+        }
+    }
+    
+    protected virtual void SetDtlImages()
+    {
+        HideAll();
+        var index = 0;
+
+        foreach (var images in data.GetDtlImages())
+        {
+            TryCreateDtlImages(index, images);
+            index++;
+        }
+    }
+
+    protected virtual void TryCreateDtlImages(int index, Sprite image)
+    {
+        if (index < dtlImages.Count)
+        {
+            dtlImages[index].gameObject.SetActive(true);
+            dtlImages[index].sprite = image;
+        }
+        else
+        {
+            dtlImages.Add(Instantiate(DtlImagePrefab, CollectionView.transform).GetComponent<Image>());
+            dtlImages[index].gameObject.SetActive(true);
+            dtlImages[index].sprite = image;
+        }
+    }
+    protected virtual void HideAll()
+    {
+        foreach (var collection in dtlImages)
+        {
+            collection.gameObject.SetActive(false);
         }
     }
 

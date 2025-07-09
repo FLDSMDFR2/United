@@ -17,6 +17,8 @@ public enum GameChallenges
     SentinelChallenge2,
     SentinelChallenge3,
     TakeoverChallenge,
+    CarnageChallenge,
+    ComplicationsChallenge,
 }
 
 public static class GameChallengesExtensions
@@ -57,6 +59,10 @@ public static class GameChallengesExtensions
                 return "Sentinel Challenge 3";
             case GameChallenges.TakeoverChallenge:
                 return "Takeover Challenge";
+            case GameChallenges.CarnageChallenge:
+                return "Carnage Challenge";
+            case GameChallenges.ComplicationsChallenge:
+                return "Complications Challenge";
             default:
                 return "";
         }

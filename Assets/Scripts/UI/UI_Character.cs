@@ -37,7 +37,6 @@ public class UI_Character : UI_SearchDtl
 
         Name.text = getData.CharacterName;
         TypeTag.SetTagDisplay(ColorManager.GetColor(getData.Type, out bool darkText), getData.Type.ToFriendlyString(), darkText);    
-        ExclusiveLabel.gameObject.SetActive(getData.IsExclusive);
         SetTeamTags(getData.Teams);
         SetHeroData(getData);
         SetVillainData(getData);
@@ -91,6 +90,7 @@ public class UI_Character : UI_SearchDtl
             return;
         }
 
+        HeroWinLoseObject.SetActive(true);
         HeroWins.text = data.HeroWins.ToString();
         HeroLosses.text = data.HeroLosses.ToString();
         HeroRating.SetRating(data.HeroRating);
@@ -104,6 +104,7 @@ public class UI_Character : UI_SearchDtl
             return;
         }
 
+        VillainWinLoseObject.SetActive(true);
         VillainWins.text = data.VillainWins.ToString();
         VillainLosses.text = data.VillainLosses.ToString();
         VillainRating.SetRating(data.VillainRating);

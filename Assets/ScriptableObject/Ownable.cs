@@ -16,6 +16,11 @@ public class Ownable : ScriptableObject
         RaiseOnOwnableUpdate();
     }
 
+    public virtual void SetIncludeInBuild(bool includeInBuild)
+    {
+        IncludeInGameBuild = includeInBuild;
+    }
+    
     protected virtual void RaiseOnOwnableUpdate()
     {
         OnOwnableUpdate?.Invoke();

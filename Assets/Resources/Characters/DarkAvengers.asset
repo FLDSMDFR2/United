@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
+  m_Name: DarkAvengers
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: bab495c2de56fd94ab2d4ff9d1ce8f9f, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames:
+  - U.S.Agent
+  - Cabal(IronPatriot)
+  - Moonstone
+  - Daken
+  - Ares
+  - Sentry
+  - Bullseye
+  DtlImages:
+  - {fileID: 21300000, guid: 97a56743909d4724c813a6cbdaccb9a4, type: 3}
+  - {fileID: 21300000, guid: cedcb1679fb873e4d8b47dc985731204, type: 3}
+  - {fileID: 21300000, guid: a5c5b610e2f3a834e870c4918bb16d00, type: 3}
+  - {fileID: 21300000, guid: 62938968c36d41a4487cd3bc012eeb98, type: 3}
+  - {fileID: 21300000, guid: 41fd267aaa8f88a4d890ad7d4996d829, type: 3}
+  - {fileID: 21300000, guid: 00cf77c134b126a40b325530e1fc1892, type: 3}
+  - {fileID: 21300000, guid: e176611101206c1498e505eb79eded47, type: 3}
+  AutoGetDtlImage: 0
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+  CharacterName: Dark Avengers
+  CharacterClarifier: 
+  Type: 2
+  Sex: 3
+  Teams: 
+  HeroSymblesMove: 0
+  HeroSymblesHeroic: 0
+  HeroSymblesAttack: 0
+  HeroSymblesWild: 0
+  HeroSpecialCards: 0
+  HeroWins: 0
+  HeroLosses: 0
+  HeroRating: 0
+  IsStandAloneVillain: 1
+  IsSuperVillainModeAllowed: 1
+  VillainSymblesMove: 1
+  VillainSymblesAttack: 1
+  VillainSymblesHeroic: 0
+  VillainSymblesWild: 0
+  VillainWins: 0
+  VillainLosses: 0
+  VillainRating: 0
+  Dtls: 
+  Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 3
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains:
+    - NumberRequired: 3
+      RequiredObjects:
+      - {fileID: 11400000, guid: fe7e5f957955d4b4b89d705f62cccd21, type: 2}
+      - {fileID: 11400000, guid: 483d7f2b48866d74e9c34b83db691401, type: 2}
+      - {fileID: 11400000, guid: a8c31780ab8fb404b931aa9789ff088b, type: 2}
+      - {fileID: 11400000, guid: 9d98226b3590eaa4fb147d421e28c532, type: 2}
+      - {fileID: 11400000, guid: 9395bc007b63ea142b75c63c5545be81, type: 2}
+      - {fileID: 11400000, guid: b21cc7d3f85ecbf43b9e2adbf677cdb0, type: 2}
+      - {fileID: 11400000, guid: 8eef37d056b97e74292e546fb8c23f6e, type: 2}
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

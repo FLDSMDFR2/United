@@ -225,6 +225,13 @@ public class DataLoader : MonoBehaviour
         return new List<Box>();
     }
 
+    public static Box GetBoxByTag(Boxs boxTag)
+    {
+        if (!boxMap.ContainsKey(boxTag)) return new Box();
+
+        return boxMap[boxTag];
+    }
+
     protected static void AddToBox(BoxOwnable ownableBox)
     {
         foreach(var box in ownableBox.Boxs)

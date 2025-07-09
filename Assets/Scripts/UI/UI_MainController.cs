@@ -7,13 +7,15 @@ public class UI_MainController : MonoBehaviour
 {
     protected class DisplayData
     {
-        public bool IsActive;
+        public bool CurrentState;
+        public bool NewState;
         public bool IsDialog;
         public IDialog Dialog;
 
-        public DisplayData(bool isActive, bool isDialog, IDialog dialog)
+        public DisplayData(bool currentState, bool newState, bool isDialog, IDialog dialog)
         {
-            IsActive = isActive;
+            CurrentState = newState;
+            NewState = currentState;
             IsDialog = isDialog;
             Dialog = dialog;
         }
@@ -75,20 +77,20 @@ public class UI_MainController : MonoBehaviour
 
     protected virtual void BuildDisplayStates()
     {
-        if (MainDisplay != null) displayStates.Add(MainDisplay, new DisplayData(true, false, null));
-        if (SearchDtlsDisplay != null) displayStates.Add(SearchDtlsDisplay, new DisplayData(true, true, SearchDtlsDisplay.GetComponent<UI_SearchDetailController>()));
-        if (CharacterDtlsDisplay != null) displayStates.Add(CharacterDtlsDisplay, new DisplayData(true, true, CharacterDtlsDisplay.GetComponent<UI_CharacterDetailsController>()));  
-        if (BoxDtlsDisplay != null) displayStates.Add(BoxDtlsDisplay, new DisplayData(true, true, BoxDtlsDisplay.GetComponent<UI_BoxDetails>()));
-        if (BuildIncludsDisplay != null) displayStates.Add(BuildIncludsDisplay, new DisplayData(true, true, BuildIncludsDisplay.GetComponent<UI_AllBoxDisplayController>()));
-        if (GeneratedBuildDisplay != null) displayStates.Add(GeneratedBuildDisplay, new DisplayData(true, true, GeneratedBuildDisplay.GetComponent<UI_GeneratedGameDtl>()));
-        if (FilterDisplay != null) displayStates.Add(FilterDisplay, new DisplayData(true, true, FilterDisplay.GetComponent<UI_Filter>()));
+        if (MainDisplay != null) displayStates.Add(MainDisplay, new DisplayData(true, true, false, null));
+        if (SearchDtlsDisplay != null) displayStates.Add(SearchDtlsDisplay, new DisplayData(true, true, true, SearchDtlsDisplay.GetComponent<UI_SearchDetailController>()));
+        if (CharacterDtlsDisplay != null) displayStates.Add(CharacterDtlsDisplay, new DisplayData(true, true, true, CharacterDtlsDisplay.GetComponent<UI_CharacterDetailsController>()));  
+        if (BoxDtlsDisplay != null) displayStates.Add(BoxDtlsDisplay, new DisplayData(true, true, true, BoxDtlsDisplay.GetComponent<UI_BoxDetails>()));
+        if (BuildIncludsDisplay != null) displayStates.Add(BuildIncludsDisplay, new DisplayData(true, true, true, BuildIncludsDisplay.GetComponent<UI_AllBoxDisplayController>()));
+        if (GeneratedBuildDisplay != null) displayStates.Add(GeneratedBuildDisplay, new DisplayData(true, true, true, GeneratedBuildDisplay.GetComponent<UI_GeneratedGameDtl>()));
+        if (FilterDisplay != null) displayStates.Add(FilterDisplay, new DisplayData(true, true, true, FilterDisplay.GetComponent<UI_Filter>()));
     }
     
     protected virtual void InitDisplay()
     {
         foreach (var key in displayStates.Keys)
         {
-            key.SetActive(displayStates[key].IsActive);
+            key.SetActive(displayStates[key].CurrentState);
         }
     }
 
@@ -96,34 +98,38 @@ public class UI_MainController : MonoBehaviour
     {
         foreach (var key in displayStates.Keys)
         {
-            if (displayStates[key] != null && displayStates[key].Dialog != null && displayStates[key].IsActive) displayStates[key].Dialog.Open();
-            else if (displayStates[key] != null && displayStates[key].Dialog != null && !displayStates[key].IsActive) displayStates[key].Dialog.Close();
-            else key.SetActive(displayStates[key].IsActive);       
+            if (displayStates[key].CurrentState == displayStates[key].NewState) continue;
+
+            displayStates[key].CurrentState = displayStates[key].NewState;
+
+            if (displayStates[key] != null && displayStates[key].Dialog != null && displayStates[key].CurrentState) displayStates[key].Dialog.Open();
+            else if (displayStates[key] != null && displayStates[key].Dialog != null && !displayStates[key].CurrentState) displayStates[key].Dialog.Close();
+            else key.SetActive(displayStates[key].CurrentState);
         }
     }
 
     protected virtual void ShowAll()
     {
-        if (displayStates.ContainsKey(MainDisplay)) displayStates[MainDisplay].IsActive = true;
-        if (displayStates.ContainsKey(SearchDtlsDisplay)) displayStates[SearchDtlsDisplay].IsActive = true;
-        if (displayStates.ContainsKey(CharacterDtlsDisplay)) displayStates[CharacterDtlsDisplay].IsActive = true;
-        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].IsActive = true;
-        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].IsActive = true;
-        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].IsActive = true;
-        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].IsActive = true;
+        if (displayStates.ContainsKey(MainDisplay)) displayStates[MainDisplay].NewState = true;
+        if (displayStates.ContainsKey(SearchDtlsDisplay)) displayStates[SearchDtlsDisplay].NewState = true;
+        if (displayStates.ContainsKey(CharacterDtlsDisplay)) displayStates[CharacterDtlsDisplay].NewState = true;
+        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].NewState = true;
+        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = true;
+        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].NewState = true;
+        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].NewState = true;
 
         UpdateDisplay();
     }
 
     protected virtual void HideAll(bool withUpdate = false)
     {
-        if (displayStates.ContainsKey(MainDisplay)) displayStates[MainDisplay].IsActive = false;
-        if (displayStates.ContainsKey(SearchDtlsDisplay)) displayStates[SearchDtlsDisplay].IsActive = false;
-        if (displayStates.ContainsKey(CharacterDtlsDisplay)) displayStates[CharacterDtlsDisplay].IsActive = false;
-        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].IsActive = false;
-        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].IsActive = false;
-        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].IsActive = false;
-        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].IsActive = false;
+        if (displayStates.ContainsKey(MainDisplay)) displayStates[MainDisplay].NewState = false;
+        if (displayStates.ContainsKey(SearchDtlsDisplay)) displayStates[SearchDtlsDisplay].NewState = false;
+        if (displayStates.ContainsKey(CharacterDtlsDisplay)) displayStates[CharacterDtlsDisplay].NewState = false;
+        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].NewState = false;
+        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = false;
+        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].NewState = false;
+        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].NewState = false;
 
         if (withUpdate) UpdateDisplay();
     }
@@ -132,7 +138,7 @@ public class UI_MainController : MonoBehaviour
     {
         HideAll();
 
-        if (displayStates.ContainsKey(MainDisplay))displayStates[MainDisplay].IsActive = true;
+        if (displayStates.ContainsKey(MainDisplay))displayStates[MainDisplay].NewState = true;
 
         UpdateDisplay();
     }
@@ -142,7 +148,7 @@ public class UI_MainController : MonoBehaviour
         if (displayStates[BuildIncludsDisplay].Dialog != null && displayStates[BuildIncludsDisplay].Dialog is UI_AllBoxDisplayController)
             ((UI_AllBoxDisplayController)displayStates[BuildIncludsDisplay].Dialog).SetData(gameSystems);
 
-        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].IsActive = true;
+        if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = true;
 
         displayStack.Push(BuildIncludsDisplay);
 
@@ -154,7 +160,7 @@ public class UI_MainController : MonoBehaviour
         if (displayStates[GeneratedBuildDisplay].Dialog != null && displayStates[GeneratedBuildDisplay].Dialog is UI_GeneratedGameDtl)
             ((UI_GeneratedGameDtl)displayStates[GeneratedBuildDisplay].Dialog).SetData(data);
 
-        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].IsActive = true;
+        if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].NewState = true;
 
         displayStack.Push(GeneratedBuildDisplay);
 
@@ -166,7 +172,7 @@ public class UI_MainController : MonoBehaviour
         if (displayStates[BoxDtlsDisplay].Dialog != null && displayStates[BoxDtlsDisplay].Dialog is UI_BoxDetails) 
             ((UI_BoxDetails)displayStates[BoxDtlsDisplay].Dialog).SetData(box, isForGameBuild);
 
-        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].IsActive = true;
+        if (displayStates.ContainsKey(BoxDtlsDisplay)) displayStates[BoxDtlsDisplay].NewState = true;
 
         displayStack.Push(BoxDtlsDisplay);
 
@@ -180,7 +186,7 @@ public class UI_MainController : MonoBehaviour
             if (displayStates[CharacterDtlsDisplay].Dialog != null && displayStates[CharacterDtlsDisplay].Dialog is UI_CharacterDetailsController)
             {
                 ((UI_CharacterDetailsController)displayStates[CharacterDtlsDisplay].Dialog).SetData(searchable);
-                displayStates[CharacterDtlsDisplay].IsActive = true;
+                displayStates[CharacterDtlsDisplay].NewState = true;
                 displayStack.Push(CharacterDtlsDisplay);
             }
         }
@@ -189,7 +195,7 @@ public class UI_MainController : MonoBehaviour
             if (displayStates[SearchDtlsDisplay].Dialog != null && displayStates[SearchDtlsDisplay].Dialog is UI_SearchDetailController)
             {
                 ((UI_SearchDetailController)displayStates[SearchDtlsDisplay].Dialog).SetData(searchable);
-                displayStates[SearchDtlsDisplay].IsActive = true;
+                displayStates[SearchDtlsDisplay].NewState = true;
                 displayStack.Push(SearchDtlsDisplay);
             }
         }
@@ -199,7 +205,7 @@ public class UI_MainController : MonoBehaviour
 
     protected virtual void ShowFilter()
     {
-        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].IsActive = true;
+        if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].NewState = true;
 
         displayStack.Push(FilterDisplay);
 
@@ -210,7 +216,7 @@ public class UI_MainController : MonoBehaviour
     {
         if (displayStack.Count > 0)
         {
-            displayStates[displayStack.Pop()].IsActive = false;
+            displayStates[displayStack.Pop()].NewState = false;
 
             UpdateDisplay();
         }

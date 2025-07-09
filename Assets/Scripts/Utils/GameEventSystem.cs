@@ -12,6 +12,8 @@ public class GameEventSystem : MonoBehaviour
 
     public static event UIEvent UI_ClosePopup;
     public static event UIEvent UI_ShowFilterPopup;
+    public static event UIEvent UI_CloseFilterPopup;
+    public static event UIEvent UI_CloseGameIncludePopup;
     public static event UIEvent_GameBuildUpdatePopup UI_ShowGameBuildUpdatePopup;
     public static event UIEvent_SearchSelected UI_SearchSelected;
     public static event UIEvent_CharacterSelected UI_CharacterSelected;
@@ -43,9 +45,17 @@ public class GameEventSystem : MonoBehaviour
     {
         UI_ShowFilterPopup?.Invoke();
     }
+    public static void UI_OnCloseFilterPopup()
+    {
+        UI_CloseFilterPopup?.Invoke();
+    }
     public static void UI_OnClosePopup()
     {
         UI_ClosePopup?.Invoke();
+    }
+    public static void UI_OnCloseGameIncludePopup()
+    {
+        UI_CloseGameIncludePopup?.Invoke();
     }
     #endregion
 }

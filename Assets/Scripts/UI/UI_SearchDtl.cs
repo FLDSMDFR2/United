@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +39,11 @@ public class UI_SearchDtl : MonoBehaviour
         ApplyData();
     }
 
+    public virtual void ResetData()
+    {
+        if (data != null) data.OnOwnableUpdate -= ApplyData;
+    }
+
     protected virtual void ApplyData()
     {
         SetBackgroundColor();
@@ -48,7 +54,7 @@ public class UI_SearchDtl : MonoBehaviour
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
         SetSeasonTags();
-        ExclusiveLabel.gameObject.SetActive(false);
+        ExclusiveLabel.gameObject.SetActive(data.IsExclusive);
     }
 
     protected virtual void SetBackgroundColor()

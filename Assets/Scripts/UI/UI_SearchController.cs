@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_SearchController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UI_SearchController : MonoBehaviour
     [Header("Location")]
     public GameObject LocationUIPrefab;
 
+    public ScrollRect SearchScrollRect;
     public GameObject SearchView;
     public TMP_InputField SearchBox;
     public int MaxDisplay = 100;
@@ -31,7 +33,7 @@ public class UI_SearchController : MonoBehaviour
 
     protected virtual void Start()
     {
-        if (ChracterUIPrefab == null) return;
+        GameEventSystem.UI_CloseFilterPopup += GameEventSystem_UI_CloseFilterPopup;    
 
         BuildSearchableContent();
         PreBuildDisplay();
@@ -60,6 +62,8 @@ public class UI_SearchController : MonoBehaviour
 
     protected virtual void DisplaySearchPage(int page)
     {
+        SearchScrollRect.verticalNormalizedPosition = 1f;
+
         if (sortedDisplay == null || sortedDisplay.Count() <= 0)
         {
             HideAllDtls();
@@ -126,7 +130,20 @@ public class UI_SearchController : MonoBehaviour
     }
     protected virtual void PerformSort()
     {
-         sortedDisplay = searchToDisplay.OrderBy(s => s.SearchName()).ToArray();
+        var sort = Filter.GetSort();
+
+        if (sort.IsAscending)
+        {
+            if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortString(sort.Type)).ToArray();
+            else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
+                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
+        }
+        else
+        {
+            if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortString(sort.Type)).ToArray();
+            else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
+                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
+        }
     }
 
     protected virtual void CreateNewDtl()
@@ -145,6 +162,7 @@ public class UI_SearchController : MonoBehaviour
             workingIndex = 0;
             foreach (var item in displayList[key])
             {
+                item.ResetData();
                 item.gameObject.SetActive(false);
             }
         }
@@ -157,5 +175,10 @@ public class UI_SearchController : MonoBehaviour
     public virtual void PageDown()
     {
         DisplaySearchPage(currentPage - 1);
+    }
+
+    protected virtual void GameEventSystem_UI_CloseFilterPopup()
+    {
+        Search();
     }
 }

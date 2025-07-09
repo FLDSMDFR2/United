@@ -16,21 +16,46 @@ MonoBehaviour:
   Owned: 0
   IncludeInGameBuild: 1
   MainImage: {fileID: 21300000, guid: 6b291564722288d4fa16119f733ad94c, type: 3}
-  DtlImage: {fileID: 21300000, guid: 6b291564722288d4fa16119f733ad94c, type: 3}
-  Season: 020000000300000004000000
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 6b291564722288d4fa16119f733ad94c, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 02000000030000000400000001000000
+  IsExclusive: 0
   Boxs:
   - Box: 1
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   - Box: 20
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 0
   - Box: 50
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 0
+  - Box: 70
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 0
   ModeTag: 1
-  ChallengesAllowed: 1
+  UseSameHerosForAllGames: 0
+  AllowVillainSelection: 1
+  AllowChallengeSelection: 1
   Games:
   - AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 1
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
     RequiaredVillains: []
+    ExcludedVillains: []
     RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []

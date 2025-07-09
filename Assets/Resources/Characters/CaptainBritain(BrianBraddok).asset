@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
+  m_Name: CaptainBritain(BrianBraddok)
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  DtlImage: {fileID: 0}
+  Season: 03000000
+  Boxs:
+  - Box: 21
+    Default: 1
+  CharacterName: Captain Britain
+  CharacterClarifier: (Brian Braddok)
+  Type: 1
+  Sex: 1
+  IsExclusive: 0
+  Teams: 
+  HeroSymblesMove: 8
+  HeroSymblesHeroic: 3
+  HeroSymblesAttack: 2
+  HeroSymblesWild: 3
+  HeroSpecialCards: 4
+  HeroWins: 0
+  HeroLosses: 0
+  HeroRating: 0
+  IsStandAloneVillain: 1
+  IsSuperVillainModeAllowed: 1
+  VillainSymblesMove: 0
+  VillainSymblesAttack: 0
+  VillainSymblesHeroic: 0
+  VillainSymblesWild: 0
+  VillainWins: 0
+  VillainLosses: 0
+  VillainRating: 0
+  Dtls: 
+  Comments: 
