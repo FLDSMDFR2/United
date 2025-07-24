@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: ResistanceAgainstApocalypse
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 30
+  Characters:
+  - {fileID: 11400000, guid: c356ef5ae4de75545bb948f8f352943d, type: 2}
+  - {fileID: 11400000, guid: 60590dcf3806bac49aae4332533801f5, type: 2}
+  - {fileID: 11400000, guid: f5be8e4838281a74ebd8e106d21f99e9, type: 2}
+  - {fileID: 11400000, guid: 1444cd306ee74ae4b8ec01390abbfad6, type: 2}
+  - {fileID: 11400000, guid: b39b0e6f3cd3cb446bbe7d5ac64a5c61, type: 2}
+  - {fileID: 11400000, guid: 56165bd0e06c1c04c87891b0ed45f5a8, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

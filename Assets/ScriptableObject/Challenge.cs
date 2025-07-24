@@ -11,19 +11,24 @@ public class Challenge : BoxOwnable
     {
         base.Init();
 
-        InitImage("ChallengeIcons/", DisplayName());
-        InitDtlImage("ChallengeDtl/", DisplayName());
+        InitImage("ChallengeIcons/", DisplayNameWithClarifier());
+        InitDtlImage("ChallengeDtl/", DisplayNameWithClarifier());
     }
     public override string DisplayName()
     {
         return ChallengeTag.ToFriendlyString();
     }
+    public override string DisplayNameWithClarifier()
+    {
+        return DisplayName() + " " + Clarifier();
+    }
     public override string SearchName()
     {
-        return ChallengeTag.ToFriendlyString();
+        return DisplayNameWithClarifier();
     }
+
     public override string Clarifier()
     {
-        return "(CHALLENGE)";
+        return "";
     }
 }

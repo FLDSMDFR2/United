@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: Inhumans
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 34
+  Characters:
+  - {fileID: 11400000, guid: 8e899ca6174ff314197108d67efb57d1, type: 2}
+  - {fileID: 11400000, guid: 3ed4c8554a5a4714aafca699013b5e4e, type: 2}
+  - {fileID: 11400000, guid: c01e1cc2ac7f2b046984b6a5f0fafd19, type: 2}
+  - {fileID: 11400000, guid: 89d7019561bce58449fe9dab46da5aa6, type: 2}
+  - {fileID: 11400000, guid: 9fb00916d3482c940a8f681739a79397, type: 2}
+  - {fileID: 11400000, guid: 782822015b369094fad59bcb4ee3bd06, type: 2}
+  - {fileID: 11400000, guid: 767dac993ead4614687f149b1b4fea0c, type: 2}
+  - {fileID: 11400000, guid: a8652a748a37af54e966fff96c284304, type: 2}
+  - {fileID: 11400000, guid: 79d4164809596e242a785ca2e78f9e2b, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

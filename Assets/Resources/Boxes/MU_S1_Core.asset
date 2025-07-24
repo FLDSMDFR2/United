@@ -15,17 +15,50 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 468774eb0ef85bb4d961b9a087cca7c7, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 468774eb0ef85bb4d961b9a087cca7c7, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 1
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   BoxTag: 1
   BoxColor: {r: 0.43137258, g: 0.76470596, b: 0.79215693, a: 1}
-  IsDarkText: 1
-  Characters: []
-  Locations: []
-  Challenges: []
-  Modes: []
+  IsDarkText: 0
+  Characters:
+  - {fileID: 11400000, guid: a2a9805b1d0ec2b46a1bcd3ed8161023, type: 2}
+  - {fileID: 11400000, guid: 5682131840659994b97d738a35c17250, type: 2}
+  - {fileID: 11400000, guid: 8ca78ef5092423444acdbaefea19059e, type: 2}
+  - {fileID: 11400000, guid: 06c440ef8c02de247be35014f3819ece, type: 2}
+  - {fileID: 11400000, guid: fbef466e4f87ea44987026968787da0d, type: 2}
+  - {fileID: 11400000, guid: bdf73405cc9506246a950447cc79f78c, type: 2}
+  - {fileID: 11400000, guid: 9db1246b96315e748b710ca25bc84e48, type: 2}
+  - {fileID: 11400000, guid: e79a2373470257a41a70fbf97ab259bd, type: 2}
+  - {fileID: 11400000, guid: 2125e13cdc992e74fba63ecf673fad7d, type: 2}
+  - {fileID: 11400000, guid: 66851deb2b5841e43a4f8282b4ba9ca2, type: 2}
+  - {fileID: 11400000, guid: 7a1eb8215f163c049a0ea9701774956b, type: 2}
+  Locations:
+  - {fileID: 11400000, guid: cbe923ec0f743ab4695f94ca5f0587ea, type: 2}
+  - {fileID: 11400000, guid: b90ae797037fc2646b24e1dfb05fd558, type: 2}
+  - {fileID: 11400000, guid: adfd6757d0737254ea211a9cfba06e37, type: 2}
+  - {fileID: 11400000, guid: f036c5b6fd2978a469e29914982f8a2a, type: 2}
+  - {fileID: 11400000, guid: 724936939fda3d343ad3f8a975c5399e, type: 2}
+  - {fileID: 11400000, guid: 150621e675b625a4cb5625d8aa5c2267, type: 2}
+  - {fileID: 11400000, guid: 5c055d0c9330dd94cb0cc19d4d8f01c1, type: 2}
+  - {fileID: 11400000, guid: 691800a087620d54e893be800fbf4040, type: 2}
+  Challenges:
+  - {fileID: 11400000, guid: 09287bd2ebeb47547954c6f6a7b3ca74, type: 2}
+  - {fileID: 11400000, guid: 00832ed70439e294ead872f10fd8ac8d, type: 2}
+  - {fileID: 11400000, guid: b669aeb3fa5ba914493ce790f8d3fc9e, type: 2}
+  Modes:
+  - {fileID: 11400000, guid: 53cd616f1283cc34087e10c9256f72db, type: 2}
   Teams: []
+  Equipment: []
+  Campaigns: []

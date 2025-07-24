@@ -15,17 +15,49 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 62e8f05e59fef4b41a56965e6465d5c9, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 62e8f05e59fef4b41a56965e6465d5c9, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 01000000
+  IsExclusive: 0
   Boxs:
   - Box: 70
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   BoxTag: 70
   BoxColor: {r: 0.6784314, g: 0.098039225, b: 0.10196079, a: 1}
-  IsDarkText: 1
-  Characters: []
-  Locations: []
-  Challenges: []
-  Modes: []
+  IsDarkText: 0
+  Characters:
+  - {fileID: 11400000, guid: 1f5dbe0e26f3d3842bad82f231475184, type: 2}
+  - {fileID: 11400000, guid: f5b96ac88243ad247b64fd6d5f951c58, type: 2}
+  - {fileID: 11400000, guid: 22ec09e5c48cf9f4899f31ffffd2f7a1, type: 2}
+  - {fileID: 11400000, guid: 6745e59c7fa97d342abbb41d54333d90, type: 2}
+  - {fileID: 11400000, guid: 0778f6842d284c14aa08f13549add0ff, type: 2}
+  - {fileID: 11400000, guid: 1c76537ddcfc4744c8134d79b8bd25a8, type: 2}
+  - {fileID: 11400000, guid: 24bc5a5c41fff114088d97fee1cfe3b2, type: 2}
+  - {fileID: 11400000, guid: 1553016df4eccb949b7ad2e347f8c5ce, type: 2}
+  - {fileID: 11400000, guid: 76de4b9d47b06664baa7e5fe2a0a73a6, type: 2}
+  - {fileID: 11400000, guid: 82aaade6f89db1943a872379de0ae3bb, type: 2}
+  Locations:
+  - {fileID: 11400000, guid: 7c8a76c1ffd940d4e852845f58b2a238, type: 2}
+  - {fileID: 11400000, guid: d248910265d29bb4aaf2ec0569f3f52c, type: 2}
+  - {fileID: 11400000, guid: 10736255354327a41a069003a4e181d4, type: 2}
+  - {fileID: 11400000, guid: 381dbdc84e757bf47a4e1de0f1b4c882, type: 2}
+  - {fileID: 11400000, guid: da91e6a9c526e514ea81bed5c4258598, type: 2}
+  - {fileID: 11400000, guid: cb5ff4d461711294a94bc252c93a354c, type: 2}
+  - {fileID: 11400000, guid: 919619a86316d3941b6d7955fc200a7d, type: 2}
+  - {fileID: 11400000, guid: ccd482024705ae04ea2a0522f4e86bc9, type: 2}
+  Challenges:
+  - {fileID: 11400000, guid: 09287bd2ebeb47547954c6f6a7b3ca74, type: 2}
+  - {fileID: 11400000, guid: 00832ed70439e294ead872f10fd8ac8d, type: 2}
+  - {fileID: 11400000, guid: b669aeb3fa5ba914493ce790f8d3fc9e, type: 2}
+  Modes:
+  - {fileID: 11400000, guid: 53cd616f1283cc34087e10c9256f72db, type: 2}
   Teams: []
+  Equipment: []
+  Campaigns: []

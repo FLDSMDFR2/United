@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: Defenders(Manhattan)
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 13
+  Characters:
+  - {fileID: 11400000, guid: 58aaad599c283384eb83821c8d65e53f, type: 2}
+  - {fileID: 11400000, guid: d8798fbd7685bb7449b8735b88cde206, type: 2}
+  - {fileID: 11400000, guid: 0a855f454b51ae14dbc8aa36df8a885c, type: 2}
+  - {fileID: 11400000, guid: e6f8264c50552e7479bc3b7af17d4c87, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

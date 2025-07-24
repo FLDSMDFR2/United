@@ -15,11 +15,23 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: cb5de7e22bfbe5e4aaf4cb647aa47e12, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: cb5de7e22bfbe5e4aaf4cb647aa47e12, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 3
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  - Box: 11
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   LocationName: Valhalla
   ExclusiveForMode: 

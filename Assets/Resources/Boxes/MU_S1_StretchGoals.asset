@@ -15,17 +15,73 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 457c61c3152cc7e4a90188068d335a04, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 457c61c3152cc7e4a90188068d335a04, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 2
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   BoxTag: 2
   BoxColor: {r: 0.87843144, g: 0.87843144, b: 0.87843144, a: 1}
-  IsDarkText: 1
-  Characters: []
+  IsDarkText: 0
+  Characters:
+  - {fileID: 11400000, guid: a1faabd726927e642a9bed0e6eb44367, type: 2}
+  - {fileID: 11400000, guid: c6fe0144323e5aa4489b87342504cfc3, type: 2}
+  - {fileID: 11400000, guid: f87668ec4a86b45418aef049cdf2c163, type: 2}
+  - {fileID: 11400000, guid: 7801d4a482b38db4a8a6f3c2f72cc13c, type: 2}
+  - {fileID: 11400000, guid: 23ea418cb6a18a2419013bd4c75b01cd, type: 2}
+  - {fileID: 11400000, guid: 8eef37d056b97e74292e546fb8c23f6e, type: 2}
+  - {fileID: 11400000, guid: 4b97bbe8d4486b3439c6146c6d41415d, type: 2}
+  - {fileID: 11400000, guid: 24ab88482855bb745b717c0cbec9f1b7, type: 2}
+  - {fileID: 11400000, guid: 58aaad599c283384eb83821c8d65e53f, type: 2}
+  - {fileID: 11400000, guid: a9c6227f8bec58c498e1a74425a27d0c, type: 2}
+  - {fileID: 11400000, guid: 6a98ef8150bb8e44c9390cf0e714c0ec, type: 2}
+  - {fileID: 11400000, guid: 6aab5a89e72b24944a6384f80534985f, type: 2}
+  - {fileID: 11400000, guid: 5c8da60ab3d6e614ca88aa427ceb3a4f, type: 2}
+  - {fileID: 11400000, guid: cefb5b088aa257a4384ef16a77ac34c3, type: 2}
+  - {fileID: 11400000, guid: a5eba9a5d53755041be8891763ab0ef3, type: 2}
+  - {fileID: 11400000, guid: 5e6cc2fa3452aa945a03dd9f3c343c07, type: 2}
+  - {fileID: 11400000, guid: 5d9f36be77d49284baabb3c2623eae68, type: 2}
+  - {fileID: 11400000, guid: 4307538a7158c6440bc374d4017a89bb, type: 2}
+  - {fileID: 11400000, guid: d8798fbd7685bb7449b8735b88cde206, type: 2}
+  - {fileID: 11400000, guid: 0a855f454b51ae14dbc8aa36df8a885c, type: 2}
+  - {fileID: 11400000, guid: 2bb06a8f199620d4eae2241cadd46ce8, type: 2}
+  - {fileID: 11400000, guid: b3652998d7cd0ac428cef4d7dad8a976, type: 2}
+  - {fileID: 11400000, guid: e6f8264c50552e7479bc3b7af17d4c87, type: 2}
+  - {fileID: 11400000, guid: 1679b7138a6882e428ed1fcf31ad2374, type: 2}
+  - {fileID: 11400000, guid: 8241a5ebba2daa2449a8fbab3b190706, type: 2}
+  - {fileID: 11400000, guid: a37399cf0a4a9ae4788b392ee6c3d9f5, type: 2}
+  - {fileID: 11400000, guid: 440c576190ea19f4b961327584133255, type: 2}
+  - {fileID: 11400000, guid: a8652a748a37af54e966fff96c284304, type: 2}
+  - {fileID: 11400000, guid: 35b9202abb29bd949adfe33008bdd650, type: 2}
+  - {fileID: 11400000, guid: afaac4cd84ebb0241afcd9b6d8192d8e, type: 2}
+  - {fileID: 11400000, guid: 2342125e15b1081478995a7f33c86841, type: 2}
+  - {fileID: 11400000, guid: 9b84e68683f19724aabe2a23ec56b46f, type: 2}
+  - {fileID: 11400000, guid: 08b1d93b0dff03548ad53693c55fcebe, type: 2}
+  - {fileID: 11400000, guid: a94ae3c3e767f3a4aaa365d3211c3a6d, type: 2}
+  - {fileID: 11400000, guid: 0b05ebeced9b08c438d39f2b07873553, type: 2}
+  - {fileID: 11400000, guid: cb896eda48a2c4941bc10ce78b7c63e4, type: 2}
+  - {fileID: 11400000, guid: 41b6f580715cb04479689b1394ca0e1a, type: 2}
+  - {fileID: 11400000, guid: 0a7b2a3003460104eb8f045bbb9ddb9e, type: 2}
+  - {fileID: 11400000, guid: 276821933184c0149a507ae2365274e1, type: 2}
+  - {fileID: 11400000, guid: 94d8e1855ca66314890fd4776212fb8d, type: 2}
+  - {fileID: 11400000, guid: 27bd9474d953a7847ae436301140ebba, type: 2}
+  - {fileID: 11400000, guid: 66851deb2b5841e43a4f8282b4ba9ca2, type: 2}
+  - {fileID: 11400000, guid: fe85513b5d67f054f9adf33e7e592324, type: 2}
+  - {fileID: 11400000, guid: 8542d974f5b701e49940173f27fdde33, type: 2}
+  - {fileID: 11400000, guid: 23108a77e23a1a94d904ee86ee4ae95c, type: 2}
+  - {fileID: 11400000, guid: 15e9dc17b0cf5384c82dc63b4183ecb3, type: 2}
   Locations: []
   Challenges: []
   Modes: []
   Teams: []
+  Equipment: []
+  Campaigns: []

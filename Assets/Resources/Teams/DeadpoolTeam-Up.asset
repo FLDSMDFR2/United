@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: DeadpoolTeam-Up
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 33
+  Characters:
+  - {fileID: 11400000, guid: e4889f52757008b43b3fbcee95857ae4, type: 2}
+  - {fileID: 11400000, guid: 02da8ebb700154f4eae76dc1e6e35783, type: 2}
+  - {fileID: 11400000, guid: c2ce0ef37fe9dd74b83a478e45b44a6b, type: 2}
+  - {fileID: 11400000, guid: 0e865523f4b08654ca558fed8d9fee12, type: 2}
+  - {fileID: 11400000, guid: cba3f3b0a3df45d4789edec6954f8aad, type: 2}
+  - {fileID: 11400000, guid: bbe51af08ba3c06428966f541e4e8020, type: 2}
+  - {fileID: 11400000, guid: 9b65561baec47bc4aa1ca62762412476, type: 2}
+  - {fileID: 11400000, guid: 4eb98de817ea2c74d92c3bb64b4621cf, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

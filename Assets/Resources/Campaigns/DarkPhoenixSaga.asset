@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636106a387478cf4f9f2053e57f9350c, type: 3}
+  m_Name: DarkPhoenixSaga
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 61
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  Name: Dark Phoenix Saga
+  RequiaredBoxs:
+  - {fileID: 11400000, guid: 406082c3a2d470a4291b4c4889b9244d, type: 2}
+  - {fileID: 11400000, guid: 1907f442e7eaf3d45b4dd5d52fc0a914, type: 2}
+  - {fileID: 11400000, guid: af6e5adb696939e49ad7ef131e3341cd, type: 2}
+  - {fileID: 11400000, guid: 6a3a8f4d4d78d424f894113fd9c51ecf, type: 2}
+  - {fileID: 11400000, guid: e446d32217670ba469daa10bcacc7067, type: 2}
+  - {fileID: 11400000, guid: b89e91724cc776047a0e69b1bc6a40bd, type: 2}
+  - {fileID: 11400000, guid: 29e192e1a1f548f42b93195957f088d1, type: 2}

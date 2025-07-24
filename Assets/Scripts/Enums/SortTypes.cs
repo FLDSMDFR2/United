@@ -3,6 +3,12 @@ public enum SortTypes
 {
     None,
     Name,
+    HeroWins,
+    HeroLosses,
+    HeroRating,
+    VillainWins,
+    VillainLosses,
+    VillainRating,
     HeroMoveIcons,
     HeroAttackIcons,
     HeroHeroicIcons,
@@ -20,6 +26,18 @@ public static class SortTypesExtensions
                 return "NONE";
             case SortTypes.Name:
                 return "NAME";
+            case SortTypes.HeroWins:
+                return "HERO WINS";
+            case SortTypes.HeroLosses:
+                return "HERO LOSSES";
+            case SortTypes.HeroRating:
+                return "HERO RATING";
+            case SortTypes.VillainWins:
+                return "VILLAIN WINS";
+            case SortTypes.VillainLosses:
+                return "VILLAIN LOSSSES";
+            case SortTypes.VillainRating:
+                return "VILLAIN RATING";
             case SortTypes.HeroMoveIcons:
                 return "HERO MOVE ICONS";
             case SortTypes.HeroAttackIcons:

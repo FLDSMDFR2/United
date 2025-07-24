@@ -98,7 +98,7 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
 
         if (animationSliderCoroutine != null) StopCoroutine(animationSliderCoroutine);
 
-        if (animate)
+        if (animate && this.gameObject.activeSelf && this.gameObject.activeInHierarchy)
         {
             animationSliderCoroutine = StartCoroutine(AnimateSlider());
         }

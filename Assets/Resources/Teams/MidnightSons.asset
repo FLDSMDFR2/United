@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: MidnightSons
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 22
+  Characters:
+  - {fileID: 11400000, guid: 23ea418cb6a18a2419013bd4c75b01cd, type: 2}
+  - {fileID: 11400000, guid: b6a29711864c3fd4aa97b56ad8fb04f5, type: 2}
+  - {fileID: 11400000, guid: a9c6227f8bec58c498e1a74425a27d0c, type: 2}
+  - {fileID: 11400000, guid: bbe51af08ba3c06428966f541e4e8020, type: 2}
+  - {fileID: 11400000, guid: 8f1cb46ab00aa5747811166607c42e94, type: 2}
+  - {fileID: 11400000, guid: d8798fbd7685bb7449b8735b88cde206, type: 2}
+  - {fileID: 11400000, guid: 10963951e0c79b546a7e6fa29e7cbb42, type: 2}
+  - {fileID: 11400000, guid: 440c576190ea19f4b961327584133255, type: 2}
+  - {fileID: 11400000, guid: 31cf553204ad2be479545128702bc68e, type: 2}
+  - {fileID: 11400000, guid: 6bd36a0a740e0a249a311b9c80c52e79, type: 2}
+  - {fileID: 11400000, guid: becc67ab51c036c4cb411745cad48375, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

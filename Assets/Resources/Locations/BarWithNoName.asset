@@ -15,12 +15,23 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 08de507f661d26049a40fccae2025a09, type: 3}
+  AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 08de507f661d26049a40fccae2025a09, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 52
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  - Box: 64
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   LocationName: Bar With No Name
   ExclusiveForMode: 

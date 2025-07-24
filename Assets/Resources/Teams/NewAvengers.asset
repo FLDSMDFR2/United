@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: NewAvengers
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 3
+  Characters:
+  - {fileID: 11400000, guid: 8ca78ef5092423444acdbaefea19059e, type: 2}
+  - {fileID: 11400000, guid: 0c9ad0e578914c64e93614b631967575, type: 2}
+  - {fileID: 11400000, guid: bdf73405cc9506246a950447cc79f78c, type: 2}
+  - {fileID: 11400000, guid: 09ac7190d6d3488498cbc4c3a287125e, type: 2}
+  - {fileID: 11400000, guid: 8530f8b0fc238af4c9cbb10a7e6840e7, type: 2}
+  - {fileID: 11400000, guid: 1dd704f457c69344c8a6cd50f5ee5944, type: 2}
+  - {fileID: 11400000, guid: e6f8264c50552e7479bc3b7af17d4c87, type: 2}
+  - {fileID: 11400000, guid: 92a603589b6ee9e46b49bd8461b1b52c, type: 2}
+  - {fileID: 11400000, guid: b21cc7d3f85ecbf43b9e2adbf677cdb0, type: 2}
+  - {fileID: 11400000, guid: 09df7aea2cf0a2645a287563b4f0b4a7, type: 2}
+  - {fileID: 11400000, guid: 94d8e1855ca66314890fd4776212fb8d, type: 2}
+  - {fileID: 11400000, guid: 27bd9474d953a7847ae436301140ebba, type: 2}
+  - {fileID: 11400000, guid: 8f0b506cf19e61e499e61501a0e0d01a, type: 2}
+  - {fileID: 11400000, guid: 8c05d5b1a539a864698ecb4a97a96be9, type: 2}
+  - {fileID: 11400000, guid: 4eb98de817ea2c74d92c3bb64b4621cf, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

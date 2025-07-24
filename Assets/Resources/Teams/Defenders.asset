@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: Defenders
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 12
+  Characters:
+  - {fileID: 11400000, guid: 1449a2ea9e43b1b4bbcf821a8b1653bf, type: 2}
+  - {fileID: 11400000, guid: 3bff823281d38694c94f0aaaeeea958d, type: 2}
+  - {fileID: 11400000, guid: bd351ede8dae3314a84cd4b36e887aa6, type: 2}
+  - {fileID: 11400000, guid: 24fb458b9d8f4784d97efc67785ad8d6, type: 2}
+  - {fileID: 11400000, guid: 58aaad599c283384eb83821c8d65e53f, type: 2}
+  - {fileID: 11400000, guid: a9c6227f8bec58c498e1a74425a27d0c, type: 2}
+  - {fileID: 11400000, guid: bbe51af08ba3c06428966f541e4e8020, type: 2}
+  - {fileID: 11400000, guid: 8f1cb46ab00aa5747811166607c42e94, type: 2}
+  - {fileID: 11400000, guid: 2f58d14f0049bdd4e86dab954e3c2e27, type: 2}
+  - {fileID: 11400000, guid: 4307538a7158c6440bc374d4017a89bb, type: 2}
+  - {fileID: 11400000, guid: fbef466e4f87ea44987026968787da0d, type: 2}
+  - {fileID: 11400000, guid: 4fe0cfa8f2bd4d44eb79090b29115981, type: 2}
+  - {fileID: 11400000, guid: 87f36ece0649fde488818c01212240dc, type: 2}
+  - {fileID: 11400000, guid: 837d74be781f39a42bb1ff18976e66a7, type: 2}
+  - {fileID: 11400000, guid: 498b07fbd7332f4468cb3abfff2c67fb, type: 2}
+  - {fileID: 11400000, guid: 2baa91a19c04d8d4ea2b6684811fd884, type: 2}
+  - {fileID: 11400000, guid: dcc119b315097364b825827227aad4ac, type: 2}
+  - {fileID: 11400000, guid: fe7e5f957955d4b4b89d705f62cccd21, type: 2}
+  - {fileID: 11400000, guid: 93f489fb7536f4542b13ab2197afc78d, type: 2}
+  - {fileID: 11400000, guid: 15e9dc17b0cf5384c82dc63b4183ecb3, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

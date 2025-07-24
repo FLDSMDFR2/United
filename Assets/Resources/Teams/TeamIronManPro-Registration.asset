@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: TeamIronManPro-Registration
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 9
+  Characters:
+  - {fileID: 11400000, guid: c356ef5ae4de75545bb948f8f352943d, type: 2}
+  - {fileID: 11400000, guid: 5682131840659994b97d738a35c17250, type: 2}
+  - {fileID: 11400000, guid: 23ea418cb6a18a2419013bd4c75b01cd, type: 2}
+  - {fileID: 11400000, guid: c2ce0ef37fe9dd74b83a478e45b44a6b, type: 2}
+  - {fileID: 11400000, guid: 0e865523f4b08654ca558fed8d9fee12, type: 2}
+  - {fileID: 11400000, guid: d42e200a63abe6f49820203b07bde039, type: 2}
+  - {fileID: 11400000, guid: bdf73405cc9506246a950447cc79f78c, type: 2}
+  - {fileID: 11400000, guid: 09ac7190d6d3488498cbc4c3a287125e, type: 2}
+  - {fileID: 11400000, guid: 8530f8b0fc238af4c9cbb10a7e6840e7, type: 2}
+  - {fileID: 11400000, guid: a06c499befc54e1418fbf20861a7d685, type: 2}
+  - {fileID: 11400000, guid: 87f36ece0649fde488818c01212240dc, type: 2}
+  - {fileID: 11400000, guid: b21cc7d3f85ecbf43b9e2adbf677cdb0, type: 2}
+  - {fileID: 11400000, guid: 0a7b2a3003460104eb8f045bbb9ddb9e, type: 2}
+  - {fileID: 11400000, guid: 924f9e5bc215da9478c42ebdd2b19650, type: 2}
+  - {fileID: 11400000, guid: ff1bc378357c934488a32e079e104567, type: 2}
+  - {fileID: 11400000, guid: 7a1eb8215f163c049a0ea9701774956b, type: 2}
+  - {fileID: 11400000, guid: 2f8c62d02493372479cf725ec2bc7d39, type: 2}
+  - {fileID: 11400000, guid: a2f386e9a18e26743b44c270d3b1a3a5, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

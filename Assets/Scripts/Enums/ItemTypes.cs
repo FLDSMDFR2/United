@@ -7,5 +7,6 @@ public enum ItemTypes
     Modes,
     Teams,
     Equipment,
-    Campaign
+    Campaign,
+    Generic,
 }

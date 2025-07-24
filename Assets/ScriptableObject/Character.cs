@@ -37,12 +37,14 @@ public class Character : BoxOwnable
     public string Comments;
     public GameDtl GameDtl;
 
+    public List<Equipment> Equipment = new List<Equipment>();
+
     public override void Init()
     {
         base.Init();
 
-        InitImage("CharacterImages/", DisplayName());
-        InitDtlImage("ChracterDtlImages/", DisplayName());
+        InitImage("CharacterImages/", DisplayNameWithClarifier());
+        InitDtlImage("ChracterDtlImages/", DisplayNameWithClarifier());
     }
 
     protected override void InitFilter()
@@ -57,6 +59,14 @@ public class Character : BoxOwnable
     {
         base.InitSort();
 
+        sort[SortTypes.HeroWins] = HeroWins.ToString();
+        sort[SortTypes.HeroLosses] = HeroLosses.ToString();
+        sort[SortTypes.HeroRating] = HeroRating.ToString();
+
+        sort[SortTypes.VillainWins] = VillainWins.ToString();
+        sort[SortTypes.VillainLosses] = VillainLosses.ToString();
+        sort[SortTypes.VillainRating] = VillainRating.ToString();
+
         sort[SortTypes.HeroMoveIcons] = HeroSymblesMove.ToString();
         sort[SortTypes.HeroAttackIcons] = HeroSymblesAttack.ToString();
         sort[SortTypes.HeroHeroicIcons] = HeroSymblesHeroic.ToString();
@@ -66,11 +76,15 @@ public class Character : BoxOwnable
 
     public override string DisplayName()
     {
-        return CharacterName + " " + CharacterClarifier;
+        return CharacterName;
+    }
+    public override string DisplayNameWithClarifier()
+    {
+        return DisplayName() + " " + Clarifier();
     }
     public override string SearchName()
     {
-        return CharacterName + " " + CharacterClarifier;
+        return DisplayNameWithClarifier();
     }
     public override string Clarifier()
     {

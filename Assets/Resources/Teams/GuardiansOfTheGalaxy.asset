@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: GuardiansOfTheGalaxy
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 18
+  Characters:
+  - {fileID: 11400000, guid: a1faabd726927e642a9bed0e6eb44367, type: 2}
+  - {fileID: 11400000, guid: 87c832c5f67bf5544b13945374381139, type: 2}
+  - {fileID: 11400000, guid: 6aab5a89e72b24944a6384f80534985f, type: 2}
+  - {fileID: 11400000, guid: cc11f7ca67b319c458abdf225c4aea11, type: 2}
+  - {fileID: 11400000, guid: 9c9a383224461c949a6deaa4a29f23cb, type: 2}
+  - {fileID: 11400000, guid: 9c6274fa91975f9498b9b666fd5ba046, type: 2}
+  - {fileID: 11400000, guid: 8241a5ebba2daa2449a8fbab3b190706, type: 2}
+  - {fileID: 11400000, guid: 35b9202abb29bd949adfe33008bdd650, type: 2}
+  - {fileID: 11400000, guid: 2baa91a19c04d8d4ea2b6684811fd884, type: 2}
+  - {fileID: 11400000, guid: cd3c5bb24198e2a4d9c7dc68a9094f96, type: 2}
+  - {fileID: 11400000, guid: cf6c5872347f8634bb1216fe88ce4d74, type: 2}
+  - {fileID: 11400000, guid: c8ab559acfa9e9c48b32d22a4e001374, type: 2}
+  - {fileID: 11400000, guid: d5923cdcdbe92764ba71902ad50285f6, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

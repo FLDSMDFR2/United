@@ -142,8 +142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ALLIES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aa55e12368c9df04c9d06a82dbbbca7f, type: 2}
-  m_sharedMaterial: {fileID: 8946717525438999472, guid: aa55e12368c9df04c9d06a82dbbbca7f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ebc57455ae1e2b4f91cea006a45399e, type: 2}
+  m_sharedMaterial: {fileID: 6739821526458818187, guid: 7ebc57455ae1e2b4f91cea006a45399e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -167,13 +167,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 15
   m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 20
-  m_fontStyle: 1
+  m_fontSizeMax: 15
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

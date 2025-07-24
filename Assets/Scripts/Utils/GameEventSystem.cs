@@ -6,17 +6,21 @@ public class GameEventSystem : MonoBehaviour
     public delegate void UIEvent();
     public delegate void UIEvent_SearchSelected(Searchable searchable);
     public delegate void UIEvent_CharacterSelected(Character character);
+    public delegate void UIEvent_CharacterWinLoseSelected(Character character, bool isHero);
     public delegate void UIEvent_BoxSelected(Box box, bool isForGameBuild);
     public delegate void UIEvent_GameBuildUpdatePopup(GameSystems gameSystems);
     public delegate void UIEvent_BuildGamePopup(BuildGameData data);
 
+    public static event UIEvent UI_ShowSettings;
     public static event UIEvent UI_ClosePopup;
     public static event UIEvent UI_ShowFilterPopup;
     public static event UIEvent UI_CloseFilterPopup;
     public static event UIEvent UI_CloseGameIncludePopup;
+    public static event UIEvent UI_CloseCharacterWinLose;
     public static event UIEvent_GameBuildUpdatePopup UI_ShowGameBuildUpdatePopup;
     public static event UIEvent_SearchSelected UI_SearchSelected;
     public static event UIEvent_CharacterSelected UI_CharacterSelected;
+    public static event UIEvent_CharacterWinLoseSelected UI_CharacterWinLoseSelected;
 
     public static event UIEvent_BoxSelected UI_BoxSelected;
     public static event UIEvent_BuildGamePopup UI_ShowBuiltGame;
@@ -28,6 +32,14 @@ public class GameEventSystem : MonoBehaviour
     public static void UI_OnCharacterSelected(Character character)
     {
         UI_CharacterSelected?.Invoke(character);
+    }
+    public static void UI_OnCharacterWinLoseSelected(Character character, bool isHero)
+    {
+        UI_CharacterWinLoseSelected?.Invoke(character, isHero);
+    }
+    public static void UI_OnCloseCharacterWinLose()
+    {
+        UI_CloseCharacterWinLose?.Invoke();
     }
     public static void UI_OnBoxSelected(Box box, bool isForGameBuild)
     {
@@ -57,5 +69,10 @@ public class GameEventSystem : MonoBehaviour
     {
         UI_CloseGameIncludePopup?.Invoke();
     }
+    public static void UI_OnShowSettings()
+    {
+        UI_ShowSettings?.Invoke();
+    }
+
     #endregion
 }

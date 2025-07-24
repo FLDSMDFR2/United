@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DataLoader : MonoBehaviour
 {
     protected static List<Character> allCharacters = new List<Character>();
-    protected static List<Character> allHeros = new List<Character>();
-    protected static List<Character> allVillains = new List<Character>();
     protected static List<Box> allBoxes = new List<Box>();
     protected static List<Location> allLocations = new List<Location>();
     protected static List<Challenge> allChallenges = new List<Challenge>();
@@ -22,6 +19,7 @@ public class DataLoader : MonoBehaviour
     protected static Dictionary<GameSystems, List<Character>> charactersInGameSystem = new Dictionary<GameSystems, List<Character>>();
     protected static Dictionary<GameSystems, List<Character>> herosInGameSystem = new Dictionary<GameSystems, List<Character>>();
     protected static Dictionary<GameSystems, List<Character>> villainsInGameSystem = new Dictionary<GameSystems, List<Character>>();
+    protected static Dictionary<GameSystems, List<Character>> companionsInGameSystem = new Dictionary<GameSystems, List<Character>>();
     protected static Dictionary<GameSystems, List<Location>> locationsInGameSystem = new Dictionary<GameSystems, List<Location>>();
     protected static Dictionary<GameSystems, List<Challenge>> challengeInGameSystem = new Dictionary<GameSystems, List<Challenge>>();
     protected static Dictionary<GameSystems, List<Mode>> modesInGameSystem = new Dictionary<GameSystems, List<Mode>>();
@@ -57,6 +55,9 @@ public class DataLoader : MonoBehaviour
         {
             character.Init();
 
+            character.Teams.Clear();
+            character.Equipment.Clear();
+
             AddToAllDictionary<Character>(character.GameSystem, charactersInGameSystem, character);
 
             if (character.Type == CharacterType.Villain || character.Type == CharacterType.AntiHero)
@@ -67,6 +68,11 @@ public class DataLoader : MonoBehaviour
             if (character.Type == CharacterType.Hero || character.Type == CharacterType.AntiHero)
             {
                 AddToAllDictionary<Character>(character.GameSystem, herosInGameSystem, character);
+            }
+
+            if (character.Type == CharacterType.Companion)
+            {
+                AddToAllDictionary<Character>(character.GameSystem, companionsInGameSystem, character);
             }
 
             foreach (var team in allTeams)
@@ -85,6 +91,25 @@ public class DataLoader : MonoBehaviour
                 }
 
                 if (team.Characters.Contains(character)) character.Teams.Add(team.TeamTag);
+            }
+
+            foreach (var equipment in allEquipment)
+            {
+                //skip if not for this system
+                if (equipment.GameSystem != character.GameSystem) continue;
+
+                // skip not for villain
+                if (equipment.AnyHero && character.Type == CharacterType.Villain) continue;
+
+                // if for any hero add it
+                if (equipment.Characters.Count <= 0 && equipment.AnyHero)
+                {
+                    character.AddDtlItem("EQUIPMENT", equipment);
+                    continue;
+                }
+
+                // if its for this character add it
+                if (equipment.Characters.Contains(character)) character.AddDtlItem("EQUIPMENT", equipment);
             }
 
             AddToBox(character);
@@ -144,6 +169,7 @@ public class DataLoader : MonoBehaviour
             AddToBox(campaigns);
         }
     }
+
     protected virtual void AddToAllDictionary<T>(GameSystems system, Dictionary<GameSystems, List<T>> dictionary, T valueToAdd)
     {
         AddToDictionary<T>(GameSystems.All, dictionary, valueToAdd);
@@ -180,6 +206,11 @@ public class DataLoader : MonoBehaviour
     public static List<Character> GetVillainsBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (villainsInGameSystem.ContainsKey(gameSystems)) return villainsInGameSystem[gameSystems];
+        return new List<Character>();
+    }
+    public static List<Character> GetCompanionsBySystem(GameSystems gameSystems = GameSystems.All)
+    {
+        if (companionsInGameSystem.ContainsKey(gameSystems)) return companionsInGameSystem[gameSystems];
         return new List<Character>();
     }
 

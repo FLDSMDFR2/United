@@ -1,7 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +8,15 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
 {
     [Header("Scrollview")]
     public GameObject CollectionView;
+    public ScrollRect ScrollRect;
+
+    [Header("Type Tag")]
+    public UI_Tag TypeTag;
 
     [Header("Images")]
     public Image Image;
     public GameObject DtlImagePrefab;
+    public GameObject ImageView;
     protected List<Image> dtlImages = new List<Image>();
 
     [Header("Owned")]
@@ -30,21 +34,42 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
     public List<UI_Tag> BoxTags;
     public TextMeshProUGUI BoxOverFlow;
 
+    [Header("Dtl Item")]
+    public GameObject DtlItemPrefab;
+    public GameObject DtlItemHeaderPrefab;
+    public Color DtlItemHeaderColor;
+
+    protected List<UI_DtlItem> displayedDtlItems = new List<UI_DtlItem>();
+    protected List<GameObject> displayedDtlItemsHeaders = new List<GameObject>();
+
     protected Searchable data;
 
+    protected float openTime = 0.1f;
+    protected float closeTime = 0.05f;
 
     public virtual void SetData(Searchable searchable)
     {
         data = searchable;
+        ApplyData();
+    }
 
+    public virtual void ResetData()
+    {
+
+    }
+
+    public virtual void ApplyData()
+    {
+        TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
         OwnedImage.SetActive(data.Owned);
         Image.sprite = data.GetDisplayImage();
         Clarifier.text = data.Clarifier();
-        Name.text = data.SearchName();
+        Name.text = data.DisplayName();
         SetSeasonTags();
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
         SetDtlImages();
+        SetDtlItems(data.DtlItems());
     }
 
     protected virtual void SetBoxTags(List<BoxAssociationDtl> boxes)
@@ -134,11 +159,19 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
         }
         else
         {
-            dtlImages.Add(Instantiate(DtlImagePrefab, CollectionView.transform).GetComponent<Image>());
+            var imageObj = Instantiate(DtlImagePrefab, ImageView.transform).GetComponent<Image>();
+            var rectTrans = imageObj.GetComponent<RectTransform>();
+            rectTrans.anchoredPosition = new Vector2(0.5f, 1f);
+            rectTrans.anchorMin = new Vector2(0.5f, 1f);
+            rectTrans.anchorMax = new Vector2(0.5f, 1f);
+            rectTrans.pivot = new Vector2(0.5f, 1f);
+
+            dtlImages.Add(imageObj);
             dtlImages[index].gameObject.SetActive(true);
             dtlImages[index].sprite = image;
         }
     }
+
     protected virtual void HideAll()
     {
         foreach (var collection in dtlImages)
@@ -147,14 +180,62 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
         }
     }
 
+    protected virtual void SetDtlItems(Dictionary<string, List<Searchable>> ownables)
+    {
+        HideDtlItems();
+        if (ownables == null || ownables.Keys.Count <= 0) return;
+
+        foreach(var key in ownables.Keys)
+        {
+            var header = Instantiate(DtlItemHeaderPrefab, CollectionView.transform);
+            header.GetComponent<UI_Header>().SetData(DtlItemHeaderColor, Color.white, key);
+            displayedDtlItemsHeaders.Add(header);
+
+            foreach (var item in ownables[key])
+            {
+                var dtl = Instantiate(DtlItemPrefab, CollectionView.transform).GetComponent<UI_DtlItem>();
+                dtl.SetData(item.GetDisplayImage(), item.DisplayNameWithClarifier());
+                displayedDtlItems.Add(dtl);
+            }
+        }
+    }
+
+    protected virtual void HideDtlItems()
+    {
+        foreach (var header in displayedDtlItemsHeaders)
+        {
+            //header.gameObject.SetActive(false);
+            Destroy(header.gameObject);
+        }
+        displayedDtlItemsHeaders.Clear();
+
+        foreach (var item in displayedDtlItems)
+        {
+            //item.gameObject.SetActive(false);
+            Destroy(item.gameObject);
+        }
+        displayedDtlItems.Clear();
+    }
+
     #region IDialog
     public virtual void Open()
     {
-        this.gameObject.SetActive(true);
+        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime);
+        StartCoroutine(OpenDelay());
+        //this.gameObject.SetActive(true);
     }
+
+    protected virtual IEnumerator OpenDelay()
+    {
+        yield return new WaitForSeconds(openTime);
+        ScrollRect.verticalNormalizedPosition = 1f;
+    }
+
     public virtual void Close()
     {
-        this.gameObject.SetActive(false);
+        ResetData();
+        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime);
+        //this.gameObject.SetActive(false);
     }
     #endregion
 }

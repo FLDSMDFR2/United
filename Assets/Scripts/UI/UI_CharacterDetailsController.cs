@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class UI_CharacterDetailsController : UI_SearchDetailController
 {
-    [Header("Type Tag")]
-    public UI_Tag TypeTag;
+    [Header("Character Details")]
 
     [Header("Team Tag")]
     public List<UI_Tag> TeamTags;
@@ -13,8 +12,8 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     public TextMeshProUGUI ExclusiveLabel;
 
     [Header("Hero Win Lose")]
-    public TMP_InputField HeroWins;
-    public TMP_InputField HeroLosses;
+    public TextMeshProUGUI HeroWins;
+    public TextMeshProUGUI HeroLosses;
     public UI_Rating HeroRating;
 
     [Header("Hero Symbols")]
@@ -26,8 +25,8 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     public TextMeshProUGUI HeroSpecialCards;
 
     [Header("Villain Win Lose")]
-    public TMP_InputField VillainWins;
-    public TMP_InputField VillainLosses;
+    public TextMeshProUGUI VillainWins;
+    public TextMeshProUGUI VillainLosses;
     public UI_Rating VillainRating;
 
     [Header("Villain Symbols")]
@@ -42,9 +41,19 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
 
     public override void SetData(Searchable searchable)
     {
-        base.SetData(searchable);
+        searchable.OnOwnableUpdate += ApplyData;
 
-        Name.text = getData.CharacterName;
+        base.SetData(searchable);
+    }
+
+    public override void ResetData()
+    {
+        if (data != null) data.OnOwnableUpdate -= ApplyData;
+    }
+
+    public override void ApplyData()
+    {
+        base.ApplyData();
         TypeTag.SetTagDisplay(ColorManager.GetColor(getData.Type, out bool darkText), getData.Type.ToFriendlyString(), darkText);
         ExclusiveLabel.gameObject.SetActive(getData.IsExclusive);
         SetTeamTags(getData.Teams);
@@ -143,32 +152,13 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
         }
     }
 
-    public virtual void OnValueChanged(TMP_InputField field)
+    public virtual void HeroDataSelected()
     {
-        if (!int.TryParse(field.text, out int value))
-        {
-            field.text = string.Empty;
-            return;
-        }
+        GameEventSystem.UI_OnCharacterWinLoseSelected(getData, true);
+    }
 
-        var numberBoxValue = Mathf.Clamp(value, 0, 999);
-        field.text = numberBoxValue.ToString();
-
-        if (field == HeroWins)
-        {
-            getData.SetHeroWins(numberBoxValue);   
-        }
-        else if (field == HeroLosses)
-        {
-            getData.SetHeroLosses(numberBoxValue);
-        }
-        else if(field == VillainWins)
-        {
-            getData.SetVillainWins(numberBoxValue);
-        }
-        else if (field == VillainLosses)
-        {
-            getData.SetVillainLosses(numberBoxValue);
-        }
+    public virtual void VillainDataSelected()
+    {
+        GameEventSystem.UI_OnCharacterWinLoseSelected(getData, false);
     }
 }

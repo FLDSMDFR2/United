@@ -14,20 +14,26 @@ public class Team : BoxOwnable
     {
         base.Init();
 
-        InitImage("TeamImages/", DisplayName());
-        InitDtlImage("TeamImages/", DisplayName());
+        InitImage("TeamImages/", DisplayNameWithClarifier());
+        InitDtlImage("TeamImages/", DisplayNameWithClarifier());
+
+        AddDtlItems("CHARACTERS", Characters);
     }
 
     public override string DisplayName()
     {
         return TeamTag.ToFriendlyString();
     }
+    public override string DisplayNameWithClarifier()
+    {
+        return DisplayName() + " " + Clarifier();
+    }
     public override string SearchName()
     {
-        return TeamTag.ToFriendlyString();
+        return DisplayNameWithClarifier();
     }
     public override string Clarifier()
     {
-        return "(TEAM)";
+        return "";
     }
 }

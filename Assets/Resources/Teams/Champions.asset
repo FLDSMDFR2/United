@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: Champions
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 20
+  Characters:
+  - {fileID: 11400000, guid: a21c12fb27f0d9042b78da05222477d3, type: 2}
+  - {fileID: 11400000, guid: 5682131840659994b97d738a35c17250, type: 2}
+  - {fileID: 11400000, guid: 8f1cb46ab00aa5747811166607c42e94, type: 2}
+  - {fileID: 11400000, guid: f15c86d2b7ac9e14283013507852e17e, type: 2}
+  - {fileID: 11400000, guid: 399fac9f702e3ca4c8ab523536b9f92e, type: 2}
+  - {fileID: 11400000, guid: efdf5b64301df85468815b78a844cd75, type: 2}
+  - {fileID: 11400000, guid: 514110d30e5dc7a4c8465d434285d1b0, type: 2}
+  - {fileID: 11400000, guid: a8652a748a37af54e966fff96c284304, type: 2}
+  - {fileID: 11400000, guid: 2342125e15b1081478995a7f33c86841, type: 2}
+  - {fileID: 11400000, guid: 0d802cf11fed79646bc1fe180cdb9b63, type: 2}
+  - {fileID: 11400000, guid: 0778f6842d284c14aa08f13549add0ff, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

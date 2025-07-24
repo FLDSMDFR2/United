@@ -15,15 +15,23 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 0f315b568cd63194882a3f47a1358239, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 0f315b568cd63194882a3f47a1358239, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 59
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  - Box: 64
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   LocationName: Arthros
   ExclusiveForMode: 

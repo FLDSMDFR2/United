@@ -13,6 +13,7 @@ public enum Boxs
     ReturnOfTheSinisterSix_MU_S1,
     Yondu_MU_S1,
     AdamWarlock_MU_S1,
+    CardBoardLocations_MU_S1,
 
     CoreSet_MXU_S2 = 20,
     StretchGoals_MXU_S2,
@@ -27,6 +28,7 @@ public enum Boxs
     FantasticFour_MXU_S2,
     StormMohawk_MXU_S2,
     OldManLogan_MXU_S2,
+    CardBoardLocations_MXU_S2,
 
     CoreSet_MMU_S3 = 50,
     StretchGoals_MMU_S3,
@@ -42,6 +44,9 @@ public enum Boxs
     CampaignDecks_MMU_S3,
     PetCompanions_MMU_S3,
     FinFangFoom_MMU_S3,
+    CardBoardLocations_MMU_S3,
+    PromoTeamDecks_MMU_S3,
+    IronLad_MMU_S3,
 
     SpiderGeddon_RO = 70,
     WitchingHour_RO
@@ -75,6 +80,8 @@ public static class BoxsExtensions
                 return "Yondu";
             case Boxs.AdamWarlock_MU_S1:
                 return "Adam Warlock";
+            case Boxs.CardBoardLocations_MU_S1:
+                return "S1 CardBoard Locations";
 
             case Boxs.CoreSet_MXU_S2:
                 return "X-Men United Core Set";
@@ -102,6 +109,8 @@ public static class BoxsExtensions
                 return "Storm (Mohawk)";
             case Boxs.OldManLogan_MXU_S2:
                 return "Old Man Logan";
+            case Boxs.CardBoardLocations_MXU_S2:
+                return "S2 CardBoard Locations";
 
             case Boxs.CoreSet_MMU_S3:
                 return "Multiverse Core Set";
@@ -131,6 +140,12 @@ public static class BoxsExtensions
                 return "S3 Pet Companions";
             case Boxs.FinFangFoom_MMU_S3:
                 return "Fin Fang Foom";
+            case Boxs.CardBoardLocations_MMU_S3:
+                return "S3 CardBoard Locations";
+            case Boxs.PromoTeamDecks_MMU_S3:
+                return "S3 Promo Team Decks";
+            case Boxs.IronLad_MMU_S3:
+                return "Iron Lad";
 
             case Boxs.SpiderGeddon_RO:
                 return "Spider-Geddon";

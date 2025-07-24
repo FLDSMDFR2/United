@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: WestCoastAvengers
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 4
+  Characters:
+  - {fileID: 11400000, guid: 5e6cc2fa3452aa945a03dd9f3c343c07, type: 2}
+  - {fileID: 11400000, guid: bdf73405cc9506246a950447cc79f78c, type: 2}
+  - {fileID: 11400000, guid: 09ac7190d6d3488498cbc4c3a287125e, type: 2}
+  - {fileID: 11400000, guid: 8530f8b0fc238af4c9cbb10a7e6840e7, type: 2}
+  - {fileID: 11400000, guid: a37399cf0a4a9ae4788b392ee6c3d9f5, type: 2}
+  - {fileID: 11400000, guid: cb896eda48a2c4941bc10ce78b7c63e4, type: 2}
+  - {fileID: 11400000, guid: ff1bc378357c934488a32e079e104567, type: 2}
+  - {fileID: 11400000, guid: 8542d974f5b701e49940173f27fdde33, type: 2}
+  - {fileID: 11400000, guid: 23108a77e23a1a94d904ee86ee4ae95c, type: 2}
+  - {fileID: 11400000, guid: 2f8c62d02493372479cf725ec2bc7d39, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

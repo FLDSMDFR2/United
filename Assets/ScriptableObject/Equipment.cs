@@ -1,30 +1,39 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class Equipment : BoxOwnable
 {
     [Header("Equipment")]
-    public string Name;
+    public string EquipmentName;
+    public string EquipmentClarifier;
+
+    public List<Character> Characters = new List<Character>();
+    public bool AnyHero;
 
     public override void Init()
     {
         base.Init();
 
-        InitImage("EquipmentImages/", DisplayName());
-        InitDtlImage("EquipmentImages/", DisplayName());
+        InitImage("EquipmentImages/", DisplayNameWithClarifier());
+        InitDtlImage("EquipmentImages/", DisplayNameWithClarifier());
     }
 
     public override string DisplayName()
     {
-        return Name;
+        return EquipmentName;
     }
-
+    public override string DisplayNameWithClarifier()
+    {
+        return DisplayName() + " " + Clarifier();
+    }
     public override string SearchName()
     {
-        return Name;
+        return DisplayNameWithClarifier();
     }
+
     public override string Clarifier()
     {
-        return "(EQUIPMENT)";
+        return EquipmentClarifier;
     }
 }

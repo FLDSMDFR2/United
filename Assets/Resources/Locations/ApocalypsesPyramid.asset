@@ -15,11 +15,23 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: f351ae18f19b6804b99a6059da3cbbbd, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: f351ae18f19b6804b99a6059da3cbbbd, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 25
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  - Box: 33
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   LocationName: Apocalypse's Pyramid
   ExclusiveForMode: 

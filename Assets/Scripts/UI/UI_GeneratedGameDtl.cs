@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,21 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
     public GameObject GroupView;
     public GameObject ChracterUIPrefab;
     public GameObject SearchUIPrefab;
+
+    public Color ModeHeaderColor;
+    public Color GameHeaderColor;
+    public Color VillainHeaderColor;
+    public Color ChallengeHeaderColor;
+    public Color LocationsHeaderColor;
+    public Color TeamHeaderColor;
+    public Color HerosHeaderColor;
+    public Color AddHerosHeaderColor;
+    public Color CompanionHeaderColor;
+    public Color EquipmentHeaderColor;
+    public Color CampaignsHeaderColor;
+
+    protected float openTime = 0.1f;
+    protected float closeTime = 0.05f;
 
     public virtual void SetData(BuildGameData data)
     {
@@ -20,46 +36,97 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
         var buildGameHeaders = data.Games.Count != 1;
         var gameCount = 0;
 
-        if (data.Mode != null)
+        if (data.Mode != null && data.Mode.Count > 0)
         {
-            Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.magenta, Color.white, "MODE");
-            Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(data.Mode);
+            Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(ModeHeaderColor, Color.white, "MODE");
+            foreach (var m in data.Mode)
+            {
+                Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(m);
+            }
         }
 
         foreach (var game in data.Games)
         {
-            if (buildGameHeaders) Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.cyan, Color.white, "GAME " + ++gameCount);
+            if (buildGameHeaders) Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(GameHeaderColor, Color.white, "GAME " + ++gameCount);
 
-            Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.red, Color.white, "VILLAIN");
-            foreach (var v in game.Villains)
+            if (game.Campaigns != null && game.Campaigns.Count > 0)
             {
-                Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_Character>().SetData(v);
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(CampaignsHeaderColor, Color.white, "CAMPAIGNS");
+                foreach (var c in game.Campaigns)
+                {
+                    Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(c);
+                }
             }
 
-            if (game.Challenge != null)
+            if (game.Villains != null && game.Villains.Count > 0)
             {
-                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.yellow, Color.white, "CHALLENGE");
-                if (game.Challenge != null) Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(game.Challenge);
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(VillainHeaderColor, Color.white, "VILLAIN");
+                foreach (var v in game.Villains)
+                {
+                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(v);
+                }
             }
 
-            Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.grey, Color.white, "LOCATIONS");
-            foreach (var l in game.Locations)
+            if (game.Challenges != null && game.Challenges.Count > 0)
             {
-                Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(l);
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(ChallengeHeaderColor, Color.white, "CHALLENGE");
+                foreach (var c in game.Challenges)
+                {
+                    Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(c);
+                }
             }
 
-            Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.blue, Color.white, "HEROS");
-            foreach (var h in game.Heros)
+            if (game.Locations != null && game.Locations.Count > 0)
             {
-                Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_Character>().SetData(h);
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(LocationsHeaderColor, Color.white, "LOCATIONS");
+                foreach (var l in game.Locations)
+                {
+                    Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(l);
+                }
             }
 
-            if (game.AdditionalHeros.Count > 0)
+            if (game.Teams != null && game.Teams.Count > 0)
             {
-                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(Color.blue, Color.white, "ADDITIONAL HEROS");
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(TeamHeaderColor, Color.white, "TEAM");
+                foreach (var t in game.Teams)
+                {
+                    Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(t);
+                }
+            }
+
+            if (game.Heros != null && game.Heros.Count > 0)
+            {
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(HerosHeaderColor, Color.white, "HEROS");
+                foreach (var h in game.Heros)
+                {
+                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(h);
+                }
+            }
+
+            if (game.Equipment != null && game.Equipment.Count > 0)
+            {
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(EquipmentHeaderColor, Color.white, "EQUIPMENT");
+                foreach (var e in game.Equipment)
+                {
+                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(e);
+                }
+            }
+
+            if (game.AdditionalHeros != null && game.AdditionalHeros.Count > 0)
+            {
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(AddHerosHeaderColor, Color.white, "ADDITIONAL HEROS");
                 foreach (var h in game.AdditionalHeros)
                 {
-                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_Character>().SetData(h);
+                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(h);
+                }
+            }
+
+            if (game.Companions != null && game.Companions.Count > 0)
+            {
+                Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(CompanionHeaderColor, Color.white, "COMPANIONS");
+                foreach (var c in game.Companions)
+                {
+                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(c);
                 }
             }
         }
@@ -76,11 +143,21 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
-        this.gameObject.SetActive(true);
+        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime);
+        StartCoroutine(OpenDelay());
+        //this.gameObject.SetActive(true);
     }
+
+    protected virtual IEnumerator OpenDelay()
+    {
+        yield return new WaitForSeconds(openTime);
+        GameScrollRect.verticalNormalizedPosition = 1f;
+    }
+
     public virtual void Close()
     {
-        this.gameObject.SetActive(false);
+        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime);
+        //this.gameObject.SetActive(false);
     }
     #endregion
 }

@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
+  m_Name: MU_S1_CardBoardLocations
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 029bfb598a8918940b58bfaa42d86b9f, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 029bfb598a8918940b58bfaa42d86b9f, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 02000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 11
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  BoxTag: 11
+  BoxColor: {r: 0.85882354, g: 0.8627451, b: 0.87058824, a: 1}
+  IsDarkText: 0
+  Characters: []
+  Locations:
+  - {fileID: 11400000, guid: d3b37e17ab608cd44b91a7f3f0ea2bcb, type: 2}
+  - {fileID: 11400000, guid: 6c3fc3bbc048c8b46a1c110ce126865e, type: 2}
+  - {fileID: 11400000, guid: cbe923ec0f743ab4695f94ca5f0587ea, type: 2}
+  - {fileID: 11400000, guid: b90ae797037fc2646b24e1dfb05fd558, type: 2}
+  - {fileID: 11400000, guid: 7cfd11ebb7103244f866dc2b39694858, type: 2}
+  - {fileID: 11400000, guid: 872841298241daf46beebce670477c96, type: 2}
+  - {fileID: 11400000, guid: adfd6757d0737254ea211a9cfba06e37, type: 2}
+  - {fileID: 11400000, guid: 5da63617e2c8bad48bb9f63da664d3c8, type: 2}
+  - {fileID: 11400000, guid: 0c753f9cd5961fb489f85bcb235258d8, type: 2}
+  - {fileID: 11400000, guid: 2e59efe9d88676c428ac9b17d0c90f71, type: 2}
+  - {fileID: 11400000, guid: 598945a067da35546aa54c5c410d7062, type: 2}
+  - {fileID: 11400000, guid: cc5287760278f1b408c9e979b8fd2484, type: 2}
+  - {fileID: 11400000, guid: bb7a8ca3ecc01f84caab8e57fd289e83, type: 2}
+  - {fileID: 11400000, guid: af8a7ab6614c9bf43a1dd09186ffff78, type: 2}
+  - {fileID: 11400000, guid: 66bc67a4208123041923ca2165e20446, type: 2}
+  - {fileID: 11400000, guid: bfd9938f5d95124429feb94bc8c87dd5, type: 2}
+  - {fileID: 11400000, guid: 2ce80f2d3681be74aa47fcd0d816544d, type: 2}
+  - {fileID: 11400000, guid: a4176c4ebdf28d242be5ad70f904f7ee, type: 2}
+  - {fileID: 11400000, guid: cd8984fc5a93aa243a2cf0bdc0abf344, type: 2}
+  - {fileID: 11400000, guid: 4ea38536b84cde542a864f4fc375f742, type: 2}
+  - {fileID: 11400000, guid: 961194928d6d29644a2021597be0d2bb, type: 2}
+  - {fileID: 11400000, guid: c13efc74612821544b4c0c20d6e6d2aa, type: 2}
+  - {fileID: 11400000, guid: f803f8d122d8f0d4f8a0722733910a5c, type: 2}
+  - {fileID: 11400000, guid: 612455115b7a7a04f999c09e135cc52d, type: 2}
+  - {fileID: 11400000, guid: 62ef875a00772ae489afb893744e065b, type: 2}
+  - {fileID: 11400000, guid: f036c5b6fd2978a469e29914982f8a2a, type: 2}
+  - {fileID: 11400000, guid: eb0fd4d1b8b745b42b8fba943edd9daa, type: 2}
+  - {fileID: 11400000, guid: d00fb5450bb138f4e827a7b122491956, type: 2}
+  - {fileID: 11400000, guid: c157b6ea29b97a546ad0c7dec3ccb099, type: 2}
+  - {fileID: 11400000, guid: cc4e548d020b01e49a055067816e6cf7, type: 2}
+  - {fileID: 11400000, guid: f93e586709e446944b4ab908b9ea94b0, type: 2}
+  - {fileID: 11400000, guid: f603e2d7d61c8284a8c0f2a8d5d6a22a, type: 2}
+  - {fileID: 11400000, guid: 724936939fda3d343ad3f8a975c5399e, type: 2}
+  - {fileID: 11400000, guid: 150621e675b625a4cb5625d8aa5c2267, type: 2}
+  - {fileID: 11400000, guid: 51fb3826e3fa18b43930be45c2513c41, type: 2}
+  - {fileID: 11400000, guid: d556113f873a56246946cf21608d3de0, type: 2}
+  - {fileID: 11400000, guid: 5c055d0c9330dd94cb0cc19d4d8f01c1, type: 2}
+  - {fileID: 11400000, guid: 77b508823940ea1469ecc48a914f11d9, type: 2}
+  - {fileID: 11400000, guid: 51f892768b9bc1d47a923d7297b85ba2, type: 2}
+  - {fileID: 11400000, guid: 691800a087620d54e893be800fbf4040, type: 2}
+  - {fileID: 11400000, guid: cf67a3b1ed157b645b04b171d049ceaf, type: 2}
+  - {fileID: 11400000, guid: 2f635016f73ee7d4a8ea7e97a76a4ce7, type: 2}
+  - {fileID: 11400000, guid: 715cf021061ab2348bec34874cfc437b, type: 2}
+  - {fileID: 11400000, guid: 32fa6fee1af7d0a4997e1dc94c83df1f, type: 2}
+  Challenges: []
+  Modes: []
+  Teams: []
+  Equipment: []
+  Campaigns: []

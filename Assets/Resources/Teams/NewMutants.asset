@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: NewMutants
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 29
+  Characters:
+  - {fileID: 11400000, guid: 1a13338f940c44848af463cbd80d4af6, type: 2}
+  - {fileID: 11400000, guid: 8976020df86fd354ba01bec0c7722ea3, type: 2}
+  - {fileID: 11400000, guid: b6a29711864c3fd4aa97b56ad8fb04f5, type: 2}
+  - {fileID: 11400000, guid: 00956acb1f3f5c148a3b2c724e73d808, type: 2}
+  - {fileID: 11400000, guid: c4f0e1df340a18b4e868d5e6f6380907, type: 2}
+  - {fileID: 11400000, guid: 4fe0cfa8f2bd4d44eb79090b29115981, type: 2}
+  - {fileID: 11400000, guid: bc8b965e33d0fdc4facb51c51415b604, type: 2}
+  - {fileID: 11400000, guid: a01c8d530d0347746a6e710d71845061, type: 2}
+  - {fileID: 11400000, guid: aed830d4a730e6c4caf830ed6afe4cf6, type: 2}
+  - {fileID: 11400000, guid: 56165bd0e06c1c04c87891b0ed45f5a8, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

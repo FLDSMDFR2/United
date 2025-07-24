@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: X-Men
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 3ba40e0d71042344bb3da37eafab48de, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 3ba40e0d71042344bb3da37eafab48de, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 24
+  Characters:
+  - {fileID: 11400000, guid: a21c12fb27f0d9042b78da05222477d3, type: 2}
+  - {fileID: 11400000, guid: 0301e42ef786b084eb98c474874f5fb7, type: 2}
+  - {fileID: 11400000, guid: 89e712d78aac6f049b0dee03b0f0328b, type: 2}
+  - {fileID: 11400000, guid: 1449a2ea9e43b1b4bbcf821a8b1653bf, type: 2}
+  - {fileID: 11400000, guid: 3bff823281d38694c94f0aaaeeea958d, type: 2}
+  - {fileID: 11400000, guid: c356ef5ae4de75545bb948f8f352943d, type: 2}
+  - {fileID: 11400000, guid: 60590dcf3806bac49aae4332533801f5, type: 2}
+  - {fileID: 11400000, guid: 59fecc480d0660b4dab310663023ef88, type: 2}
+  - {fileID: 11400000, guid: 77c85c1b18ef1ed4888d9088768bf8ef, type: 2}
+  - {fileID: 11400000, guid: d1ea93f37829a0a4eac7771e2817ea95, type: 2}
+  - {fileID: 11400000, guid: 3ba599cdec8ae9040bb39b4c0e0558e4, type: 2}
+  - {fileID: 11400000, guid: eaa177b931de6004b87bc4b2ae086083, type: 2}
+  - {fileID: 11400000, guid: 46d961f5ce114014cbcd6b69ca89e0f0, type: 2}
+  - {fileID: 11400000, guid: cfeb1da16a206f24a875a3e2b549e4f5, type: 2}
+  - {fileID: 11400000, guid: 4e7a35bbf9de8594ea8f5db77c17060c, type: 2}
+  - {fileID: 11400000, guid: 3476a03868def744d8d87244a4946e4d, type: 2}
+  - {fileID: 11400000, guid: 1821b86000889dd4da87cac36362eac1, type: 2}
+  - {fileID: 11400000, guid: 399fac9f702e3ca4c8ab523536b9f92e, type: 2}
+  - {fileID: 11400000, guid: 24251da26c1f3f34eb36a4a5c67d6a6a, type: 2}
+  - {fileID: 11400000, guid: 3eef8867da459e144bc7749c764e7ada, type: 2}
+  - {fileID: 11400000, guid: 5c08996c3ba6a404e89f30c3f1eef1d7, type: 2}
+  - {fileID: 11400000, guid: 1dd704f457c69344c8a6cd50f5ee5944, type: 2}
+  - {fileID: 11400000, guid: e56429d57fcf50d48abae8241d59d1bc, type: 2}
+  - {fileID: 11400000, guid: 8b9a8c7740bf6c74f9b99ae94c8dd375, type: 2}
+  - {fileID: 11400000, guid: f5be8e4838281a74ebd8e106d21f99e9, type: 2}
+  - {fileID: 11400000, guid: c2860fa6b30ffa44896dd97b03a09c91, type: 2}
+  - {fileID: 11400000, guid: e0944ecb0215a724cac9fbb02836d9ad, type: 2}
+  - {fileID: 11400000, guid: f4d8e513e2ea69a418cd7abcce8d113d, type: 2}
+  - {fileID: 11400000, guid: fe2b2a1ccc5e2b34daf25ea17c4ec052, type: 2}
+  - {fileID: 11400000, guid: 264b85684f39b4540bab5ca0be9c6d68, type: 2}
+  - {fileID: 11400000, guid: bc4a23e2264bbb34e9977f8adcf2fb25, type: 2}
+  - {fileID: 11400000, guid: bcb885ff05f089d4e8e023fb75d6f33b, type: 2}
+  - {fileID: 11400000, guid: 747589cd5dc1436479fe3b8ec8b80f8f, type: 2}
+  - {fileID: 11400000, guid: 0c83f335fdff2ab4f9847f2c07de9419, type: 2}
+  - {fileID: 11400000, guid: 0b36272a6a8717444a5ffd1ea4338ee4, type: 2}
+  - {fileID: 11400000, guid: 9dbbd0b907431544791fbec49b30798d, type: 2}
+  - {fileID: 11400000, guid: 8c05d5b1a539a864698ecb4a97a96be9, type: 2}
+  - {fileID: 11400000, guid: 4eb98de817ea2c74d92c3bb64b4621cf, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

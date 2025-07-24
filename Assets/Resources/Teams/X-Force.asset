@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: X-Force
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 25
+  Characters:
+  - {fileID: 11400000, guid: d9a02c09bed021a4eb25e5b60ce093c8, type: 2}
+  - {fileID: 11400000, guid: 02da8ebb700154f4eae76dc1e6e35783, type: 2}
+  - {fileID: 11400000, guid: 1a13338f940c44848af463cbd80d4af6, type: 2}
+  - {fileID: 11400000, guid: c2ce0ef37fe9dd74b83a478e45b44a6b, type: 2}
+  - {fileID: 11400000, guid: 0e865523f4b08654ca558fed8d9fee12, type: 2}
+  - {fileID: 11400000, guid: cba3f3b0a3df45d4789edec6954f8aad, type: 2}
+  - {fileID: 11400000, guid: 8d143b10743b04442a0855f935001fc6, type: 2}
+  - {fileID: 11400000, guid: 79a9c3d70402f0e4f9d7027cd5f60d4c, type: 2}
+  - {fileID: 11400000, guid: dd006bf48f7617e45b827094c7a984d4, type: 2}
+  - {fileID: 11400000, guid: b1e21cdfe16490046acf1a14f5204b6e, type: 2}
+  - {fileID: 11400000, guid: b1486de52d42b2b468d0d3d443f97552, type: 2}
+  - {fileID: 11400000, guid: bc8b965e33d0fdc4facb51c51415b604, type: 2}
+  - {fileID: 11400000, guid: 8ca059499b113c5488169b43bf5250a7, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

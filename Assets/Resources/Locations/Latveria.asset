@@ -15,11 +15,23 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 7c3e4bc8bf68d6f4b8882d6852f48ccf, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 7c3e4bc8bf68d6f4b8882d6852f48ccf, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 30
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  - Box: 33
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   LocationName: Latveria
   ExclusiveForMode: 

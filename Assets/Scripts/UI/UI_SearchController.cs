@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class UI_SearchController : MonoBehaviour
 {
+    [Header("Base Search")]
+    public GameObject BaseSearchUIPrefab;
     [Header("Chracter")]
     public GameObject ChracterUIPrefab;
-    [Header("Location")]
-    public GameObject LocationUIPrefab;
 
     public ScrollRect SearchScrollRect;
     public GameObject SearchView;
@@ -33,11 +33,11 @@ public class UI_SearchController : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameEventSystem.UI_CloseFilterPopup += GameEventSystem_UI_CloseFilterPopup;    
-
         BuildSearchableContent();
         PreBuildDisplay();
         Search();
+
+        GameEventSystem.UI_CloseFilterPopup += GameEventSystem_UI_CloseFilterPopup;
     }
 
     protected virtual void BuildSearchableContent()
@@ -48,6 +48,8 @@ public class UI_SearchController : MonoBehaviour
         fullSearchContent.AddRange(DataLoader.GetChallengesBySystem());
         fullSearchContent.AddRange(DataLoader.GetModesBySystem());
         fullSearchContent.AddRange(DataLoader.GetTeamsBySystem());
+        fullSearchContent.AddRange(DataLoader.GetCampaignsBySystem());
+        fullSearchContent.AddRange(DataLoader.GetEquipmentBySystem());
     }
 
     protected virtual void PreBuildDisplay()
@@ -96,10 +98,10 @@ public class UI_SearchController : MonoBehaviour
                 displayList[ItemTypes.Characters][workingIndex].gameObject.SetActive(true);
                 workingIndex++;
             }
-            else if (sortedDisplay[i] is Location || sortedDisplay[i] is Challenge || sortedDisplay[i] is Mode || sortedDisplay[i] is Team || sortedDisplay[i] is Box)
+            else if (sortedDisplay[i] is Location || sortedDisplay[i] is Challenge || sortedDisplay[i] is Mode || sortedDisplay[i] is Team || sortedDisplay[i] is Box || sortedDisplay[i] is Campaign || sortedDisplay[i] is Equipment)
             {
-                displayList[ItemTypes.Locations][workingIndex].SetData(sortedDisplay[i]);
-                displayList[ItemTypes.Locations][workingIndex].gameObject.SetActive(true);
+                displayList[ItemTypes.Generic][workingIndex].SetData(sortedDisplay[i]);
+                displayList[ItemTypes.Generic][workingIndex].gameObject.SetActive(true);
                 workingIndex++;
             }
         }
@@ -136,23 +138,27 @@ public class UI_SearchController : MonoBehaviour
         {
             if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortString(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
-                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
+                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
+                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
+            else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortFloat(sort.Type)).ToArray();
         }
         else
         {
             if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortString(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
-                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
+                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
+                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
+            else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortFloat(sort.Type)).ToArray();
         }
     }
 
     protected virtual void CreateNewDtl()
     {
         if (!displayList.ContainsKey(ItemTypes.Characters)) displayList[ItemTypes.Characters] = new List<UI_SearchDtl>();
-        displayList[ItemTypes.Characters].Add(Instantiate(ChracterUIPrefab, SearchView.transform).GetComponent<UI_Character>());
+        displayList[ItemTypes.Characters].Add(Instantiate(ChracterUIPrefab, SearchView.transform).GetComponent<UI_SearchDtlCharacter>());
 
-        if (!displayList.ContainsKey(ItemTypes.Locations)) displayList[ItemTypes.Locations] = new List<UI_SearchDtl>();
-        displayList[ItemTypes.Locations].Add(Instantiate(LocationUIPrefab, SearchView.transform).GetComponent<UI_Location>());
+        if (!displayList.ContainsKey(ItemTypes.Generic)) displayList[ItemTypes.Generic] = new List<UI_SearchDtl>();
+        displayList[ItemTypes.Generic].Add(Instantiate(BaseSearchUIPrefab, SearchView.transform).GetComponent<UI_SearchDtl>());
     }
 
     protected virtual void HideAllDtls()
@@ -176,7 +182,6 @@ public class UI_SearchController : MonoBehaviour
     {
         DisplaySearchPage(currentPage - 1);
     }
-
     protected virtual void GameEventSystem_UI_CloseFilterPopup()
     {
         Search();

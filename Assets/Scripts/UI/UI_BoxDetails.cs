@@ -1,11 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class UI_BoxDetails : MonoBehaviour, IDialog
 {
+    public ScrollRect ScrollRect;
     public GameObject BoxHeader;
     public Color HeaderColor;
     public GameObject BoxDtlPrefab;
@@ -29,14 +29,16 @@ public class UI_BoxDetails : MonoBehaviour, IDialog
 
     protected Box Box;
 
-    protected Vector3 openPos;
-    protected Vector3 closePos;
-
     protected Dictionary<ItemTypes, List<UI_BoxDtl>> groupDictionary = new Dictionary<ItemTypes, List<UI_BoxDtl>>();
     protected Dictionary<ItemTypes, UI_DropDownHeader> groupHeader = new Dictionary<ItemTypes, UI_DropDownHeader>();
 
     protected UI_Header boxHeader;
     protected bool forGameBuild;
+
+    protected Vector3 openPos;
+    protected Vector3 closePos;
+    protected float openTime = 0.2f;
+    protected float closeTime = 0.2f;
 
     protected virtual void Awake()
     {
@@ -367,11 +369,18 @@ public class UI_BoxDetails : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
-        LeanTween.move(this.gameObject, openPos, 0.2f);
+        LeanTween.move(this.gameObject, openPos, openTime);
+        StartCoroutine(OpenDelay());
+    }
+
+    protected virtual IEnumerator OpenDelay()
+    {
+        yield return new WaitForSeconds(openTime);
+        ScrollRect.verticalNormalizedPosition = 1f;
     }
     public virtual void Close()
     {
-        LeanTween.move(this.gameObject, closePos, 0.2f);
+        LeanTween.move(this.gameObject, closePos, closeTime);
     }
     #endregion
 }

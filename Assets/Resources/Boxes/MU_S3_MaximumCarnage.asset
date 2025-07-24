@@ -15,17 +15,40 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 3d021e7f4ff20b34f9a4d0f95c89241b, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 3d021e7f4ff20b34f9a4d0f95c89241b, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 54
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   BoxTag: 54
   BoxColor: {r: 0.9333334, g: 0.19215688, b: 0.21960786, a: 1}
-  IsDarkText: 1
-  Characters: []
-  Locations: []
-  Challenges: []
-  Modes: []
+  IsDarkText: 0
+  Characters:
+  - {fileID: 11400000, guid: 49c4d4d952b57254da0f9162a57d6ea3, type: 2}
+  - {fileID: 11400000, guid: c49b3a7e237904c4d8769efbbda05d7f, type: 2}
+  - {fileID: 11400000, guid: a168fec512fcb0740a3a38276584ae95, type: 2}
+  - {fileID: 11400000, guid: 31cf553204ad2be479545128702bc68e, type: 2}
+  - {fileID: 11400000, guid: fdef2eb70cab19c4ebdce09defcd4082, type: 2}
+  - {fileID: 11400000, guid: 96499291e741de24eb0db8e25c462573, type: 2}
+  - {fileID: 11400000, guid: 769c2eef6da54364e99b8eacd10171ce, type: 2}
+  Locations:
+  - {fileID: 11400000, guid: ccc5b64497d9ff74ebd74465b99a9cde, type: 2}
+  - {fileID: 11400000, guid: a80f6119b49b8cd4ea27301d88f590f7, type: 2}
+  - {fileID: 11400000, guid: e53e7784583831f459be40a0e1d4df1e, type: 2}
+  - {fileID: 11400000, guid: 2600ae11fe31144468c3433605eb28fb, type: 2}
+  Challenges:
+  - {fileID: 11400000, guid: e183b9317afa8ec41b10bfd2f4925acd, type: 2}
+  Modes:
+  - {fileID: 11400000, guid: e24b80f4f9d1dbc4c979da6268d76750, type: 2}
   Teams: []
+  Equipment: []
+  Campaigns: []

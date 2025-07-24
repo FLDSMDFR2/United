@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: RedHulksThunderbolts
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 17
+  Characters:
+  - {fileID: 11400000, guid: 7e4db99616ca21146be71529b17e0da7, type: 2}
+  - {fileID: 11400000, guid: c2ce0ef37fe9dd74b83a478e45b44a6b, type: 2}
+  - {fileID: 11400000, guid: 0e865523f4b08654ca558fed8d9fee12, type: 2}
+  - {fileID: 11400000, guid: 5c8da60ab3d6e614ca88aa427ceb3a4f, type: 2}
+  - {fileID: 11400000, guid: 8f1cb46ab00aa5747811166607c42e94, type: 2}
+  - {fileID: 11400000, guid: 08b1d93b0dff03548ad53693c55fcebe, type: 2}
+  - {fileID: 11400000, guid: cd8bcca7d24c3674c9a66cc46afffcaa, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

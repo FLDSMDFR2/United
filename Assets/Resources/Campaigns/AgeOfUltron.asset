@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636106a387478cf4f9f2053e57f9350c, type: 3}
+  m_Name: AgeOfUltron
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 61
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  Name: Age Of Ultron
+  RequiaredBoxs:
+  - {fileID: 11400000, guid: d2ac9988e6749eb468a98ca6604d8487, type: 2}
+  - {fileID: 11400000, guid: 74ebce9b4be77174a81088459dc6c000, type: 2}
+  - {fileID: 11400000, guid: fb084a4bb58f81140b3d0adaa4d18e76, type: 2}
+  - {fileID: 11400000, guid: 82166a75347d8df4c9903858c5ab5fe8, type: 2}
+  - {fileID: 11400000, guid: 406082c3a2d470a4291b4c4889b9244d, type: 2}
+  - {fileID: 11400000, guid: 0439441d1b6ab8748873b43f28116eb8, type: 2}
+  - {fileID: 11400000, guid: 6a3a8f4d4d78d424f894113fd9c51ecf, type: 2}
+  - {fileID: 11400000, guid: 11c979ee1c149fb489cf9ca9df0a0234, type: 2}
+  - {fileID: 11400000, guid: 540cdd4ecc12f6e4a8e348fcee96c70b, type: 2}

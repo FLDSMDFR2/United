@@ -22,12 +22,16 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
-  IsExclusive: 0
+  IsExclusive: 1
   Boxs:
   - Box: 51
     Default: 0
+    Owned: 0
+    IncludeInGameBuild: 1
   - Box: 63
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Fin Fang Foom
   CharacterClarifier: 
   Type: 2

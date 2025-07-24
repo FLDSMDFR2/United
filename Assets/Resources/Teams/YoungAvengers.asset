@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: YoungAvengers
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 7
+  Characters:
+  - {fileID: 11400000, guid: c6fe0144323e5aa4489b87342504cfc3, type: 2}
+  - {fileID: 11400000, guid: 9ca5ab06f2ecfd249a307907c93e31cf, type: 2}
+  - {fileID: 11400000, guid: f2b3a5bcfffd4124d9714d878ba14290, type: 2}
+  - {fileID: 11400000, guid: 4ff4df0aaa00e854b9615d07ff806a79, type: 2}
+  - {fileID: 11400000, guid: 4a90c10eeaea61448a66016de04b367f, type: 2}
+  - {fileID: 11400000, guid: 0d802cf11fed79646bc1fe180cdb9b63, type: 2}
+  - {fileID: 11400000, guid: 61e3f50cd1e97c845878d077e153455b, type: 2}
+  - {fileID: 11400000, guid: 6e0097a845a134840862e0e84388120f, type: 2}
+  - {fileID: 11400000, guid: 120009ca55e4be243bc8e579f03a8c6a, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

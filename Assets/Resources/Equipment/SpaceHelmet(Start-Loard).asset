@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b993ba5d3b57140a7f43fc7a5c19e3, type: 3}
+  m_Name: SpaceHelmet(Start-Loard)
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 50
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  EquipmentName: Space Helmet
+  EquipmentClarifier: (Star-Lord)
+  Characters:
+  - {fileID: 11400000, guid: d5923cdcdbe92764ba71902ad50285f6, type: 2}
+  AnyHero: 0

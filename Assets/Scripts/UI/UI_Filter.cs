@@ -165,7 +165,7 @@ public class UI_Filter : MonoBehaviour, IDialog
         var dropdown = Instantiate(GroupHeaderPrefab, Content.transform).GetComponent<UI_DropDownHeader>();
         filterDictionary["Type"] = new Dictionary<string, Filter>();
 
-        var typeList = new List<string>() { typeof(Character).ToString(), typeof(Location).ToString(), typeof(Challenge).ToString(), typeof(Mode).ToString(), typeof(Team).ToString(), typeof(Box).ToString() };
+        var typeList = new List<string>() { typeof(Character).ToString(), typeof(Location).ToString(), typeof(Challenge).ToString(), typeof(Mode).ToString(), typeof(Team).ToString(), typeof(Box).ToString(), typeof(Campaign).ToString(), typeof(Equipment).ToString() };
 
         var group = new List<GameObject>();
         foreach (var type in typeList)

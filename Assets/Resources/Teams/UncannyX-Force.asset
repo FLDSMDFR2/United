@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: UncannyX-Force
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 26
+  Characters:
+  - {fileID: 11400000, guid: 0301e42ef786b084eb98c474874f5fb7, type: 2}
+  - {fileID: 11400000, guid: c2ce0ef37fe9dd74b83a478e45b44a6b, type: 2}
+  - {fileID: 11400000, guid: 0e865523f4b08654ca558fed8d9fee12, type: 2}
+  - {fileID: 11400000, guid: a08b4d7768c4dc149801fef7ff9a67a5, type: 2}
+  - {fileID: 11400000, guid: 48fc7b0f4ae9ac541a4dacd338760b94, type: 2}
+  - {fileID: 11400000, guid: 1dd704f457c69344c8a6cd50f5ee5944, type: 2}
+  - {fileID: 11400000, guid: bcb885ff05f089d4e8e023fb75d6f33b, type: 2}
+  - {fileID: 11400000, guid: bc2dffd7c903a754181875a2eaeac52e, type: 2}
+  - {fileID: 11400000, guid: 8c05d5b1a539a864698ecb4a97a96be9, type: 2}
+  - {fileID: 11400000, guid: 4eb98de817ea2c74d92c3bb64b4621cf, type: 2}
+  - {fileID: 11400000, guid: 9da56c536adaf22419b43837088931cf, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

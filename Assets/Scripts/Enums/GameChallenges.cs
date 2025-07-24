@@ -52,11 +52,11 @@ public static class GameChallengesExtensions
             case GameChallenges.HazardousLocationsChallenge:
                 return "Hazardous Locations Challenge";
             case GameChallenges.SentinelChallenge1:
-                return "Sentinel Challenge 1";
+                return "Sentinel 1 Challenge";
             case GameChallenges.SentinelChallenge2:
-                return "Sentinel Challenge 2";
+                return "Sentinel 2 Challenge";
             case GameChallenges.SentinelChallenge3:
-                return "Sentinel Challenge 3";
+                return "Sentinel 3 Challenge";
             case GameChallenges.TakeoverChallenge:
                 return "Takeover Challenge";
             case GameChallenges.CarnageChallenge:

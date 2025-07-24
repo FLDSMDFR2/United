@@ -16,6 +16,7 @@ public class Searchable : Ownable
 
     protected Dictionary<string, List<string>> filter = new Dictionary<string, List<string>>();
     protected Dictionary<SortTypes, string> sort = new Dictionary<SortTypes, string>();
+    protected Dictionary<string, List<Searchable>> dtlItems = new Dictionary<string, List<Searchable>>();
 
     public virtual void Init()
     {
@@ -104,6 +105,10 @@ public class Searchable : Ownable
     {
         return "";
     }
+    public virtual string DisplayNameWithClarifier()
+    {
+        return "";
+    }
     public virtual string SearchName()
     {
         return "";
@@ -124,9 +129,16 @@ public class Searchable : Ownable
     }
     public virtual int GetSortInt(SortTypes sortTypes)
     {
-        if (!sort.ContainsKey(sortTypes)) return 0;
+        if (!sort.ContainsKey(sortTypes)) return -1;
 
         return int.Parse(sort[sortTypes]);
+    }
+
+    public virtual float GetSortFloat(SortTypes sortTypes)
+    {
+        if (!sort.ContainsKey(sortTypes)) return -1;
+
+        return float.Parse(sort[sortTypes]);
     }
 
     public virtual Sprite GetDisplayImage()
@@ -138,4 +150,31 @@ public class Searchable : Ownable
         return DtlImages;
     }
 
+    public virtual Dictionary<string, List<Searchable>> DtlItems()
+    {
+        return dtlItems;
+    }
+    public virtual void AddDtlItem(string key, Searchable item)
+    {
+        if (!dtlItems.ContainsKey(key) || dtlItems[key] == null) dtlItems[key] = new List<Searchable>();
+
+        if (dtlItems[key].Contains(item)) return;
+
+        dtlItems[key].Add(item);
+    }
+    public virtual void AddDtlItems(string key, List<Searchable> items)
+    {
+        if (!dtlItems.ContainsKey(key) || dtlItems[key] == null) dtlItems[key] = new List<Searchable>();
+        dtlItems[key].AddRange(items);
+    }
+    public virtual void AddDtlItems(string key, List<Character> items)
+    {
+        if (!dtlItems.ContainsKey(key) || dtlItems[key] == null) dtlItems[key] = new List<Searchable>();
+        dtlItems[key].AddRange(items);
+    }
+    public virtual void AddDtlItems(string key, List<Box> items)
+    {
+        if (!dtlItems.ContainsKey(key) || dtlItems[key] == null) dtlItems[key] = new List<Searchable>();
+        dtlItems[key].AddRange(items);
+    }
 }

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: X-Factor
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 65
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 27
+  Characters:
+  - {fileID: 11400000, guid: cfeb1da16a206f24a875a3e2b549e4f5, type: 2}
+  - {fileID: 11400000, guid: cf9cf50466194c244a2906e4d7e94f7a, type: 2}
+  - {fileID: 11400000, guid: 2b30f5ce2d87a99498c15517045e0b17, type: 2}
+  - {fileID: 11400000, guid: f5f79383914aa2640a41bd0818cdd499, type: 2}
+  - {fileID: 11400000, guid: a94ae3c3e767f3a4aaa365d3211c3a6d, type: 2}
+  - {fileID: 11400000, guid: 74b379063e0751043bcb0247e5d7e7d3, type: 2}
+  - {fileID: 11400000, guid: aed830d4a730e6c4caf830ed6afe4cf6, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

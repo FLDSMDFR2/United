@@ -3,7 +3,8 @@ public enum CharacterType
     None = 0,
     Hero,
     Villain,
-    AntiHero
+    AntiHero,
+    Companion,
 }
 
 public static class CharacterTypeExtensions
@@ -20,6 +21,8 @@ public static class CharacterTypeExtensions
                 return "VILLAIN";
             case CharacterType.AntiHero:
                 return "ANTI HERO";
+            case CharacterType.Companion:
+                return "COMPANION";
             default:
                 return "";
         }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class UI_MainController : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class UI_MainController : MonoBehaviour
         }
     }
 
-    public GameObject LoadingScreen; // LOADING SCREEN
+    public UI_LoadScreen LoadingScreen; // LOADING SCREEN
 
     public GameObject MainDisplay; // TAB WINDOW
 
@@ -35,13 +34,17 @@ public class UI_MainController : MonoBehaviour
 
     public GameObject FilterDisplay; // FILTER POPUP
 
+    public GameObject CharacterWinLose; // FILTER POPUP
+
+    public GameObject Settings; // SETTINGS POPUP
+
     protected Dictionary<GameObject, DisplayData> displayStates = new Dictionary<GameObject, DisplayData>();
     protected Stack<GameObject> displayStack = new Stack<GameObject>();
     protected Inputs inputs;
 
     protected virtual void Awake()
     {
-        LoadingScreen.SetActive(true);
+        LoadingScreen.Show();
         inputs = new Inputs();
         inputs.UserInputs.Enable();
 
@@ -54,6 +57,8 @@ public class UI_MainController : MonoBehaviour
         GameEventSystem.UI_ShowGameBuildUpdatePopup += GameEventSystem_UI_ShowGameBuildUpdatePopup;
         GameEventSystem.UI_ShowBuiltGame += GameEventSystem_UI_ShowBuiltGame;
         GameEventSystem.UI_ShowFilterPopup += GameEventSystem_UI_ShowFilterPopup;
+        GameEventSystem.UI_CharacterWinLoseSelected += GameEventSystem_UI_CharacterWinLoseSelected;
+        GameEventSystem.UI_ShowSettings += GameEventSystem_UI_ShowSettings;
         inputs.UserInputs.BackButton.performed += BackButton_performed;
     }
 
@@ -70,9 +75,9 @@ public class UI_MainController : MonoBehaviour
 
         ShowMainDisplay();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        LoadingScreen.SetActive(false);
+        LoadingScreen.Close();
     }
 
     protected virtual void BuildDisplayStates()
@@ -84,6 +89,8 @@ public class UI_MainController : MonoBehaviour
         if (BuildIncludsDisplay != null) displayStates.Add(BuildIncludsDisplay, new DisplayData(true, true, true, BuildIncludsDisplay.GetComponent<UI_AllBoxDisplayController>()));
         if (GeneratedBuildDisplay != null) displayStates.Add(GeneratedBuildDisplay, new DisplayData(true, true, true, GeneratedBuildDisplay.GetComponent<UI_GeneratedGameDtl>()));
         if (FilterDisplay != null) displayStates.Add(FilterDisplay, new DisplayData(true, true, true, FilterDisplay.GetComponent<UI_Filter>()));
+        if (CharacterWinLose != null) displayStates.Add(CharacterWinLose, new DisplayData(true, true, true, CharacterWinLose.GetComponent<UI_CharacterWinLose>()));
+        if (Settings != null) displayStates.Add(Settings, new DisplayData(true, true, true, Settings.GetComponent<UI_Settings>()));
     }
     
     protected virtual void InitDisplay()
@@ -117,6 +124,8 @@ public class UI_MainController : MonoBehaviour
         if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = true;
         if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].NewState = true;
         if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].NewState = true;
+        if (displayStates.ContainsKey(CharacterWinLose)) displayStates[CharacterWinLose].NewState = true;
+        if (displayStates.ContainsKey(Settings)) displayStates[Settings].NewState = true;
 
         UpdateDisplay();
     }
@@ -130,6 +139,8 @@ public class UI_MainController : MonoBehaviour
         if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = false;
         if (displayStates.ContainsKey(GeneratedBuildDisplay)) displayStates[GeneratedBuildDisplay].NewState = false;
         if (displayStates.ContainsKey(FilterDisplay)) displayStates[FilterDisplay].NewState = false;
+        if (displayStates.ContainsKey(CharacterWinLose)) displayStates[CharacterWinLose].NewState = false;
+        if (displayStates.ContainsKey(Settings)) displayStates[Settings].NewState = false;
 
         if (withUpdate) UpdateDisplay();
     }
@@ -212,6 +223,30 @@ public class UI_MainController : MonoBehaviour
         UpdateDisplay();
     }
 
+    protected virtual void ShowWinLose(Character character, bool isHero)
+    {
+        if (displayStates[CharacterWinLose].Dialog != null && displayStates[CharacterWinLose].Dialog is UI_CharacterWinLose)
+            ((UI_CharacterWinLose)displayStates[CharacterWinLose].Dialog).SetData(character, isHero);
+
+        if (displayStates.ContainsKey(CharacterWinLose)) displayStates[CharacterWinLose].NewState = true;
+
+        displayStack.Push(CharacterWinLose);
+
+        UpdateDisplay();
+    }
+
+    protected virtual void ShowSettings()
+    {
+        if (displayStates[Settings].Dialog != null && displayStates[Settings].Dialog is UI_Settings)
+            ((UI_Settings)displayStates[Settings].Dialog).SetData();
+
+        if (displayStates.ContainsKey(Settings)) displayStates[Settings].NewState = true;
+
+        displayStack.Push(Settings);
+
+        UpdateDisplay();
+    }
+
     protected virtual void HideDialog()
     {
         if (displayStack.Count > 0)
@@ -245,14 +280,21 @@ public class UI_MainController : MonoBehaviour
     {
         ShowGeneratedBuildDisplay(data);
     }
-
-    protected virtual void BackButton_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void GameEventSystem_UI_CharacterWinLoseSelected(Character character, bool isHero)
     {
-        HideDialog();
+        ShowWinLose(character, isHero);
     }
     protected virtual void GameEventSystem_UI_ShowFilterPopup()
     {
         ShowFilter();
+    }
+    protected virtual void GameEventSystem_UI_ShowSettings()
+    {
+        ShowSettings();
+    }
+    protected virtual void BackButton_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        HideDialog();
     }
     protected virtual void GameEventSystem_UI_ClosePopup()
     {

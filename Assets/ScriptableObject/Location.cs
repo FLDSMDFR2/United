@@ -12,21 +12,24 @@ public class Location : BoxOwnable
     {
         base.Init();
 
-        InitImage("LocationImages/", DisplayName());
-        InitDtlImage("LocationImages/", DisplayName());
+        InitImage("LocationImages/", DisplayNameWithClarifier());
+        InitDtlImage("LocationImages/", DisplayNameWithClarifier());
     }
 
     public override string DisplayName()
     {
         return LocationName;
     }
-
+    public override string DisplayNameWithClarifier()
+    {
+        return DisplayName() + " " + Clarifier();
+    }
     public override string SearchName()
     {
-        return LocationName;
+        return DisplayNameWithClarifier();
     }
     public override string Clarifier()
     {
-        return "(LOCATION)";
+        return "";
     }
 }

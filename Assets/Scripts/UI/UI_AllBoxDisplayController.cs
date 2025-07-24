@@ -1,18 +1,29 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
 {
     public GameObject BoxUIPrefab;
     public GameObject CollectionView;
+    public ScrollRect SearchScrollRect;
     public bool IsForGameBuild;
     public int PreBuildTotal;
+
+    protected Vector3 openPos;
+    protected Vector3 closePos;
+    protected float openTime = 0.2f;
+    protected float closeTime = 0.2f;
 
     protected List<UI_CollectionDtl> collectionDtls = new List<UI_CollectionDtl>();
 
     protected virtual void Start()
     {
+        openPos = this.transform.position;
+        closePos = this.transform.position - new Vector3(0, UIScreenSize.ScreenHeight(), 0);
+
         for (int i = 0; i < PreBuildTotal; i++)
         {
             collectionDtls.Add(Instantiate(BoxUIPrefab, CollectionView.transform).GetComponent<UI_CollectionDtl>());
@@ -28,7 +39,7 @@ public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
     {
         HideAll();
         var boxes = DataLoader.GetBoxsBySystem(gameSystems);
-        var display = boxes.OrderBy(b => b.DisplayName());
+        var display = boxes.OrderBy(b => b.DisplayNameWithClarifier());
         var index = 0;
 
         foreach (var box in display)
@@ -80,12 +91,22 @@ public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
-        this.gameObject.SetActive(true);
+        LeanTween.move(this.gameObject, openPos, openTime);
+        StartCoroutine(OpenDelay());
+        //this.gameObject.SetActive(true);
     }
+
+    protected virtual IEnumerator OpenDelay()
+    {
+        yield return new WaitForSeconds(openTime);
+        SearchScrollRect.verticalNormalizedPosition = 1f;
+    }
+
     public virtual void Close()
     {
         if (IsForGameBuild) GameEventSystem.UI_OnCloseGameIncludePopup();
-        this.gameObject.SetActive(false);
+        LeanTween.move(this.gameObject, closePos, closeTime);
+        //this.gameObject.SetActive(false);
     }
     #endregion
 }

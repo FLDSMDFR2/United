@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: DarkAvengers
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 51
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 6
+  Characters:
+  - {fileID: 11400000, guid: 9395bc007b63ea142b75c63c5545be81, type: 2}
+  - {fileID: 11400000, guid: 9d98226b3590eaa4fb147d421e28c532, type: 2}
+  - {fileID: 11400000, guid: a8c31780ab8fb404b931aa9789ff088b, type: 2}
+  - {fileID: 11400000, guid: b21cc7d3f85ecbf43b9e2adbf677cdb0, type: 2}
+  - {fileID: 11400000, guid: 924f9e5bc215da9478c42ebdd2b19650, type: 2}
+  - {fileID: 11400000, guid: fe7e5f957955d4b4b89d705f62cccd21, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0

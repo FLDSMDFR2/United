@@ -10,6 +10,9 @@ public class UI_SearchDtl : MonoBehaviour
     public Image Background;
     public Color DefaultBackground;
 
+    [Header("Type Tag")]
+    public UI_Tag TypeTag;
+
     [Header("Image")]
     public Image Image;
 
@@ -49,6 +52,7 @@ public class UI_SearchDtl : MonoBehaviour
         SetBackgroundColor();
         OwnedImage.SetActive(data.Owned);
         Image.sprite = data.GetDisplayImage();
+        TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
         Clarifier.text = data.Clarifier();
         Name.text = data.DisplayName();
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);

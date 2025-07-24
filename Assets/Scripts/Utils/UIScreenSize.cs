@@ -13,10 +13,12 @@ public class UIScreenSize : MonoBehaviour
 
     public static float ScreenWidth()
     {
-        return myTransform.sizeDelta.x * 2;
+        //return myTransform.sizeDelta.x * 2;
+        return myTransform.position.x * 2;
     }
     public static float ScreenHeight()
     {
-        return myTransform.sizeDelta.y * 2;
+        //return myTransform.sizeDelta.y * 2;
+        return myTransform.position.y * 2;
     }
 }

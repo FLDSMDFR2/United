@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
+  m_Name: Wakandans
+  m_EditorClassIdentifier: 
+  GameSystem: 2
+  Owned: 0
+  IncludeInGameBuild: 1
+  MainImage: {fileID: 0}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages: []
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 04000000
+  IsExclusive: 0
+  Boxs:
+  - Box: 60
+    Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
+  TeamTag: 14
+  Characters:
+  - {fileID: 11400000, guid: 24fb458b9d8f4784d97efc67785ad8d6, type: 2}
+  - {fileID: 11400000, guid: 21eb4650374280f45b469210078ad066, type: 2}
+  - {fileID: 11400000, guid: 9b84e68683f19724aabe2a23ec56b46f, type: 2}
+  - {fileID: 11400000, guid: b590b28acf28c7445a218a12719a4a83, type: 2}
+  - {fileID: 11400000, guid: 6916f39397a23fa43a04e9629bbca86f, type: 2}
+  HerosOnly: 0
+  VillainOnly: 0
