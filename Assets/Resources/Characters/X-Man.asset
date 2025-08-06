@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: X-Man
   m_EditorClassIdentifier: 
+  ID: 352
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: e8fba19879036424183d1df9d1603da2, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 727a09950edf73c408561259b9fbe155, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 58
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: X-Man
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1d0000001e00000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 5
   HeroSymblesAttack: 0
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

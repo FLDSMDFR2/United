@@ -59,12 +59,12 @@ public class UI_FullGameBuild : UI_Generation
 
     protected bool updatingDropDowns;
 
-    protected override void Start()
+    public override void LoadableStep2()
     {
         BuildNumberOfHerosDropDown(MaxNumberOfHeros);
         BuildNumberOfCompanionsDropDown(MaxNumberOfCompanions);
 
-        base.Start();
+        base.LoadableStep2();
     }
 
     protected override void UpdatedDropDowns()

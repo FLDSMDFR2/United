@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
   m_Name: MU_S3_WorldWarHulk
   m_EditorClassIdentifier: 
+  ID: 395
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -46,5 +47,7 @@ MonoBehaviour:
   Challenges: []
   Modes: []
   Teams: []
-  Equipment: []
+  Equipment:
+  - {fileID: 11400000, guid: e7979c887a8861b48b9b10722b4bbe6c, type: 2}
+  - {fileID: 11400000, guid: 26fb83a03a3eaa8429f01cd2fd988006, type: 2}
   Campaigns: []

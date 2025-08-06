@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Man-Thing
   m_EditorClassIdentifier: 
+  ID: 191
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: cbe81a1757a76024bb49dea3338e3b42, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: ebec8d5aa07a6054698803146fa1579d, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Man-Thing
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1600000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 2
   HeroSymblesAttack: 2
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

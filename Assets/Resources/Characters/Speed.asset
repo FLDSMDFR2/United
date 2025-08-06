@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: 
+  ID: 292
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: e5ddec8d0f09bd04f80113a19e40c2d6, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 8a9b5cce9648da24f8090f05d4a71b91, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Speed
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 0100000007000000
   HeroSymblesMove: 11
   HeroSymblesHeroic: 3
   HeroSymblesAttack: 3
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

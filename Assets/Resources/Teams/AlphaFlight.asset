@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: AlphaFlight
   m_EditorClassIdentifier: 
+  ID: 556
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 71b8c8db6369b6b4db84c45f4a2c058a, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 71b8c8db6369b6b4db84c45f4a2c058a, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 28
+  TeamColor: {r: 0.67058825, g: 0.67058825, b: 0.62352943, a: 1}
   Characters:
   - {fileID: 11400000, guid: 0fcb88178cf57e042938ae270e7e198f, type: 2}
   - {fileID: 11400000, guid: 5151be8ab0dfb6346b33a680b18a1f2e, type: 2}

@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636106a387478cf4f9f2053e57f9350c, type: 3}
   m_Name: WorldWarHulk
   m_EditorClassIdentifier: 
+  ID: 691
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 151428a5ec555d243bd6c26c0beec866, type: 3}
+  MainImage: {fileID: 21300000, guid: 2f1e63c1c1515194b852989e73386161, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 151428a5ec555d243bd6c26c0beec866, type: 3}
+  - {fileID: 21300000, guid: 2f1e63c1c1515194b852989e73386161, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000

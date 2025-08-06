@@ -21,12 +21,12 @@ public class UI_SingleGeneration : UI_Generation
 
     protected List<SingleItemGenerationType> typeDropDownMap = new List<SingleItemGenerationType>();
 
-    protected override void Start()
+    public override void LoadableStep2()
     {
         BuildTypesDropDown(Enum.GetValues(typeof(SingleItemGenerationType)));
         BuildCountDropDown(MaxCount);
 
-        base.Start();
+        base.LoadableStep2();
     }
     public override void GenerateGameSelected()
     {

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -84,7 +83,8 @@ public class UI_SearchDtl : MonoBehaviour
 
         for (int i = 0; i < lowCount; i++)
         {
-            BoxTags[i].SetTagDisplay(ColorManager.GetColor(boxes[i].Box, out bool darkText), boxes[i].Box.ToFriendlyString(), darkText);
+            var box = DataLoader.GetBoxByTag(boxes[i].Box);
+            BoxTags[i].SetTagDisplay(box.BoxColor, box.DisplayNameWithClarifier(), false);
             BoxTags[i].gameObject.SetActive(true);
         }
 

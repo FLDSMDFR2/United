@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: CyborgSpider-Man
   m_EditorClassIdentifier: 
+  ID: 66
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 1bd591760a0482a43883c0c1340afb68, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 6d9b0ab30e6a44a42a1646de4013cc50, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Cyborg Spider-Man
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 0f00000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 3
   HeroSymblesAttack: 3
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

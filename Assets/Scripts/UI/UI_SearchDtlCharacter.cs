@@ -65,7 +65,8 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
 
         for (int i = 0; i < lowCount; i++)
         {
-            TeamTags[i].SetTagDisplay(ColorManager.GetColor(teams[i], out bool darkText), teams[i].ToFriendlyString(), darkText);
+            var team = DataLoader.GetTeamByTag(teams[i]);
+            TeamTags[i].SetTagDisplay(team.TeamColor, team.DisplayNameWithClarifier(), false);
             TeamTags[i].gameObject.SetActive(true);
         }
 

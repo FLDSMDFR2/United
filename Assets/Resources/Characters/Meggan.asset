@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Meggan
   m_EditorClassIdentifier: 
+  ID: 199
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: af77723f96ec9314d83e1ac6146923b1, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 6849cbdd3862bdb49ba55ef045542ea4, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Meggan
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 2300000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 4
   HeroSymblesAttack: 2
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

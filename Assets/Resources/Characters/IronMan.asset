@@ -12,29 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: IronMan
   m_EditorClassIdentifier: 
+  ID: 151
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 20820cab0ca3384439155b108401b9a6, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 9ff95f257e10f6149a5958a02646e00b, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 1
     Default: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
-  Season: 02000000
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Iron Man
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 020000000b0000001700000003000000090000000100000004000000
   HeroSymblesMove: 4
-  HeroSymblesAttack: 6
   HeroSymblesHeroic: 5
+  HeroSymblesAttack: 6
   HeroSymblesWild: 3
   HeroSpecialCards: 3
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
+  IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
   VillainSymblesHeroic: 0
@@ -44,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

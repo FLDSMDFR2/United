@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: DoctorDoom
   m_EditorClassIdentifier: 
+  ID: 89
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: d947b168955ed094db5edbedfcc6fee0, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 4d125625e6b7b40468a52549c77987c1, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 30
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Doctor Doom
   CharacterClarifier: 
   Type: 3
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 01000000
   HeroSymblesMove: 3
   HeroSymblesHeroic: 1
   HeroSymblesAttack: 4
@@ -46,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

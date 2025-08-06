@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Throg
   m_EditorClassIdentifier: 
+  ID: 319
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -67,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

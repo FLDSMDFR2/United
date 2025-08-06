@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
   m_Name: RO_Spider-Geddon
   m_EditorClassIdentifier: 
+  ID: 397
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -59,5 +60,10 @@ MonoBehaviour:
   Modes:
   - {fileID: 11400000, guid: 53cd616f1283cc34087e10c9256f72db, type: 2}
   Teams: []
-  Equipment: []
+  Equipment:
+  - {fileID: 11400000, guid: caf84864f32ee394485f6a836df0d5c4, type: 2}
+  - {fileID: 11400000, guid: 00b0aeb0563901144a2d04ebeda82df6, type: 2}
+  - {fileID: 11400000, guid: 7e5b4690ba2b0034f9a1de61b306923a, type: 2}
+  - {fileID: 11400000, guid: ca8f47b20a93ffc478ce6a7fca0c6c46, type: 2}
+  - {fileID: 11400000, guid: d056c195af474c348a6ce5dbeaed8312, type: 2}
   Campaigns: []

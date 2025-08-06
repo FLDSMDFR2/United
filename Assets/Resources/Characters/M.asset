@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: M
   m_EditorClassIdentifier: 
+  ID: 184
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 52b1c3a4fb4813f4681b4c5a7967729a, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 2323e32db61e89b4cb0861cccc5298a0, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: M
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 2400000001000000
   HeroSymblesMove: 4
   HeroSymblesHeroic: 3
   HeroSymblesAttack: 3
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

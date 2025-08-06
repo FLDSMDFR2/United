@@ -12,24 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Nemesis
   m_EditorClassIdentifier: 
+  ID: 223
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: d0b4bd08873d42d4cb7478687fcd8f6b, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 8eb4777df82d9b543a31398d61eceb78, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 58
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Nemesis
   CharacterClarifier: 
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

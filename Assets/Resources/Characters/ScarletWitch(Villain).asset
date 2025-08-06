@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: ScarletWitch(Villain)
   m_EditorClassIdentifier: 
+  ID: 272
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  MainImage: {fileID: 21300000, guid: 437eeeae34ac6ee42ada204afad9096e, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  - {fileID: 21300000, guid: d1340b55586427d4d8dd757c976b1f26, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 01000000
@@ -67,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

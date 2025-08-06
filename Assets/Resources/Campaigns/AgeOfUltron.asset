@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636106a387478cf4f9f2053e57f9350c, type: 3}
   m_Name: AgeOfUltron
   m_EditorClassIdentifier: 
+  ID: 685
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: fcc7aec2e5fafd5449f9da6736bc5851, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: fcc7aec2e5fafd5449f9da6736bc5851, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000

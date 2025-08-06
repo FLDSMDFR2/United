@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
   m_Name: MU_S3_Core
   m_EditorClassIdentifier: 
+  ID: 384
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -59,5 +60,37 @@ MonoBehaviour:
   Modes:
   - {fileID: 11400000, guid: 53cd616f1283cc34087e10c9256f72db, type: 2}
   Teams: []
-  Equipment: []
+  Equipment:
+  - {fileID: 11400000, guid: 2c7f475e87bd41142885f1aa79d96293, type: 2}
+  - {fileID: 11400000, guid: 7ccbd11b226bd9745be37f7901404138, type: 2}
+  - {fileID: 11400000, guid: 36a2c46403db520408e1086c9eba2fc0, type: 2}
+  - {fileID: 11400000, guid: cc5d8a74cb754a44fa5ee6614cf6a35c, type: 2}
+  - {fileID: 11400000, guid: 0ebf9d2c9c7f755479a7593ec6ab8786, type: 2}
+  - {fileID: 11400000, guid: 9cac416a46d7fc34cbb65fb8a1637e4e, type: 2}
+  - {fileID: 11400000, guid: b5dd5c95408f81c42b489b9350a3914f, type: 2}
+  - {fileID: 11400000, guid: b25f3aa056f519d46aaf36bf540a09a6, type: 2}
+  - {fileID: 11400000, guid: 1025b81b22d2cdb4e84d8af4be4faa85, type: 2}
+  - {fileID: 11400000, guid: a05557a73c30dec47b53a071feb61582, type: 2}
+  - {fileID: 11400000, guid: 33e0930ed19f29f4e86d1903d9a4af33, type: 2}
+  - {fileID: 11400000, guid: 9907afe5c2df10048ab56c8ba2138e49, type: 2}
+  - {fileID: 11400000, guid: 2cfa69e646c473e45bf93883f44bbff0, type: 2}
+  - {fileID: 11400000, guid: 0c423f9aed03d224d98fd46266d4e9b3, type: 2}
+  - {fileID: 11400000, guid: 328ea15ab8d653a4198130422363bfde, type: 2}
+  - {fileID: 11400000, guid: 25e0284694d6e1d40afeb8807d444128, type: 2}
+  - {fileID: 11400000, guid: 795153c8c39f86d4b9cf355ad1c51f1b, type: 2}
+  - {fileID: 11400000, guid: 63a5009ef7c30aa40b6a92945755de0e, type: 2}
+  - {fileID: 11400000, guid: 442916caf953c2f448a3af448ebc8fd2, type: 2}
+  - {fileID: 11400000, guid: afcc492df06736a4684e2636afd52b45, type: 2}
+  - {fileID: 11400000, guid: 331316f65fc4ce7478e4e5c3fc899418, type: 2}
+  - {fileID: 11400000, guid: 2a964e8da2eff9a43b4832db1337e58b, type: 2}
+  - {fileID: 11400000, guid: 365ea9b02e0e33844a166392a7975d8f, type: 2}
+  - {fileID: 11400000, guid: e226148835cd5a240b790823d7409396, type: 2}
+  - {fileID: 11400000, guid: 25ed51392d9967a4e9ee5ae38032b942, type: 2}
+  - {fileID: 11400000, guid: 5066b41634e060f41b2b9b2b30e6ff27, type: 2}
+  - {fileID: 11400000, guid: 812feb1c12495c54d92093483884bb2c, type: 2}
+  - {fileID: 11400000, guid: 91131312cc717fa4ab6a0213bd0da5a8, type: 2}
+  - {fileID: 11400000, guid: 3bafd4ddc1807724abc1ccbd247f7f5e, type: 2}
+  - {fileID: 11400000, guid: 274ee06f9c7e6934e813ccdbb2ac075f, type: 2}
+  - {fileID: 11400000, guid: 2a1cc4fef300bab409300c7b487b6f55, type: 2}
+  - {fileID: 11400000, guid: 4fe3b42367e292b4abaed5c9ca10421f, type: 2}
   Campaigns: []

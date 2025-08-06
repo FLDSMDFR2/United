@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Jeffrey
   m_EditorClassIdentifier: 
+  ID: 156
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: d1f71db86a39a924ab3b5dc747a1ebf8, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: ee3706e155ac7f2458ff36b703d83529, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -32,7 +34,7 @@ MonoBehaviour:
   CharacterClarifier: 
   Type: 4
   Sex: 1
-  Teams: 
+  Teams: 01000000
   HeroSymblesMove: 2
   HeroSymblesHeroic: 0
   HeroSymblesAttack: 1
@@ -66,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

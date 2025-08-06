@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Nova
   m_EditorClassIdentifier: 
+  ID: 229
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 03b8bd588f16bb648872a458c7b4b856, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: be008b3a61a280b4aa9e2752dba59eb3, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 2
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Nova
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1400000001000000
   HeroSymblesMove: 2
   HeroSymblesHeroic: 6
   HeroSymblesAttack: 3
@@ -54,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

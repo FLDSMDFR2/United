@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Sabretooth&Wildchild
   m_EditorClassIdentifier: 
+  ID: 265
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 0c41d2316237d5748a7b7dbd200af15f, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 8be615f0329fe6d4e8293f9988467ac9, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 58
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Sabretooth & Wildchild
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1e00000001000000
   HeroSymblesMove: 7
   HeroSymblesHeroic: 1
   HeroSymblesAttack: 4
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

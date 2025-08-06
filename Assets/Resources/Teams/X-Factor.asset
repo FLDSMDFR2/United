@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: X-Factor
   m_EditorClassIdentifier: 
+  ID: 589
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: e526775cd4165c541a0459e962585f27, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: e526775cd4165c541a0459e962585f27, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 27
+  TeamColor: {r: 0.49803925, g: 0.08235294, b: 0.023529414, a: 1}
   Characters:
   - {fileID: 11400000, guid: cfeb1da16a206f24a875a3e2b549e4f5, type: 2}
   - {fileID: 11400000, guid: cf9cf50466194c244a2906e4d7e94f7a, type: 2}

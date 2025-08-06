@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Nebula
   m_EditorClassIdentifier: 
+  ID: 222
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: bb05d859406efe544a9784b2128a4f01, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: e5e81191a1ee7c742891c3246ec03985, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 2
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Nebula
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 1200000001000000
   HeroSymblesMove: 3
   HeroSymblesHeroic: 2
   HeroSymblesAttack: 8
@@ -35,6 +43,7 @@ MonoBehaviour:
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

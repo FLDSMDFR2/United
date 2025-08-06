@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Deadpool(Villain)
   m_EditorClassIdentifier: 
+  ID: 81
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
   MainImage: {fileID: 21300000, guid: c4ee602506083a64891c16fe5b165f91, type: 3}
-  DtlImage: {fileID: 21300000, guid: 72127d693b8446447aa8efde8926fe88, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 72127d693b8446447aa8efde8926fe88, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 24
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Deadpool
   CharacterClarifier: (Villain)
   Type: 2
   Sex: 1
-  IsExclusive: 0
-  Teams: 01000000
+  Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
   HeroSymblesAttack: 0
@@ -35,6 +43,7 @@ MonoBehaviour:
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 0
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

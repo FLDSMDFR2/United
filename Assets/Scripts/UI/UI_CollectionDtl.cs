@@ -13,6 +13,9 @@ public class UI_CollectionDtl : MonoBehaviour
 
     public virtual void SetData(Box box, bool isForGameBuild)
     {
+        OwnedSlider.ToggleSwitch_On -= OwnedSlider_Toggled;
+        OwnedSlider.ToggleSwitch_Off -= OwnedSlider_Toggled;
+
         data = box;
         forGameBuild = isForGameBuild;
 
@@ -21,6 +24,9 @@ public class UI_CollectionDtl : MonoBehaviour
 
         if (forGameBuild) OwnedSlider.ToggleByGroupManager(data.GetIncludeInBuild(data.BoxTag), false);
         else OwnedSlider.ToggleByGroupManager(data.GetOwned(data.BoxTag), false);
+
+        OwnedSlider.ToggleSwitch_On += OwnedSlider_Toggled;
+        OwnedSlider.ToggleSwitch_Off += OwnedSlider_Toggled;
     }
 
     public virtual void SetSliderValue(bool sliderValue)
@@ -30,7 +36,7 @@ public class UI_CollectionDtl : MonoBehaviour
         OwnedSlider.ToggleByGroupManager(sliderValue);
     }
 
-    public virtual void SliderToggled()
+    protected virtual void OwnedSlider_Toggled()
     {
         if (forGameBuild)
         {

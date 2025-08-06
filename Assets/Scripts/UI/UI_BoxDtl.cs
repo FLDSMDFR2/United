@@ -16,6 +16,10 @@ public class UI_BoxDtl : MonoBehaviour
 
     public virtual void SetData(BoxOwnable ownable, Box box, bool isForGameBuild, Color BackgroundColor)
     {
+
+        OwnedSlider.ToggleSwitch_On -= OwnedSlider_Toggled;
+        OwnedSlider.ToggleSwitch_Off -= OwnedSlider_Toggled;
+
         data = ownable;
         this.box = box;
         forGameBuild = isForGameBuild;
@@ -44,6 +48,10 @@ public class UI_BoxDtl : MonoBehaviour
         }
 
         OwnedSlider.ToggleByGroupManager(isOn, false);
+
+
+        OwnedSlider.ToggleSwitch_On += OwnedSlider_Toggled;
+        OwnedSlider.ToggleSwitch_Off += OwnedSlider_Toggled;
     }
 
     public virtual void SetSliderValue(bool sliderValue)
@@ -53,29 +61,16 @@ public class UI_BoxDtl : MonoBehaviour
         OwnedSlider.ToggleByGroupManager(sliderValue);
     }
 
-    public virtual void SliderToggleOn()
+    protected virtual void OwnedSlider_Toggled()
     {
         if (forGameBuild)
         {
-            data.SetIncludeInBuild(box.BoxTag, true);
+            data.SetIncludeInBuild(box.BoxTag, OwnedSlider.CurrentValue);
         }
         else
         {
-            if (data != null && referanceIndex >= 0) data.Boxs[referanceIndex].Default = true;
-            if (box.Owned) data.SetOwned(box.BoxTag, true);
-        }
-    }
-
-    public virtual void SliderToggleOff()
-    {
-        if (forGameBuild)
-        {
-            data.SetIncludeInBuild(box.BoxTag, false);
-        }
-        else
-        {
-            if (data != null && referanceIndex >= 0) data.Boxs[referanceIndex].Default = false;
-            if (box.Owned) data.SetOwned(box.BoxTag, false);
+            if (data != null && referanceIndex >= 0) data.Boxs[referanceIndex].Default = OwnedSlider.CurrentValue;
+            if (box.Owned) data.SetOwned(box.BoxTag, OwnedSlider.CurrentValue);
         }
     }
 }

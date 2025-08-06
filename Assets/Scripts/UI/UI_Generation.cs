@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UI_Generation : MonoBehaviour
+public class UI_Generation : Loadable
 {
     [Header("System")]
     public TMP_Dropdown GameSystemDropDown;
@@ -16,7 +16,7 @@ public class UI_Generation : MonoBehaviour
 
     protected List<GameSystems> gameSystemsDropDownMap = new List<GameSystems>();
 
-    protected virtual void Start()
+    public override void LoadableStep2()
     {
         GameEventSystem.UI_CloseGameIncludePopup += GameEventSystem_UI_CloseGameIncludePopup;
 

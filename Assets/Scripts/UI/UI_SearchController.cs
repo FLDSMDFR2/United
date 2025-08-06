@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_SearchController : MonoBehaviour
+public class UI_SearchController : Loadable
 {
     [Header("Base Search")]
     public GameObject BaseSearchUIPrefab;
@@ -31,7 +31,7 @@ public class UI_SearchController : MonoBehaviour
     protected List<Searchable> searchToDisplay = new List<Searchable>();
     protected Searchable[] sortedDisplay;
 
-    protected virtual void Start()
+    public override void LoadableStep2()
     {
         BuildSearchableContent();
         PreBuildDisplay();

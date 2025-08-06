@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: SavageAvengers
   m_EditorClassIdentifier: 
+  ID: 579
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: c344d20632a2c944db4d33579326d79f, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: c344d20632a2c944db4d33579326d79f, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 5
+  TeamColor: {r: 0.3019608, g: 0.42352945, b: 0.10588236, a: 1}
   Characters:
   - {fileID: 11400000, guid: bd351ede8dae3314a84cd4b36e887aa6, type: 2}
   - {fileID: 11400000, guid: 5682131840659994b97d738a35c17250, type: 2}

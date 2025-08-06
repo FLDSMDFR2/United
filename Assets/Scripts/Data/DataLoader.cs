@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class DataLoader : MonoBehaviour
+public class DataLoader : Loadable
 {
     protected static List<Character> allCharacters = new List<Character>();
     protected static List<Box> allBoxes = new List<Box>();
@@ -14,6 +15,7 @@ public class DataLoader : MonoBehaviour
     protected static List<Campaign> allCampaigns = new List<Campaign>();
 
     protected static Dictionary<Boxs, Box> boxMap = new Dictionary<Boxs, Box>();
+    protected static Dictionary<Teams, Team> teamMap = new Dictionary<Teams, Team>();
 
     protected static Dictionary<GameSystems, List<Box>> boxsInGameSystem = new Dictionary<GameSystems, List<Box>>();
     protected static Dictionary<GameSystems, List<Character>> charactersInGameSystem = new Dictionary<GameSystems, List<Character>>();
@@ -27,10 +29,66 @@ public class DataLoader : MonoBehaviour
     protected static Dictionary<GameSystems, List<Equipment>> equipmentInGameSystem = new Dictionary<GameSystems, List<Equipment>>();
     protected static Dictionary<GameSystems, List<Campaign>> campaignsInGameSystem = new Dictionary<GameSystems, List<Campaign>>();
 
-    protected virtual void Awake()
+    #region GenerateIds
+    [ButtonInspectorAttribute(nameof(GenerateIDs))]
+    public bool GenerateIdsButton;
+    public virtual void GenerateIDs()
     {
-        LoadData();
+        foreach (var character in allCharacters)
+        {
+            character.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(character);
+        }
+        foreach (var box in allBoxes)
+        {
+            box.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(box);
+        }
+        foreach (var location in allLocations)
+        {
+            location.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(location);
+        }
+        foreach (var challenge in allChallenges)
+        {
+            challenge.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(challenge);
+        }
+        foreach (var mode in allModes)
+        {
+            mode.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(mode);
+        }
+        foreach (var team in allTeams)
+        {
+            team.ID = GameIdGenerator.GetNextId();
+            team.TeamColor = ColorManager.GetColor(team.TeamTag, out bool darkText);
+            EditorUtility.SetDirty(team);
+        }
+        foreach (var equipment in allEquipment)
+        {
+            equipment.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(equipment);
+        }
+        foreach (var campaign in allCampaigns)
+        {
+            campaign.ID = GameIdGenerator.GetNextId();
+            EditorUtility.SetDirty(campaign);
+        }
     }
+    #endregion
+
+    public override void LoadableStep1()
+    {
+        Load();
+    }
+
+    public async void Load()
+    {
+        await SaveDataController.LoadSavedData();
+
+        LoadData();
+    }       
 
     protected virtual void LoadData()
     {
@@ -45,7 +103,12 @@ public class DataLoader : MonoBehaviour
 
         foreach (var box in allBoxes)
         {
+            if (box.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, box.DisplayNameWithClarifier() + "Missing Id");
+
             box.Init();
+
+            UpdateSavedData(box);
+
             boxMap[box.BoxTag] = box;
 
             AddToAllDictionary<Box>(box.GameSystem, boxsInGameSystem, box);
@@ -53,7 +116,11 @@ public class DataLoader : MonoBehaviour
 
         foreach (var character in allCharacters)
         {
+            if (character.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, character.DisplayNameWithClarifier() + "Missing Id");
+
             character.Init();
+
+            UpdateSavedData(character);
 
             character.Teams.Clear();
             character.Equipment.Clear();
@@ -117,8 +184,12 @@ public class DataLoader : MonoBehaviour
 
         foreach (var location in allLocations)
         {
+            if (location.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, location.DisplayNameWithClarifier() + "Missing Id");
+
             location.Init();
-            
+
+            UpdateSavedData(location);
+
             AddToAllDictionary<Location>(location.GameSystem, locationsInGameSystem, location);
 
             AddToBox(location);
@@ -126,8 +197,12 @@ public class DataLoader : MonoBehaviour
 
         foreach (var challenges in allChallenges)
         {
+            if (challenges.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, challenges.DisplayNameWithClarifier() + "Missing Id");
+
             challenges.Init();
-            
+
+            UpdateSavedData(challenges);
+
             AddToAllDictionary<Challenge>(challenges.GameSystem, challengeInGameSystem, challenges);
 
             AddToBox(challenges);
@@ -135,8 +210,12 @@ public class DataLoader : MonoBehaviour
 
         foreach (var mode in allModes)
         {
+            if (mode.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, mode.DisplayNameWithClarifier() + "Missing Id");
+
             mode.Init();
-            
+
+            UpdateSavedData(mode);
+
             AddToAllDictionary<Mode>(mode.GameSystem, modesInGameSystem, mode);
 
             AddToBox(mode);
@@ -144,8 +223,14 @@ public class DataLoader : MonoBehaviour
 
         foreach (var team in allTeams)
         {
+            if (team.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, team.DisplayNameWithClarifier() + "Missing Id");
+
             team.Init();
-            
+
+            UpdateSavedData(team);
+
+            teamMap[team.TeamTag] = team;
+
             AddToAllDictionary<Team>(team.GameSystem, teamsInGameSystem, team);
 
             AddToBox(team);
@@ -153,8 +238,12 @@ public class DataLoader : MonoBehaviour
 
         foreach (var equipment in allEquipment)
         {
+            if (equipment.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, equipment.DisplayNameWithClarifier() + "Missing Id");
+
             equipment.Init();
-            
+
+            UpdateSavedData(equipment);
+
             AddToAllDictionary<Equipment>(equipment.GameSystem, equipmentInGameSystem, equipment);
 
             AddToBox(equipment);
@@ -162,11 +251,33 @@ public class DataLoader : MonoBehaviour
 
         foreach (var campaigns in allCampaigns)
         {
+            if (campaigns.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, campaigns.DisplayNameWithClarifier() + "Missing Id");
+
             campaigns.Init();
-            
+
+            UpdateSavedData(campaigns);
+
             AddToAllDictionary<Campaign>(campaigns.GameSystem, campaignsInGameSystem, campaigns);
 
             AddToBox(campaigns);
+        }
+
+        SaveDataController.Save();
+    }
+
+    protected virtual void UpdateSavedData(BoxOwnable ownable)
+    {
+        var savedData = SaveDataController.GetDataForId(ownable.ID);
+
+        if (savedData != null)
+        {
+            ownable.SetOwnableData(savedData);
+        }
+        else
+        {
+            savedData = ownable.GetOwnableData();
+            savedData.LastUpdateDate = DateTime.Now;
+            SaveDataController.UpdateDataForId(ownable.ID, savedData);
         }
     }
 
@@ -192,6 +303,21 @@ public class DataLoader : MonoBehaviour
         if (!dictionary.ContainsKey(system)) dictionary[system] = new List<T>() { valueToAdd };
         else dictionary[system].Add(valueToAdd);
     }
+    protected static void AddToBox(BoxOwnable ownableBox)
+    {
+        foreach (var box in ownableBox.Boxs)
+        {
+            if (!boxMap.ContainsKey(box.Box)) continue;
+
+            if (ownableBox is Character) boxMap[box.Box].Characters.Add((Character)ownableBox);
+            else if (ownableBox is Location) boxMap[box.Box].Locations.Add((Location)ownableBox);
+            else if (ownableBox is Challenge) boxMap[box.Box].Challenges.Add((Challenge)ownableBox);
+            else if (ownableBox is Mode) boxMap[box.Box].Modes.Add((Mode)ownableBox);
+            else if (ownableBox is Team) boxMap[box.Box].Teams.Add((Team)ownableBox);
+            else if (ownableBox is Equipment) boxMap[box.Box].Equipment.Add((Equipment)ownableBox);
+            else if (ownableBox is Campaign) boxMap[box.Box].Campaigns.Add((Campaign)ownableBox);
+        }
+    }
 
     public static List<Character> GetCharactersBySystem(GameSystems gameSystems = GameSystems.All)
     {
@@ -213,70 +339,52 @@ public class DataLoader : MonoBehaviour
         if (companionsInGameSystem.ContainsKey(gameSystems)) return companionsInGameSystem[gameSystems];
         return new List<Character>();
     }
-
     public static List<Location> GetLocationsBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (locationsInGameSystem.ContainsKey(gameSystems)) return locationsInGameSystem[gameSystems];
         return new List<Location>();
     }
-
     public static List<Challenge> GetChallengesBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (challengeInGameSystem.ContainsKey(gameSystems)) return challengeInGameSystem[gameSystems];
         return new List<Challenge>();
     }
-
     public static List<Mode> GetModesBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (modesInGameSystem.ContainsKey(gameSystems)) return modesInGameSystem[gameSystems];
         return new List<Mode>();
     }
-
     public static List<Team> GetTeamsBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (teamsInGameSystem.ContainsKey(gameSystems)) return teamsInGameSystem[gameSystems];
         return new List<Team>();
     }
-
     public static List<Equipment> GetEquipmentBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (equipmentInGameSystem.ContainsKey(gameSystems)) return equipmentInGameSystem[gameSystems];
         return new List<Equipment>();
     }
-
     public static List<Campaign> GetCampaignsBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (campaignsInGameSystem.ContainsKey(gameSystems)) return campaignsInGameSystem[gameSystems];
         return new List<Campaign>();
     }
-
     public static List<Box> GetBoxsBySystem(GameSystems gameSystems = GameSystems.All)
     {
         if (boxsInGameSystem.ContainsKey(gameSystems)) return boxsInGameSystem[gameSystems];
         return new List<Box>();
     }
-
     public static Box GetBoxByTag(Boxs boxTag)
     {
         if (!boxMap.ContainsKey(boxTag)) return new Box();
 
         return boxMap[boxTag];
     }
-
-    protected static void AddToBox(BoxOwnable ownableBox)
+    public static Team GetTeamByTag(Teams teamTag)
     {
-        foreach(var box in ownableBox.Boxs)
-        {
-            if (!boxMap.ContainsKey(box.Box)) continue;
+        if (!teamMap.ContainsKey(teamTag)) return new Team();
 
-            if (ownableBox is Character) boxMap[box.Box].Characters.Add((Character)ownableBox);
-            else if (ownableBox is Location) boxMap[box.Box].Locations.Add((Location)ownableBox);
-            else if (ownableBox is Challenge) boxMap[box.Box].Challenges.Add((Challenge)ownableBox);
-            else if (ownableBox is Mode) boxMap[box.Box].Modes.Add((Mode)ownableBox);
-            else if (ownableBox is Team) boxMap[box.Box].Teams.Add((Team)ownableBox);
-            else if (ownableBox is Equipment) boxMap[box.Box].Equipment.Add((Equipment)ownableBox);
-            else if (ownableBox is Campaign) boxMap[box.Box].Campaigns.Add((Campaign)ownableBox);
-        }
+        return teamMap[teamTag];
     }
 }
 

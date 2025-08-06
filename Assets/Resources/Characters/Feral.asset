@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Feral
   m_EditorClassIdentifier: 
+  ID: 108
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 731a2863a993a0946b7d1e1ce164f598, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 4b3a3e2a130a6f041b35c6fa35eca6f9, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 21
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Feral
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 0100000019000000
   HeroSymblesMove: 7
   HeroSymblesHeroic: 3
   HeroSymblesAttack: 4
@@ -46,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

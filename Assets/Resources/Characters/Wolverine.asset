@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Wolverine
   m_EditorClassIdentifier: 
+  ID: 346
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: b96738a65a8a3274f920dcb1ba94567d, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: ab19297874aa62748a9b7b66574d4682, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 20
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Wolverine
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1c000000210000000300000005000000260000001a0000000100000018000000
   HeroSymblesMove: 4
   HeroSymblesHeroic: 4
   HeroSymblesAttack: 5
@@ -35,6 +43,7 @@ MonoBehaviour:
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

@@ -12,24 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: SilverSurfer(Villain)
   m_EditorClassIdentifier: 
+  ID: 286
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 3dbb424c852b84642ad51a960c6fa462, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: a9ed1181d5b2d2948afba5b635ed36be, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 55
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Silver Surfer
   CharacterClarifier: (Villain)
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UI_Filter : MonoBehaviour, IDialog
+public class UI_Filter : Loadable, IDialog
 {
     public GameObject GroupHeaderPrefab;
     public Color HeaderColor;
@@ -18,7 +18,7 @@ public class UI_Filter : MonoBehaviour, IDialog
 
     protected Filter sortIsAscending;
 
-    protected virtual void Awake()
+    public override void LoadableStep1()
     {
         BuildSort();
         BuildFilterGameSystems();
@@ -29,7 +29,7 @@ public class UI_Filter : MonoBehaviour, IDialog
         BuildFilterCharacterSex();
     }
 
-    protected virtual void Start()
+    public override void LoadableStep2()
     {
         openPos = this.transform.position;
         closePos = this.transform.position - new Vector3(-UIScreenSize.ScreenWidth(), 0, 0);

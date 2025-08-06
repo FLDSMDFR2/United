@@ -12,25 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Shriek
   m_EditorClassIdentifier: 
+  ID: 281
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: a44022886bbb17047b698a79f0323fce, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 79a8b4dcc75718d41a16500d85379607, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 54
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Shriek
   CharacterClarifier: 
   Type: 2
   Sex: 2
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -55,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

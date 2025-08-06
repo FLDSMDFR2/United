@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Silk
   m_EditorClassIdentifier: 
+  ID: 283
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 06f091e063e1b974795cc817fb40129e, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 7dae9bcd5d6a0f0438a494feb55f389c, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 01000000
@@ -26,11 +28,13 @@ MonoBehaviour:
   Boxs:
   - Box: 70
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Silk
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  Teams: 
+  Teams: 140000000f00000001000000
   HeroSymblesMove: 4
   HeroSymblesHeroic: 3
   HeroSymblesAttack: 4
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

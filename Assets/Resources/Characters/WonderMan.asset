@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: WonderMan
   m_EditorClassIdentifier: 
+  ID: 347
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 8946fe4cc62718c4f93dbbe59c820515, type: 3}
+  AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 77de875b0be37cd41aec7d3e1376d2f3, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 52
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Wonder Man
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 0b000000090000000100000004000000
   HeroSymblesMove: 4
   HeroSymblesHeroic: 1
   HeroSymblesAttack: 4
@@ -51,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

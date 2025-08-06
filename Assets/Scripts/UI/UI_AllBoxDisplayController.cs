@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
+public class UI_AllBoxDisplayController : Loadable, IDialog
 {
     public GameObject BoxUIPrefab;
     public GameObject CollectionView;
@@ -19,7 +19,7 @@ public class UI_AllBoxDisplayController : MonoBehaviour, IDialog
 
     protected List<UI_CollectionDtl> collectionDtls = new List<UI_CollectionDtl>();
 
-    protected virtual void Start()
+    public override void LoadableStep2()
     {
         openPos = this.transform.position;
         closePos = this.transform.position - new Vector3(0, UIScreenSize.ScreenHeight(), 0);

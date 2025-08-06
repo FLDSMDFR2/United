@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Demogoblin
   m_EditorClassIdentifier: 
+  ID: 86
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  MainImage: {fileID: 21300000, guid: 1e71183d69d76984f8f08f164ca8558f, type: 3}
   AutoGetMainImage: 1
   DtlImageNames:
   - Demogoblin
@@ -24,14 +25,16 @@ MonoBehaviour:
   AutoGetDtlImage: 0
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 54
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Demogoblin
   CharacterClarifier: (Sinister Six Assembled)
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -56,15 +59,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

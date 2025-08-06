@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
   m_Name: SinisterSixAssembled
   m_EditorClassIdentifier: 
+  ID: 549
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 0

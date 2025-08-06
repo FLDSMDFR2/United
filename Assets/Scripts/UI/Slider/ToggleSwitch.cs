@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
 {
+    public delegate void ToggleSwitchEvent();
+    public event ToggleSwitchEvent ToggleSwitch_On;
+    public event ToggleSwitchEvent ToggleSwitch_Off;
+
     [Header("Slider Setup")]
     [Range(0,1f)]
     public float SliderValue;
@@ -92,9 +96,17 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
         CurrentValue = valueToSetTo;
 
         if (CurrentValue)
+        {
             ToggleOn?.Invoke();
-        else 
+            ToggleSwitch_On?.Invoke();
+        }
+
+        else
+        {
             ToggleOff?.Invoke();
+            ToggleSwitch_Off?.Invoke();
+        }
+
 
         if (animationSliderCoroutine != null) StopCoroutine(animationSliderCoroutine);
 

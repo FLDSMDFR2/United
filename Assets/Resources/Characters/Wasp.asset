@@ -12,29 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Wasp
   m_EditorClassIdentifier: 
+  ID: 338
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  MainImage: {fileID: 21300000, guid: 198fadad9dac10a4c8b8092773e2d84c, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 91a10abeb83dc3843a98dbd1a487f97d, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
+  Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 1
     Default: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
-  Season: 02000000
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Wasp
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 020000000900000001000000
   HeroSymblesMove: 5
-  HeroSymblesAttack: 5
   HeroSymblesHeroic: 3
+  HeroSymblesAttack: 5
   HeroSymblesWild: 4
   HeroSpecialCards: 3
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
+  IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
   VillainSymblesHeroic: 0
@@ -44,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

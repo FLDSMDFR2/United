@@ -18,7 +18,7 @@ public class Searchable : Ownable
     protected Dictionary<SortTypes, string> sort = new Dictionary<SortTypes, string>();
     protected Dictionary<string, List<Searchable>> dtlItems = new Dictionary<string, List<Searchable>>();
 
-    public virtual void Init()
+    public override void Init()
     {
         InitFilter();
         InitSort();

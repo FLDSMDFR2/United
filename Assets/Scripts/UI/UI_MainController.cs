@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class UI_MainController : MonoBehaviour
@@ -66,16 +67,17 @@ public class UI_MainController : MonoBehaviour
     {
         InitDisplay();
 
-        StartCoroutine(StartDelay());
+        StartGameLoad();
     }
 
-    protected virtual IEnumerator StartDelay()
+    protected async void StartGameLoad()
     {
-        yield return new WaitForSeconds(0.2f);
+        await GameLoader.LoadStep1Async();
+        await GameLoader.LoadStep2Async();
 
         ShowMainDisplay();
 
-        yield return new WaitForSeconds(1f);
+        await Task.Delay(1000);
 
         LoadingScreen.Close();
     }

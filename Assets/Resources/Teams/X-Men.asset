@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: X-Men
   m_EditorClassIdentifier: 
+  ID: 591
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 3ba40e0d71042344bb3da37eafab48de, type: 3}
+  MainImage: {fileID: 21300000, guid: 113547fa4c42b874899252034e2504ca, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 3ba40e0d71042344bb3da37eafab48de, type: 3}
+  - {fileID: 21300000, guid: 113547fa4c42b874899252034e2504ca, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -30,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 24
+  TeamColor: {r: 0.24313727, g: 0.3137255, b: 0.38823533, a: 1}
   Characters:
   - {fileID: 11400000, guid: a21c12fb27f0d9042b78da05222477d3, type: 2}
   - {fileID: 11400000, guid: 0301e42ef786b084eb98c474874f5fb7, type: 2}

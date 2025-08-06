@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Forge
   m_EditorClassIdentifier: 
+  ID: 112
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 6cfdf669bcb4736498d7c0e493d73f68, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 0fc987c45e4f1f04fa8b4530306909dd, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 1
   Boxs:
   - Box: 22
     Default: 0
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Forge
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 1
-  Teams: 
+  Teams: 010000001b00000018000000
   HeroSymblesMove: 3
   HeroSymblesHeroic: 6
   HeroSymblesAttack: 3
@@ -35,6 +43,7 @@ MonoBehaviour:
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

@@ -90,7 +90,8 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
 
         for (int i = 0; i < lowCount; i++)
         {
-            BoxTags[i].SetTagDisplay(ColorManager.GetColor(boxes[i].Box, out bool darkText), boxes[i].Box.ToFriendlyString(), darkText);
+            var box = DataLoader.GetBoxByTag(boxes[i].Box);
+            BoxTags[i].SetTagDisplay(box.BoxColor, box.DisplayNameWithClarifier(), false);
             BoxTags[i].gameObject.SetActive(true);
         }
 

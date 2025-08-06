@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: AlligatorLoki
   m_EditorClassIdentifier: 
+  ID: 7
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 3a46fe431cb279e44b58bce99cc75e78, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 0a235a72aa3080e4ab11d0b615187e6f, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -32,7 +34,7 @@ MonoBehaviour:
   CharacterClarifier: 
   Type: 4
   Sex: 1
-  Teams: 
+  Teams: 01000000
   HeroSymblesMove: 2
   HeroSymblesHeroic: 0
   HeroSymblesAttack: 0
@@ -66,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

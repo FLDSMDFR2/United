@@ -12,25 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: RedHulk
   m_EditorClassIdentifier: 
+  ID: 256
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: f2d61cc2d47d24e498b55d36301e2018, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 495f84cd35f38534a9dce16fa3d7f52f, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 51
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Red Hulk
   CharacterClarifier: 
   Type: 3
   Sex: 1
-  IsExclusive: 0
-  Teams: 
+  Teams: 1100000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 1
   HeroSymblesAttack: 7
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: MightyThor
   m_EditorClassIdentifier: 
+  ID: 200
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 6ceb82e4a997b3941a7826b1cfcda3e3, type: 3}
+  AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 168cd5d28ea80d94f9c3d454a8c12e72, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 50
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Mighty Thor
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 1f0000001000000001000000
   HeroSymblesMove: 6
   HeroSymblesHeroic: 4
   HeroSymblesAttack: 3
@@ -51,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

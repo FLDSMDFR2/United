@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: DeadpoolTeam-Up
   m_EditorClassIdentifier: 
+  ID: 561
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 5748a637ebc3a3a4c911472f53fe27c3, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 5748a637ebc3a3a4c911472f53fe27c3, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 33
+  TeamColor: {r: 0.18431373, g: 0.19215688, b: 0.15294118, a: 1}
   Characters:
   - {fileID: 11400000, guid: e4889f52757008b43b3fbcee95857ae4, type: 2}
   - {fileID: 11400000, guid: 02da8ebb700154f4eae76dc1e6e35783, type: 2}

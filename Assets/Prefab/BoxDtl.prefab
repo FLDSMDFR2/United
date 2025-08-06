@@ -900,6 +900,14 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5000680577199557272, guid: 82c6e0c1ddb387546b7b37b7f684d410, type: 3}
+      propertyPath: ToggleOn.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000680577199557272, guid: 82c6e0c1ddb387546b7b37b7f684d410, type: 3}
+      propertyPath: ToggleOff.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000680577199557272, guid: 82c6e0c1ddb387546b7b37b7f684d410, type: 3}
       propertyPath: ToggleOn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4757180413301801336}

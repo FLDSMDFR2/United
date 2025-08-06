@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
   m_Name: ClashofHeroes(PvP)
   m_EditorClassIdentifier: 
+  ID: 543
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -23,9 +24,12 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 52
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   ModeTag: 7
   UseSameHerosForAllGames: 0
   AllowVillainSelection: 0

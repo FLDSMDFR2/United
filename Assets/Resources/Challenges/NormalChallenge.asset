@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7062e3cd9ae26a543b11614f31502c81, type: 3}
   m_Name: NormalChallenge
   m_EditorClassIdentifier: 
+  ID: 535
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1

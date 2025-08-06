@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Toad,Blob&Pyro
   m_EditorClassIdentifier: 
+  ID: 323
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -22,18 +23,22 @@ MonoBehaviour:
   - Blob
   - Pyro
   DtlImages:
-  - {fileID: 21300000, guid: 3cd04c21ce89f9d4f84525839c0d72e1, type: 3}
+  - {fileID: 21300000, guid: 16259d8b5ea5f8e4cbc24c8bc6fea3f2, type: 3}
+  - {fileID: 21300000, guid: 6c4fd3f64ecabc74b9c1ea22778402fe, type: 3}
+  - {fileID: 21300000, guid: 08ddf19ba47e1ad4383e6d246ce6b3d0, type: 3}
   AutoGetDtlImage: 0
   AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 21
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Toad, Blob & Pyro
   CharacterClarifier: 
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -58,15 +63,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

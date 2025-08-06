@@ -94,36 +94,69 @@ public class Character : BoxOwnable
     public virtual void SetHeroWins(int wins)
     {
         HeroWins = wins;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
     }
 
     public virtual void SetHeroLosses(int losses)
     {
         HeroLosses = losses;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
     }
 
     public virtual void SetHeroRating(float rating)
     {
         HeroRating = rating;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
     }
 
     public virtual void SetVillainWins(int wins)
     {
         VillainWins = wins;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
     }
 
     public virtual void SetVillainLosses(int losses)
     {
         VillainLosses = losses;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
     }
     public virtual void SetVillainRating(float rating)
     {
         VillainRating = rating;
+        UpdateAndSaveData();
         RaiseOnOwnableUpdate();
+    }
+
+    public override void SetOwnableData(OwnableData data)
+    {
+        base.SetOwnableData(data);
+
+        HeroWins = data.HeroWins;
+        HeroLosses = data.HeroLosses;
+        HeroRating = data.HeroRating;
+
+        VillainWins = data.VillainWins;
+        VillainLosses = data.VillainLosses;
+        VillainRating = data.VillainRating;
+    }
+
+    public override OwnableData GetOwnableData()
+    {
+        var data = base.GetOwnableData();
+        data.HeroWins = HeroWins;
+        data.HeroLosses = HeroLosses;
+        data.HeroRating = HeroRating;
+
+        data.VillainWins = VillainWins;
+        data.VillainLosses = VillainLosses;
+        data.VillainRating = VillainRating;
+
+        return data;
     }
 
 }

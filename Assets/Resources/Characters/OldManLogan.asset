@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: OldManLogan
   m_EditorClassIdentifier: 
+  ID: 233
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -23,16 +24,20 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 1
   Boxs:
   - Box: 21
     Default: 0
+    Owned: 0
+    IncludeInGameBuild: 1
   - Box: 32
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Old Man Logan
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 1
   Teams: 01000000
   HeroSymblesMove: 7
   HeroSymblesHeroic: 5
@@ -57,15 +62,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: MidnightSons
   m_EditorClassIdentifier: 
+  ID: 573
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: a70d5d8474301fb4ea500c4788f966da, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: a70d5d8474301fb4ea500c4788f966da, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 22
+  TeamColor: {r: 0.2509804, g: 0.039215688, b: 0.019607844, a: 1}
   Characters:
   - {fileID: 11400000, guid: 23ea418cb6a18a2419013bd4c75b01cd, type: 2}
   - {fileID: 11400000, guid: b6a29711864c3fd4aa97b56ad8fb04f5, type: 2}

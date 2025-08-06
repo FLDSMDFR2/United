@@ -12,29 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Ronan
   m_EditorClassIdentifier: 
+  ID: 262
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
-  DtlImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 9106c89b2b8dfb648a26d8d4f4709564, type: 3}
+  AutoGetMainImage: 1
+  DtlImageNames: []
+  DtlImages:
+  - {fileID: 21300000, guid: 5b789c029f0d4db4b90fc0bdd986474f, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 4
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Ronan
   CharacterClarifier: 
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
-  HeroSymblesAttack: 0
   HeroSymblesHeroic: 0
+  HeroSymblesAttack: 0
   HeroSymblesWild: 0
   HeroSpecialCards: 0
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
+  IsStandAloneVillain: 1
   IsSuperVillainModeAllowed: 1
   VillainSymblesMove: 0
   VillainSymblesAttack: 0
@@ -45,3 +54,18 @@ MonoBehaviour:
   VillainRating: 0
   Dtls: 
   Comments: 
+  GameDtl:
+    AdditionalHerosReferenceNumHeros: 0
+    AdditionalHeros: 0
+    NumberOfVillains: 0
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
+    ExcludedHeros: []
+    RequiaredVillainsExclusively: 0
+    RequiaredVillains: []
+    ExcludedVillains: []
+    RequiaredLocations: []
+    ExcludedLocations: []
+    RequiaredChallenges: []
+    ExcludedChallenges: []
+  Equipment: []

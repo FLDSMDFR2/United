@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b993ba5d3b57140a7f43fc7a5c19e3, type: 3}
   m_Name: DeflectorShields(IronManCivilWar)
   m_EditorClassIdentifier: 
+  ID: 614
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 2e7b3a86766acb145b9b060956ad0b76, type: 3}
+  MainImage: {fileID: 21300000, guid: 9d0e03c230c704042958567eea592b71, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 2e7b3a86766acb145b9b060956ad0b76, type: 3}
+  - {fileID: 21300000, guid: 9d0e03c230c704042958567eea592b71, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000

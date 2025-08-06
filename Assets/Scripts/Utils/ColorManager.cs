@@ -47,7 +47,6 @@ public class ColorManager : MonoBehaviour
     public List<TeamsColorMap> Teams = new List<TeamsColorMap>();
 
     protected static Dictionary<CharacterType, CharacterTypeColorMap> characterType = new Dictionary<CharacterType, CharacterTypeColorMap>();
-    protected static Dictionary<Boxs, Box> box = new Dictionary<Boxs, Box>();
     protected static Dictionary<GameModes, GameModesColorMap> gameModes = new Dictionary<GameModes, GameModesColorMap>();
     protected static Dictionary<Seasons, SeasonsColorMap> seasons = new Dictionary<Seasons, SeasonsColorMap>();
     protected static Dictionary<Teams, TeamsColorMap> teams = new Dictionary<Teams, TeamsColorMap>();
@@ -57,10 +56,6 @@ public class ColorManager : MonoBehaviour
         foreach (var c in CharacterType)
         {
             characterType[c.Name] = c;
-        }
-        foreach (var b in DataLoader.GetBoxsBySystem())
-        {
-            box[b.BoxTag] = b;
         }
         foreach (var g in GameModes)
         {
@@ -86,16 +81,7 @@ public class ColorManager : MonoBehaviour
         }
         return Color.red;
     }
-    public static Color GetColor(Boxs name, out bool isDarkText)
-    {
-        isDarkText = false;
-        if (box.ContainsKey(name))
-        {
-            isDarkText = box[name].IsDarkText;
-            return box[name].BoxColor;
-        }
-        return Color.red;
-    }
+
     public static Color GetColor(GameModes name, out bool isDarkText)
     {
         isDarkText = false;

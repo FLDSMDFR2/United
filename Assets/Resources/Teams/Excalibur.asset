@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: Excalibur
   m_EditorClassIdentifier: 
+  ID: 564
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 5b3c88b486986164f92a6330a620c5df, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 5b3c88b486986164f92a6330a620c5df, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
@@ -29,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 35
+  TeamColor: {r: 0.59607846, g: 0.18823531, b: 0.40000004, a: 1}
   Characters:
   - {fileID: 11400000, guid: 4da2144eaae48bd4c8d9757beb94e4c4, type: 2}
   - {fileID: 11400000, guid: 0bbdc29b6fab79e42835782989ccecee, type: 2}

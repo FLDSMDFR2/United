@@ -32,7 +32,7 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     protected bool inTransition = false;
 
-    public  virtual void Start() 
+    protected virtual void Awake() 
     {
         if (Tabs != null && Tabs.Count > 0)
         {

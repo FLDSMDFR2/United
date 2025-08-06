@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
   m_Name: GoldvsBlue(Team)
   m_EditorClassIdentifier: 
+  ID: 544
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -23,11 +24,16 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 22
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   - Box: 23
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   ModeTag: 4
   UseSameHerosForAllGames: 0
   AllowVillainSelection: 1

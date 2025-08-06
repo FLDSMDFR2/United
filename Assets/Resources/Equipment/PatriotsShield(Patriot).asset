@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b993ba5d3b57140a7f43fc7a5c19e3, type: 3}
   m_Name: PatriotsShield(Patriot)
   m_EditorClassIdentifier: 
+  ID: 643
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 35a2c184295b2c647827fc6e305fd821, type: 3}
+  MainImage: {fileID: 21300000, guid: 111766a86ca64994ebb0a53864848912, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 35a2c184295b2c647827fc6e305fd821, type: 3}
+  - {fileID: 21300000, guid: 111766a86ca64994ebb0a53864848912, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000

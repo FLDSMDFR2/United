@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_BoxDetails : MonoBehaviour, IDialog
+public class UI_BoxDetails : Loadable, IDialog
 {
     public ScrollRect ScrollRect;
     public GameObject BoxHeader;
@@ -40,7 +40,7 @@ public class UI_BoxDetails : MonoBehaviour, IDialog
     protected float openTime = 0.2f;
     protected float closeTime = 0.2f;
 
-    protected virtual void Awake()
+    public override void LoadableStep1()
     {
         openPos = this.transform.position;
         closePos = this.transform.position - new Vector3(0, UIScreenSize.ScreenHeight(), 0);
@@ -63,7 +63,7 @@ public class UI_BoxDetails : MonoBehaviour, IDialog
         forGameBuild = isForGameBuild;
 
         if (BoxDtlPrefab == null) return;
-        if (boxHeader != null) boxHeader.SetData(box);
+        if (boxHeader != null) boxHeader.SetData(box.BoxColor,Color.white,box.DisplayNameWithClarifier());
         HideAllDtls();
 
         BuildCharactersForBox();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
   m_Name: MU_S3_WarOfKings
   m_EditorClassIdentifier: 
+  ID: 394
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1

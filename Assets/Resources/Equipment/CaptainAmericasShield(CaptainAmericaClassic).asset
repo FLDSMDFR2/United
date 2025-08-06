@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b993ba5d3b57140a7f43fc7a5c19e3, type: 3}
   m_Name: CaptainAmericasShield(CaptainAmericaClassic)
   m_EditorClassIdentifier: 
+  ID: 603
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1

@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: BlackPanther(Shuri)
   m_EditorClassIdentifier: 
+  ID: 31
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 264c1c2c5b7f7904397e2e230ab793e1, type: 3}
+  AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: 3ba9308bfce356a4c8355329ee21c502, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 0
   Boxs:
   - Box: 50
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Black Panther
   CharacterClarifier: (Shuri)
   Type: 1
   Sex: 2
-  IsExclusive: 0
-  Teams: 
+  Teams: 010000000e000000
   HeroSymblesMove: 7
   HeroSymblesHeroic: 5
   HeroSymblesAttack: 3
@@ -51,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

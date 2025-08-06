@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636106a387478cf4f9f2053e57f9350c, type: 3}
   m_Name: WarOfKings
   m_EditorClassIdentifier: 
+  ID: 690
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 21300000, guid: 151428a5ec555d243bd6c26c0beec866, type: 3}
+  MainImage: {fileID: 21300000, guid: 7fa8ef1c68935a54cb40adeaa86c1dc8, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
-  - {fileID: 21300000, guid: 151428a5ec555d243bd6c26c0beec866, type: 3}
+  - {fileID: 21300000, guid: 7fa8ef1c68935a54cb40adeaa86c1dc8, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de675c8163dddfe45b7b47f27432c8cb, type: 3}
   m_Name: A-Force
   m_EditorClassIdentifier: 
+  ID: 555
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -30,6 +31,7 @@ MonoBehaviour:
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 31
+  TeamColor: {r: 0.23137257, g: 0.5568628, b: 0.5372549, a: 1}
   Characters:
   - {fileID: 11400000, guid: c6fe0144323e5aa4489b87342504cfc3, type: 2}
   - {fileID: 11400000, guid: 06c440ef8c02de247be35014f3819ece, type: 2}

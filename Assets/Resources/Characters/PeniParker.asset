@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: PeniParker
   m_EditorClassIdentifier: 
+  ID: 237
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
-  MainImage: {fileID: 0}
+  MainImage: {fileID: 21300000, guid: 606669ea86525014fad67e2f68672923, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
-  DtlImages: []
+  DtlImages:
+  - {fileID: 21300000, guid: b977462ecafb4ac41a518149d418b02d, type: 3}
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 01000000
@@ -26,11 +28,13 @@ MonoBehaviour:
   Boxs:
   - Box: 70
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Peni Parker
   CharacterClarifier: 
   Type: 1
   Sex: 2
-  Teams: 
+  Teams: 0f00000001000000
   HeroSymblesMove: 5
   HeroSymblesHeroic: 5
   HeroSymblesAttack: 3
@@ -64,3 +68,4 @@ MonoBehaviour:
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

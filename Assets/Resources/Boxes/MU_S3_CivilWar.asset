@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ee66f310f83c428c6d1afc647b251, type: 3}
   m_Name: MU_S3_CivilWar
   m_EditorClassIdentifier: 
+  ID: 383
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -55,5 +56,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69c60e5375ca9384c83670a9c64c2db0, type: 2}
   - {fileID: 11400000, guid: c0a9b97b852d7cc4d9f3653273f2da9a, type: 2}
   Teams: []
-  Equipment: []
+  Equipment:
+  - {fileID: 11400000, guid: a2fb70b4564cfee429bc7b370e2a46c8, type: 2}
+  - {fileID: 11400000, guid: 7b251d9312d7f3246ad12ad2396e24b8, type: 2}
+  - {fileID: 11400000, guid: 45d03ba08ad192e4d866d0102fa5212f, type: 2}
+  - {fileID: 11400000, guid: b05ea1d517a7de042a4e056502cb7a19, type: 2}
+  - {fileID: 11400000, guid: 10ed70f0f8523e447b6180756a0421d4, type: 2}
+  - {fileID: 11400000, guid: ea53bd05ad9859f4b9ec1deb44735204, type: 2}
+  - {fileID: 11400000, guid: 11d2b315e9626134abf65f95bbe520c3, type: 2}
+  - {fileID: 11400000, guid: 29cf8f3436a15bf45b13fb6a2f43b959, type: 2}
+  - {fileID: 11400000, guid: 72c06b45282d8f04bbc4eddaaf1a5135, type: 2}
+  - {fileID: 11400000, guid: b86ffcfb89c6c4a4fa183fc9c46e0856, type: 2}
+  - {fileID: 11400000, guid: a69636db5b591144cba3e6c4b10baf6d, type: 2}
+  - {fileID: 11400000, guid: 1057ce961338a8c498663bb2bec99443, type: 2}
+  - {fileID: 11400000, guid: 500af511e9aeac54bb599307287e8927, type: 2}
   Campaigns: []

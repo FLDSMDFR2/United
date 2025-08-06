@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Loki(Villain)
   m_EditorClassIdentifier: 
+  ID: 181
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
   MainImage: {fileID: 21300000, guid: 443ccc99faa83904a95429f6799f66bd, type: 3}
+  AutoGetMainImage: 1
   DtlImageNames: []
   DtlImages:
   - {fileID: 21300000, guid: 3a4c00148dae608488f5e3da5d5dd464, type: 3}
+  AutoGetDtlImage: 1
+  AutoGetDtlImages: 1
   Season: 02000000
+  IsExclusive: 0
   Boxs:
   - Box: 3
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Loki
   CharacterClarifier: (Villain)
   Type: 2
   Sex: 1
-  IsExclusive: 0
   Teams: 
   HeroSymblesMove: 0
   HeroSymblesHeroic: 0
@@ -52,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []

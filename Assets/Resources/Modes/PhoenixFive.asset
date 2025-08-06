@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ff2c6503f256248b735be4833f699d, type: 3}
   m_Name: PhoenixFive
   m_EditorClassIdentifier: 
+  ID: 546
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -23,9 +24,12 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 03000000
+  IsExclusive: 0
   Boxs:
   - Box: 28
     Default: 1
+    Owned: 0
+    IncludeInGameBuild: 1
   ModeTag: 6
   UseSameHerosForAllGames: 0
   AllowVillainSelection: 0
@@ -53,7 +57,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
       - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
@@ -80,7 +83,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
       - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
@@ -107,7 +109,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
       - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
@@ -134,7 +135,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
       - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
@@ -161,7 +161,6 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 39170c8b8aba9b2498220ddea87a24ff, type: 2}
       - {fileID: 11400000, guid: b8af71da01569034da4dbbf3db1d9584, type: 2}
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []

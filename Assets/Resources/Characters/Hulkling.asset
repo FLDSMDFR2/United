@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff00ab63a831bc4abdbdf11344187b5, type: 3}
   m_Name: Hulkling
   m_EditorClassIdentifier: 
+  ID: 141
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
@@ -23,15 +24,17 @@ MonoBehaviour:
   AutoGetDtlImage: 1
   AutoGetDtlImages: 1
   Season: 04000000
+  IsExclusive: 1
   Boxs:
   - Box: 52
     Default: 0
+    Owned: 0
+    IncludeInGameBuild: 1
   CharacterName: Hulkling
   CharacterClarifier: 
   Type: 1
   Sex: 1
-  IsExclusive: 1
-  Teams: 01000000
+  Teams: 080000000100000007000000
   HeroSymblesMove: 4
   HeroSymblesHeroic: 5
   HeroSymblesAttack: 4
@@ -55,15 +58,14 @@ MonoBehaviour:
     AdditionalHerosReferenceNumHeros: 0
     AdditionalHeros: 0
     NumberOfVillains: 0
-    RequiaredHerosExclusively: 0
-    NumberRequiaredHeros: 0
-    RequiaredHeros: []
+    RequiredHerosExclusively: 0
+    RequiredHeros: []
     ExcludedHeros: []
     RequiaredVillainsExclusively: 0
     RequiaredVillains: []
     ExcludedVillains: []
-    NumberRequiaredLocations: 0
     RequiaredLocations: []
     ExcludedLocations: []
     RequiaredChallenges: []
     ExcludedChallenges: []
+  Equipment: []
