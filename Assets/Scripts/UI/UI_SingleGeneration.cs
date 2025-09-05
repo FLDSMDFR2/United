@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 public class UI_SingleGeneration : UI_Generation
 {
@@ -28,6 +25,7 @@ public class UI_SingleGeneration : UI_Generation
 
         base.LoadableStep2();
     }
+
     public override void GenerateGameSelected()
     {
         var buildData = new BuildGameData();
@@ -37,7 +35,13 @@ public class UI_SingleGeneration : UI_Generation
         if (selectedType == SingleItemGenerationType.Mode)
         {
             var modes = DataLoader.GetModesBySystem(GetActiveSystem());
-            if (modes.Count < CountDropDown.value + 1)
+            List<Mode> availableModes = new List<Mode>();
+            foreach(var mode in modes)
+            {
+                if (mode.IncludeInGameBuild) availableModes.Add(mode);
+            }
+
+            if (availableModes.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Modes Included");
                 return;
@@ -45,15 +49,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = modes[RandomGenerator.UnseededRange(0, modes.Count)];
+                var selected = availableModes[RandomGenerator.UnseededRange(0, availableModes.Count)];
                 buildData.Mode.Add(selected);
-                modes.Remove(selected);
+                availableModes.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Challenge)
         {
-            var challenge = DataLoader.GetChallengesBySystem(GetActiveSystem());
-            if (challenge.Count < CountDropDown.value + 1)
+            var challenges = DataLoader.GetChallengesBySystem(GetActiveSystem());
+            List<Challenge> availableChallenges = new List<Challenge>();
+            foreach (var challenge in challenges)
+            {
+                if (challenge.IncludeInGameBuild) availableChallenges.Add(challenge);
+            }
+
+            if (availableChallenges.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Challenges Included");
                 return;
@@ -61,15 +71,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = challenge[RandomGenerator.UnseededRange(0, challenge.Count)];
+                var selected = availableChallenges[RandomGenerator.UnseededRange(0, availableChallenges.Count)];
                 buildData.Games[0].Challenges.Add(selected);
-                challenge.Remove(selected);
+                availableChallenges.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Villain)
         {
-            var villain = DataLoader.GetVillainsBySystem(GetActiveSystem());
-            if (villain.Count < CountDropDown.value + 1)
+            var villains = DataLoader.GetVillainsBySystem(GetActiveSystem());
+            List<Character> availableVillains = new List<Character>();
+            foreach (var villain in villains)
+            {
+                if (villain.IncludeInGameBuild) availableVillains.Add(villain);
+            }
+
+            if (availableVillains.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Villains Included");
                 return;
@@ -77,15 +93,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = villain[RandomGenerator.UnseededRange(0, villain.Count)];
+                var selected = availableVillains[RandomGenerator.UnseededRange(0, availableVillains.Count)];
                 buildData.Games[0].Villains.Add(selected);
-                villain.Remove(selected);
+                availableVillains.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Team)
         {
-            var team = DataLoader.GetTeamsBySystem(GetActiveSystem());
-            if (team.Count < CountDropDown.value + 1)
+            var teams = DataLoader.GetTeamsBySystem(GetActiveSystem());
+            List<Team> availableTeams = new List<Team>();
+            foreach (var team in teams)
+            {
+                if (team.IncludeInGameBuild) availableTeams.Add(team);
+            }
+
+            if (availableTeams.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Teams Included");
                 return;
@@ -93,15 +115,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = team[RandomGenerator.UnseededRange(0, team.Count)];
+                var selected = availableTeams[RandomGenerator.UnseededRange(0, availableTeams.Count)];
                 buildData.Games[0].Teams.Add(selected);
-                team.Remove(selected);
+                availableTeams.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Hero)
         {
-            var hero = DataLoader.GetHerosBySystem(GetActiveSystem());
-            if (hero.Count < CountDropDown.value + 1)
+            var heros = DataLoader.GetHerosBySystem(GetActiveSystem());
+            List<Character> availableHeros = new List<Character>();
+            foreach (var hero in heros)
+            {
+                if (hero.IncludeInGameBuild) availableHeros.Add(hero);
+            }
+
+            if (availableHeros.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Heros Included");
                 return;
@@ -109,15 +137,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = hero[RandomGenerator.UnseededRange(0, hero.Count)];
+                var selected = availableHeros[RandomGenerator.UnseededRange(0, availableHeros.Count)];
                 buildData.Games[0].Heros.Add(selected);
-                hero.Remove(selected);
+                availableHeros.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Companion)
         {
-            var companion = DataLoader.GetCompanionsBySystem(GetActiveSystem());
-            if (companion.Count < CountDropDown.value + 1)
+            var companions = DataLoader.GetCompanionsBySystem(GetActiveSystem());
+            List<Character> availableCompanions = new List<Character>();
+            foreach (var companion in companions)
+            {
+                if (companion.IncludeInGameBuild) availableCompanions.Add(companion);
+            }
+
+            if (availableCompanions.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Companions Included");
                 return;
@@ -125,15 +159,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = companion[RandomGenerator.UnseededRange(0, companion.Count)];
+                var selected = availableCompanions[RandomGenerator.UnseededRange(0, availableCompanions.Count)];
                 buildData.Games[0].Companions.Add(selected);
-                companion.Remove(selected);
+                availableCompanions.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Location)
         {
-            var location = DataLoader.GetLocationsBySystem(GetActiveSystem());
-            if (location.Count < CountDropDown.value + 1)
+            var locations = DataLoader.GetLocationsBySystem(GetActiveSystem());
+            List<Location> availableLocations = new List<Location>();
+            foreach (var location in locations)
+            {
+                if (location.IncludeInGameBuild) availableLocations.Add(location);
+            }
+
+            if (availableLocations.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Locations Included");
                 return;
@@ -141,15 +181,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = location[RandomGenerator.UnseededRange(0, location.Count)];
+                var selected = availableLocations[RandomGenerator.UnseededRange(0, availableLocations.Count)];
                 buildData.Games[0].Locations.Add(selected);
-                location.Remove(selected);
+                availableLocations.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Equipment)
         {
-            var equipment = DataLoader.GetEquipmentBySystem(GetActiveSystem());
-            if (equipment.Count < CountDropDown.value + 1)
+            var equipments = DataLoader.GetEquipmentBySystem(GetActiveSystem());
+            List<Equipment> availableEquipments = new List<Equipment>();
+            foreach (var equipment in equipments)
+            {
+                if (equipment.IncludeInGameBuild) availableEquipments.Add(equipment);
+            }
+
+            if (availableEquipments.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Equipment Included");
                 return;
@@ -157,15 +203,21 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = equipment[RandomGenerator.UnseededRange(0, equipment.Count)];
+                var selected = availableEquipments[RandomGenerator.UnseededRange(0, availableEquipments.Count)];
                 buildData.Games[0].Equipment.Add(selected);
-                equipment.Remove(selected);
+                availableEquipments.Remove(selected);
             }
         }
         else if (selectedType == SingleItemGenerationType.Campaign)
         {
-            var campaign = DataLoader.GetCampaignsBySystem(GetActiveSystem());
-            if (campaign.Count < CountDropDown.value + 1)
+            var campaigns = DataLoader.GetCampaignsBySystem(GetActiveSystem());
+            List<Campaign> availableCampaigns = new List<Campaign>();
+            foreach (var campaign in campaigns)
+            {
+                if (campaign.IncludeInGameBuild) availableCampaigns.Add(campaign);
+            }
+
+            if (availableCampaigns.Count < CountDropDown.value + 1)
             {
                 ErrorText(true, "Not Enough Campaigns Included");
                 return;
@@ -173,9 +225,9 @@ public class UI_SingleGeneration : UI_Generation
 
             for (int i = 0; i <= CountDropDown.value; i++)
             {
-                var selected = campaign[RandomGenerator.UnseededRange(0, campaign.Count)];
+                var selected = availableCampaigns[RandomGenerator.UnseededRange(0, availableCampaigns.Count)];
                 buildData.Games[0].Campaigns.Add(selected);
-                campaign.Remove(selected);
+                availableCampaigns.Remove(selected);
             }
         }
 

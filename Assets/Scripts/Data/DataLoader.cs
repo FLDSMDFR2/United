@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using static UnityEditor.FilePathAttribute;
 
 public class DataLoader : Loadable
 {
@@ -109,6 +111,9 @@ public class DataLoader : Loadable
 
             UpdateSavedData(box);
 
+            box.Boxs[0].Owned = box.Owned;
+            box.Boxs[0].IncludeInGameBuild = box.IncludeInGameBuild;
+
             boxMap[box.BoxTag] = box;
 
             AddToAllDictionary<Box>(box.GameSystem, boxsInGameSystem, box);
@@ -121,6 +126,7 @@ public class DataLoader : Loadable
             character.Init();
 
             UpdateSavedData(character);
+            UpdateOwnableAndInclude(character);
 
             character.Teams.Clear();
             character.Equipment.Clear();
@@ -189,6 +195,7 @@ public class DataLoader : Loadable
             location.Init();
 
             UpdateSavedData(location);
+            UpdateOwnableAndInclude(location);
 
             AddToAllDictionary<Location>(location.GameSystem, locationsInGameSystem, location);
 
@@ -202,6 +209,7 @@ public class DataLoader : Loadable
             challenges.Init();
 
             UpdateSavedData(challenges);
+            UpdateOwnableAndInclude(challenges);
 
             AddToAllDictionary<Challenge>(challenges.GameSystem, challengeInGameSystem, challenges);
 
@@ -215,6 +223,7 @@ public class DataLoader : Loadable
             mode.Init();
 
             UpdateSavedData(mode);
+            UpdateOwnableAndInclude(mode);
 
             AddToAllDictionary<Mode>(mode.GameSystem, modesInGameSystem, mode);
 
@@ -228,6 +237,7 @@ public class DataLoader : Loadable
             team.Init();
 
             UpdateSavedData(team);
+            UpdateOwnableAndInclude(team);
 
             teamMap[team.TeamTag] = team;
 
@@ -243,6 +253,7 @@ public class DataLoader : Loadable
             equipment.Init();
 
             UpdateSavedData(equipment);
+            UpdateOwnableAndInclude(equipment);
 
             AddToAllDictionary<Equipment>(equipment.GameSystem, equipmentInGameSystem, equipment);
 
@@ -256,6 +267,7 @@ public class DataLoader : Loadable
             campaigns.Init();
 
             UpdateSavedData(campaigns);
+            UpdateOwnableAndInclude(campaigns);
 
             AddToAllDictionary<Campaign>(campaigns.GameSystem, campaignsInGameSystem, campaigns);
 
@@ -278,6 +290,18 @@ public class DataLoader : Loadable
             savedData = ownable.GetOwnableData();
             savedData.LastUpdateDate = DateTime.Now;
             SaveDataController.UpdateDataForId(ownable.ID, savedData);
+        }
+    }
+
+    protected virtual void UpdateOwnableAndInclude(BoxOwnable ownable)
+    {
+        foreach (var box in ownable.Boxs)
+        {
+            if (GetBoxByTag(box.Box).Owned) box.Owned = true;
+            else box.Owned = false;
+
+            if (GetBoxByTag(box.Box).IncludeInGameBuild) box.IncludeInGameBuild = true;
+            else box.IncludeInGameBuild = false;
         }
     }
 
@@ -376,7 +400,10 @@ public class DataLoader : Loadable
     }
     public static Box GetBoxByTag(Boxs boxTag)
     {
-        if (!boxMap.ContainsKey(boxTag)) return new Box();
+        if (!boxMap.ContainsKey(boxTag))
+        {
+            return new Box();
+        }
 
         return boxMap[boxTag];
     }

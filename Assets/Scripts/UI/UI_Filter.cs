@@ -24,6 +24,7 @@ public class UI_Filter : Loadable, IDialog
         BuildFilterGameSystems();
         BuildFilterSeasons();
         BuildFilterOwned();
+        BuildFilterFavorite();
         BuildFilterType();
         BuildFilterCharacterType();
         BuildFilterCharacterSex();
@@ -158,6 +159,37 @@ public class UI_Filter : Loadable, IDialog
 
 
         dropdown.SetData("Owned", group, HeaderColor, false, 55);
+    }
+
+    protected virtual void BuildFilterFavorite()
+    {
+        var dropdown = Instantiate(GroupHeaderPrefab, Content.transform).GetComponent<UI_DropDownHeader>();
+        filterDictionary["Favorite"] = new Dictionary<string, Filter>();
+
+        var group = new List<GameObject>();
+
+        var filter = new Filter();
+        filter.Name = "Yes";
+        filter.FilterValue = true;
+
+        filterDictionary["Favorite"][true.ToString()] = filter;
+        var filterObj = Instantiate(FilterPrefab, Content.transform).GetComponent<UI_FilterOption>();
+        filterObj.SetData(filter);
+        group.Add(filterObj.gameObject);
+        filterObj.gameObject.SetActive(false);
+
+        var filter1 = new Filter();
+        filter1.Name = "No";
+        filter1.FilterValue = true;
+
+        filterDictionary["Favorite"][false.ToString()] = filter1;
+        var filterObj1 = Instantiate(FilterPrefab, Content.transform).GetComponent<UI_FilterOption>();
+        filterObj1.SetData(filter1);
+        group.Add(filterObj1.gameObject);
+        filterObj1.gameObject.SetActive(false);
+
+
+        dropdown.SetData("Favorite", group, HeaderColor, false, 55);
     }
 
     protected virtual void BuildFilterType()

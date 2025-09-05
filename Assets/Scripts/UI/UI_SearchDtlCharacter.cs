@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_SearchDtlCharacter : UI_SearchDtl
 {
@@ -26,6 +27,15 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
     public TextMeshProUGUI VillainLosses;
     public UI_Rating VillainRating;
 
+    [Header("Cards / Symbols")]
+    public GameObject CardsAndSymbols;
+    public TextMeshProUGUI MoveText;
+    public TextMeshProUGUI HeroicText;
+    public TextMeshProUGUI AttackText;
+    public TextMeshProUGUI WildText;
+    public TextMeshProUGUI SpecialCards;
+    public TextMeshProUGUI StartingHandCards;
+
     protected Character getData => (Character)data;
 
     protected override void ApplyData()
@@ -37,6 +47,7 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
         SetTeamTags(getData.Teams);
         SetHeroData(getData);
         SetVillainData(getData);
+        SetCardsAndSymbols(getData);
     }
 
     protected override void SetBackgroundColor()
@@ -107,6 +118,24 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
         VillainWins.text = data.VillainWins.ToString();
         VillainLosses.text = data.VillainLosses.ToString();
         VillainRating.SetRating(data.VillainRating);
+    }
+
+    protected virtual void SetCardsAndSymbols(Character data)
+    {
+        if (data.Type == CharacterType.Villain)
+        {
+            CardsAndSymbols.SetActive(false);
+            return;
+        }
+
+        MoveText.text = data.HeroSymblesMove.ToString();
+        HeroicText.text = data.HeroSymblesHeroic.ToString();
+        AttackText.text = data.HeroSymblesAttack.ToString();
+        WildText.text = data.HeroSymblesWild.ToString();
+        SpecialCards.text = data.HeroSpecialCards.ToString();
+        StartingHandCards.text = data.HeroStartingHandCards.ToString();
+
+        CardsAndSymbols.SetActive(true);
     }
 
     public override void Selected()

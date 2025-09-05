@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class UI_SearchDtl : MonoBehaviour
 {
+    [Header("System Type")]
+    public TextMeshProUGUI SystemTypeText;
+    public Image SystemTypeBackground;
+
     [Header("Background")]
     public Image Background;
     public Color DefaultBackground;
@@ -16,7 +20,8 @@ public class UI_SearchDtl : MonoBehaviour
     public Image Image;
 
     [Header("Owned")]
-    public GameObject OwnedImage;
+    public GameObject Owned;
+    public GameObject Favorite;
 
     [Header("Character Name")]
     public TextMeshProUGUI Clarifier;
@@ -29,8 +34,6 @@ public class UI_SearchDtl : MonoBehaviour
     [Header("Box Tag")]
     public List<UI_Tag> BoxTags;
     public TextMeshProUGUI BoxOverFlow;
-
-    public TextMeshProUGUI ExclusiveLabel;
 
     protected Searchable data;
 
@@ -48,8 +51,12 @@ public class UI_SearchDtl : MonoBehaviour
 
     protected virtual void ApplyData()
     {
+        SystemTypeText.text = data.GameSystem.ToFriendlyString();
+        SystemTypeBackground.color = ColorManager.GetColor(data.GameSystem, out bool darkText);
+        
         SetBackgroundColor();
-        OwnedImage.SetActive(data.Owned);
+        Owned.SetActive(data.Owned);
+        Favorite.SetActive(data.IsFavorite);
         Image.sprite = data.GetDisplayImage();
         TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
         Clarifier.text = data.Clarifier();
@@ -57,7 +64,6 @@ public class UI_SearchDtl : MonoBehaviour
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
         SetSeasonTags();
-        ExclusiveLabel.gameObject.SetActive(data.IsExclusive);
     }
 
     protected virtual void SetBackgroundColor()

@@ -26,7 +26,7 @@ MonoBehaviour:
   Season: 04000000
   IsExclusive: 1
   Boxs:
-  - Box: 51
+  - Box: 55
     Default: 0
     Owned: 0
     IncludeInGameBuild: 1

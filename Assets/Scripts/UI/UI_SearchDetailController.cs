@@ -10,6 +10,9 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
     public GameObject CollectionView;
     public ScrollRect ScrollRect;
 
+    [Header("System Type")]
+    public UI_Tag SystemType;
+
     [Header("Type Tag")]
     public UI_Tag TypeTag;
 
@@ -19,12 +22,18 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
     public GameObject ImageView;
     protected List<Image> dtlImages = new List<Image>();
 
-    [Header("Owned")]
-    public GameObject OwnedImage;
+    public TextMeshProUGUI ExclusiveLabel;
 
-    [Header("Character Name")]
+    [Header("Owned")]
+    public GameObject Owned;
+
+    [Header("Name")]
     public TextMeshProUGUI Clarifier;
     public TextMeshProUGUI Name;
+
+    [Header("Buttons")]
+    public Button FavButton;
+    protected FavoriteButton favoriteButton;
 
     [Header("Season Tag")]
     public List<UI_Tag> SeasonTags;
@@ -60,16 +69,34 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
 
     public virtual void ApplyData()
     {
+        SystemType.SetTagDisplay(ColorManager.GetColor(data.GameSystem, out bool darkText), data.GameSystem.ToFriendlyString(), false);
         TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
-        OwnedImage.SetActive(data.Owned);
+        Owned.SetActive(data.Owned);
         Image.sprite = data.GetDisplayImage();
         Clarifier.text = data.Clarifier();
         Name.text = data.DisplayName();
+        ExclusiveLabel.gameObject.SetActive(data.IsExclusive);
+        SetFavoriteButton();
         SetSeasonTags();
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
         SetDtlImages();
         SetDtlItems(data.DtlItems());
+    }
+
+    protected virtual void SetFavoriteButton()
+    {
+        FavButton.onClick.RemoveAllListeners();
+        FavButton.onClick.AddListener(FavButtonClick);
+
+        favoriteButton = FavButton.GetComponent<FavoriteButton>();
+        favoriteButton.SetIsFavorite(data.IsFavorite);
+
+    }
+    protected virtual void FavButtonClick()
+    {
+        data.SetFavorite(!data.IsFavorite);
+        favoriteButton.SetIsFavorite(data.IsFavorite);
     }
 
     protected virtual void SetBoxTags(List<BoxAssociationDtl> boxes)

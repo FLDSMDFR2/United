@@ -17,6 +17,7 @@ public class Character : BoxOwnable
     public int HeroSymblesAttack;
     public int HeroSymblesWild;
     public int HeroSpecialCards;
+    public int HeroStartingHandCards;
 
     public int HeroWins;
     public int HeroLosses;
@@ -72,6 +73,7 @@ public class Character : BoxOwnable
         sort[SortTypes.HeroHeroicIcons] = HeroSymblesHeroic.ToString();
         sort[SortTypes.HeroWildIcons] = HeroSymblesWild.ToString();
         sort[SortTypes.HeroSpecailCards] = HeroSpecialCards.ToString();
+        sort[SortTypes.HeroStartingHandCards] = HeroStartingHandCards.ToString();
     }
 
     public override string DisplayName()

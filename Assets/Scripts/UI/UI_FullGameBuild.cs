@@ -176,7 +176,7 @@ public class UI_FullGameBuild : UI_Generation
         availableChalleneges.AddRange(DataLoader.GetChallengesBySystem(GetActiveSystem()));
 
         // if the game mode random
-        if (GameModesDropDown.value == 1 || modesDropDownMap[GameModesDropDown.value].AllowChallengeSelection)
+        if (modesDropDownMap.Count > GameModesDropDown.value && (GameModesDropDown.value == 1 || (modesDropDownMap[GameModesDropDown.value] != null && modesDropDownMap[GameModesDropDown.value].AllowChallengeSelection)))
         {
             if (GameModesDropDown.value != 1) UpdateAvailableChallengesForMode(modesDropDownMap[GameModesDropDown.value]);
             ChallengeObject.SetActive(true);
@@ -279,6 +279,8 @@ public class UI_FullGameBuild : UI_Generation
 
     protected virtual void UpdateAvailableVillainsForMode(Mode mode)
     {
+        if (mode == null) return;
+
         // this should only get called if we allow selection
         // we should only remove what is not allowed
         foreach (var game in mode.Games)

@@ -6,10 +6,12 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
 {
     [Header("Character Details")]
 
+    [Header("Character Sex")]
+    public UI_Tag SexTag;
+
     [Header("Team Tag")]
     public List<UI_Tag> TeamTags;
     public TextMeshProUGUI TeamOverFlow;
-    public TextMeshProUGUI ExclusiveLabel;
 
     [Header("Hero Win Lose")]
     public TextMeshProUGUI HeroWins;
@@ -23,6 +25,7 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     public TextMeshProUGUI HeroAttackSymble;
     public TextMeshProUGUI HeroWildSymble;
     public TextMeshProUGUI HeroSpecialCards;
+    public TextMeshProUGUI HeroStartingHandCards;
 
     [Header("Villain Win Lose")]
     public TextMeshProUGUI VillainWins;
@@ -54,8 +57,8 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
     public override void ApplyData()
     {
         base.ApplyData();
+        SexTag.SetTagDisplay(Color.gray, getData.Sex.ToFriendlyString(), false);
         TypeTag.SetTagDisplay(ColorManager.GetColor(getData.Type, out bool darkText), getData.Type.ToFriendlyString(), darkText);
-        ExclusiveLabel.gameObject.SetActive(getData.IsExclusive);
         SetTeamTags(getData.Teams);
         SetHeroData(getData);
         SetVillainData(getData);
@@ -124,6 +127,7 @@ public class UI_CharacterDetailsController : UI_SearchDetailController
             HeroAttackSymble.text = data.HeroSymblesAttack.ToString();
             HeroWildSymble.text = data.HeroSymblesWild.ToString();
             HeroSpecialCards.text = data.HeroSpecialCards.ToString();
+            HeroStartingHandCards.text = data.HeroStartingHandCards.ToString();
         }
         else
         {

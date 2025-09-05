@@ -13,6 +13,7 @@ public class Searchable : Ownable
     public bool AutoGetDtlImages = true;
     public List<Seasons> Season;
     public bool IsExclusive;
+    public bool IsFavorite;
 
     protected Dictionary<string, List<string>> filter = new Dictionary<string, List<string>>();
     protected Dictionary<SortTypes, string> sort = new Dictionary<SortTypes, string>();
@@ -83,6 +84,7 @@ public class Searchable : Ownable
     {
         filter[typeof(GameSystems).Name] = new List<string>() { Enum.GetName(typeof(GameSystems), GameSystem) };
         filter["Owned"] = new List<string>() { Owned.ToString() };
+        filter["Favorite"] = new List<string>() { IsFavorite.ToString() };
         filter[typeof(Seasons).Name] = new List<string>();
         foreach(var season in Season)
         {
@@ -99,6 +101,14 @@ public class Searchable : Ownable
     {
         base.SetOwned(owned);
         filter["Owned"][0] = Owned.ToString();
+    }
+
+    public virtual void SetFavorite(bool Favorite)
+    {
+        IsFavorite = Favorite;
+        filter["Favorite"][0] = IsFavorite.ToString();
+        UpdateAndSaveData();
+        RaiseOnOwnableUpdate();
     }
 
     public virtual string DisplayName()
@@ -176,5 +186,19 @@ public class Searchable : Ownable
     {
         if (!dtlItems.ContainsKey(key) || dtlItems[key] == null) dtlItems[key] = new List<Searchable>();
         dtlItems[key].AddRange(items);
+    }
+
+    public override void SetOwnableData(OwnableData data)
+    {
+        base.SetOwnableData(data);
+        IsFavorite = data.Favorite;
+    }
+
+    public override OwnableData GetOwnableData()
+    {
+        var data = base.GetOwnableData();
+        data.Favorite = IsFavorite;
+
+        return data;
     }
 }

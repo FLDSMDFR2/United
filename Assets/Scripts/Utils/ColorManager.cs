@@ -12,9 +12,9 @@ public class ColorManager : MonoBehaviour
         public bool IsDarkText;
     }
     [Serializable]
-    public class GameModesColorMap
+    public class GameSystemColorMap
     {
-        public GameModes Name;
+        public GameSystems Name;
         public Color Color;
         public bool IsDarkText;
     }
@@ -32,13 +32,12 @@ public class ColorManager : MonoBehaviour
         public Color Color;
         public bool IsDarkText;
     }
-
+    [SerializeField]
+    [Header("Game System")]
+    public List<GameSystemColorMap> GameSystems = new List<GameSystemColorMap>();
     [SerializeField]
     [Header("Character Type")]
     public List<CharacterTypeColorMap> CharacterType = new List<CharacterTypeColorMap>();
-    [SerializeField]
-    [Header("Game Mode")]
-    public List<GameModesColorMap> GameModes = new List<GameModesColorMap>();
     [SerializeField]
     [Header("Seasons")]
     public List<SeasonsColorMap> Seasons = new List<SeasonsColorMap>();
@@ -46,8 +45,8 @@ public class ColorManager : MonoBehaviour
     [Header("Teams")]
     public List<TeamsColorMap> Teams = new List<TeamsColorMap>();
 
+    protected static Dictionary<GameSystems, GameSystemColorMap> gameSystems = new Dictionary<GameSystems, GameSystemColorMap>();
     protected static Dictionary<CharacterType, CharacterTypeColorMap> characterType = new Dictionary<CharacterType, CharacterTypeColorMap>();
-    protected static Dictionary<GameModes, GameModesColorMap> gameModes = new Dictionary<GameModes, GameModesColorMap>();
     protected static Dictionary<Seasons, SeasonsColorMap> seasons = new Dictionary<Seasons, SeasonsColorMap>();
     protected static Dictionary<Teams, TeamsColorMap> teams = new Dictionary<Teams, TeamsColorMap>();
 
@@ -57,9 +56,9 @@ public class ColorManager : MonoBehaviour
         {
             characterType[c.Name] = c;
         }
-        foreach (var g in GameModes)
+        foreach (var g in GameSystems)
         {
-            gameModes[g.Name] = g;
+            gameSystems[g.Name] = g;
         }
         foreach (var s in Seasons)
         {
@@ -82,13 +81,13 @@ public class ColorManager : MonoBehaviour
         return Color.red;
     }
 
-    public static Color GetColor(GameModes name, out bool isDarkText)
+    public static Color GetColor(GameSystems name, out bool isDarkText)
     {
         isDarkText = false;
-        if (gameModes.ContainsKey(name))
+        if (gameSystems.ContainsKey(name))
         {
-            isDarkText = gameModes[name].IsDarkText;
-            return gameModes[name].Color;
+            isDarkText = gameSystems[name].IsDarkText;
+            return gameSystems[name].Color;
         }
         return Color.red;
     }

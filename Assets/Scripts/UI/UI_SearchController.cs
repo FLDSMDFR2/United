@@ -139,7 +139,7 @@ public class UI_SearchController : Loadable
             if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortString(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
                 sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
-                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
+                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses || sort.Type == SortTypes.HeroStartingHandCards) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortFloat(sort.Type)).ToArray();
         }
         else
@@ -147,7 +147,7 @@ public class UI_SearchController : Loadable
             if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortString(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
                 sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
-                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
+                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses || sort.Type == SortTypes.HeroStartingHandCards) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
             else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortFloat(sort.Type)).ToArray();
         }
     }

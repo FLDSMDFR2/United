@@ -11,6 +11,10 @@ public class OwnableData
     [SerializeField]
     public DateTime LastUpdateDate;
 
+    //Searchable
+    [SerializeField]
+    public bool Favorite;
+
     //Character data
     [SerializeField]
     public int HeroWins;

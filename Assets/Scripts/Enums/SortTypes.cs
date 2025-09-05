@@ -13,8 +13,8 @@ public enum SortTypes
     HeroAttackIcons,
     HeroHeroicIcons,
     HeroWildIcons, 
-    HeroSpecailCards
-
+    HeroSpecailCards,
+    HeroStartingHandCards
 }
 public static class SortTypesExtensions
 {
@@ -48,6 +48,8 @@ public static class SortTypesExtensions
                 return "HERO WILD ICONS";
             case SortTypes.HeroSpecailCards:
                 return "HERO SPECAIL CARDS";
+            case SortTypes.HeroStartingHandCards:
+                return "HERO STARTING HAND CARDS";
             default:
                 return "";
         }

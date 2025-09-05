@@ -25,6 +25,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 03000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 30
     Default: 1
@@ -40,6 +41,7 @@ MonoBehaviour:
   HeroSymblesAttack: 2
   HeroSymblesWild: 7
   HeroSpecialCards: 5
+  HeroStartingHandCards: 1
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
