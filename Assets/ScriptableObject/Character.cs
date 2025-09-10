@@ -12,6 +12,7 @@ public class Character : BoxOwnable
     public CharacterSex Sex;
     public List<Teams> Teams = new List<Teams>();
 
+    [Header("HERO")]
     public int HeroSymblesMove;
     public int HeroSymblesHeroic;
     public int HeroSymblesAttack;
@@ -23,6 +24,7 @@ public class Character : BoxOwnable
     public int HeroLosses;
     public float HeroRating;
 
+    [Header("VILLAIN")]
     public bool IsStandAloneVillain = true;
     public bool IsSuperVillainModeAllowed = true;
     public int VillainSymblesMove;
@@ -34,6 +36,18 @@ public class Character : BoxOwnable
     public int VillainLosses;
     public float VillainRating;
 
+    [Header("COMPANION")]
+    public int CompanionSymblesMove;
+    public int CompanionSymblesHeroic;
+    public int CompanionSymblesAttack;
+    public int CompanionSymblesWild;
+    public int CompanionSpecialCards;
+    public int CompanionStartingHandCards;
+
+    public int CompanionWins;
+    public int CompanionLosses;
+    public float CompanionRating;
+
     public string Dtls;
     public string Comments;
     public GameDtl GameDtl;
@@ -44,8 +58,8 @@ public class Character : BoxOwnable
     {
         base.Init();
 
-        InitImage("CharacterImages/", DisplayNameWithClarifier());
-        InitDtlImage("ChracterDtlImages/", DisplayNameWithClarifier());
+        InitImage("CharacterImages/", GetDisplayNameWithClarifier());
+        InitDtlImage("ChracterDtlImages/", GetDisplayNameWithClarifier());
     }
 
     protected override void InitFilter()
@@ -60,13 +74,13 @@ public class Character : BoxOwnable
     {
         base.InitSort();
 
-        sort[SortTypes.HeroWins] = HeroWins.ToString();
-        sort[SortTypes.HeroLosses] = HeroLosses.ToString();
-        sort[SortTypes.HeroRating] = HeroRating.ToString();
-
         sort[SortTypes.VillainWins] = VillainWins.ToString();
         sort[SortTypes.VillainLosses] = VillainLosses.ToString();
         sort[SortTypes.VillainRating] = VillainRating.ToString();
+
+        sort[SortTypes.HeroWins] = HeroWins.ToString();
+        sort[SortTypes.HeroLosses] = HeroLosses.ToString();
+        sort[SortTypes.HeroRating] = HeroRating.ToString();
 
         sort[SortTypes.HeroMoveIcons] = HeroSymblesMove.ToString();
         sort[SortTypes.HeroAttackIcons] = HeroSymblesAttack.ToString();
@@ -74,23 +88,17 @@ public class Character : BoxOwnable
         sort[SortTypes.HeroWildIcons] = HeroSymblesWild.ToString();
         sort[SortTypes.HeroSpecailCards] = HeroSpecialCards.ToString();
         sort[SortTypes.HeroStartingHandCards] = HeroStartingHandCards.ToString();
-    }
 
-    public override string DisplayName()
-    {
-        return CharacterName;
-    }
-    public override string DisplayNameWithClarifier()
-    {
-        return DisplayName() + " " + Clarifier();
-    }
-    public override string SearchName()
-    {
-        return DisplayNameWithClarifier();
-    }
-    public override string Clarifier()
-    {
-        return CharacterClarifier;
+        sort[SortTypes.CompanionWins] = CompanionWins.ToString();
+        sort[SortTypes.CompanionLosses] = CompanionLosses.ToString();
+        sort[SortTypes.CompanionRating] = CompanionRating.ToString();
+
+        sort[SortTypes.CompanionMoveIcons] = CompanionSymblesMove.ToString();
+        sort[SortTypes.CompanionAttackIcons] = CompanionSymblesAttack.ToString();
+        sort[SortTypes.CompanionHeroicIcons] = CompanionSymblesHeroic.ToString();
+        sort[SortTypes.CompanionWildIcons] = CompanionSymblesWild.ToString();
+        sort[SortTypes.CompanionSpecailCards] = CompanionSpecialCards.ToString();
+        sort[SortTypes.CompanionStartingHandCards] = CompanionStartingHandCards.ToString();
     }
 
     public virtual void SetHeroWins(int wins)
@@ -134,6 +142,26 @@ public class Character : BoxOwnable
         RaiseOnOwnableUpdate();
     }
 
+    public virtual void SetCompanionWins(int wins)
+    {
+        CompanionWins = wins;
+        UpdateAndSaveData();
+        RaiseOnOwnableUpdate();
+    }
+
+    public virtual void SetCompanionLosses(int losses)
+    {
+        CompanionLosses = losses;
+        UpdateAndSaveData();
+        RaiseOnOwnableUpdate();
+    }
+    public virtual void SetCompanionRating(float rating)
+    {
+        CompanionRating = rating;
+        UpdateAndSaveData();
+        RaiseOnOwnableUpdate();
+    }
+
     public override void SetOwnableData(OwnableData data)
     {
         base.SetOwnableData(data);
@@ -145,6 +173,10 @@ public class Character : BoxOwnable
         VillainWins = data.VillainWins;
         VillainLosses = data.VillainLosses;
         VillainRating = data.VillainRating;
+
+        CompanionWins = data.CompanionWins;
+        CompanionLosses = data.CompanionLosses;
+        CompanionRating = data.CompanionRating;
     }
 
     public override OwnableData GetOwnableData()
@@ -157,6 +189,10 @@ public class Character : BoxOwnable
         data.VillainWins = VillainWins;
         data.VillainLosses = VillainLosses;
         data.VillainRating = VillainRating;
+
+        data.CompanionWins = CompanionWins;
+        data.CompanionLosses = CompanionLosses;
+        data.CompanionRating = CompanionRating;
 
         return data;
     }

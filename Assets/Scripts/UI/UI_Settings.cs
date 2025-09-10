@@ -17,21 +17,17 @@ public class UI_Settings : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
+        this.gameObject.SetActive(true);
         LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime);
-        StartCoroutine(OpenDelay());
-        //this.gameObject.SetActive(true);
-    }
-
-    protected virtual IEnumerator OpenDelay()
-    {
-        yield return new WaitForSeconds(openTime);
-
     }
 
     public virtual void Close()
     {
-        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime);
-        //this.gameObject.SetActive(false);
+        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime).setOnComplete(CloseComplete);
+    }
+    public virtual void CloseComplete()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

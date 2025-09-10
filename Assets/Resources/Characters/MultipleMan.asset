@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Multiple Man
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: cec3ef39dbdb4c746b77fcd074f94e1e, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -54,6 +56,15 @@ MonoBehaviour:
   VillainWins: 0
   VillainLosses: 0
   VillainRating: 0
+  CompanionSymblesMove: 0
+  CompanionSymblesHeroic: 0
+  CompanionSymblesAttack: 0
+  CompanionSymblesWild: 0
+  CompanionSpecialCards: 0
+  CompanionStartingHandCards: 0
+  CompanionWins: 0
+  CompanionLosses: 0
+  CompanionRating: 0
   Dtls: 
   Comments: 
   GameDtl:

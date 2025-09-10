@@ -25,13 +25,14 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 60
     Default: 1
     Owned: 0
     IncludeInGameBuild: 1
   TeamTag: 3
-  TeamColor: {r: 0.33333334, g: 0.34901962, b: 0.29803923, a: 1}
+  TeamColor: {r: 0.33333334, g: 0.34901962, b: 0.29803923, a: 0.50980395}
   Characters:
   - {fileID: 11400000, guid: 8ca78ef5092423444acdbaefea19059e, type: 2}
   - {fileID: 11400000, guid: 0c9ad0e578914c64e93614b631967575, type: 2}

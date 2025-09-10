@@ -15,25 +15,7 @@ public class Equipment : BoxOwnable
     {
         base.Init();
 
-        InitImage("EquipmentImages/", DisplayNameWithClarifier());
-        InitDtlImage("EquipmentImages/", DisplayNameWithClarifier());
-    }
-
-    public override string DisplayName()
-    {
-        return EquipmentName;
-    }
-    public override string DisplayNameWithClarifier()
-    {
-        return DisplayName() + " " + Clarifier();
-    }
-    public override string SearchName()
-    {
-        return DisplayNameWithClarifier();
-    }
-
-    public override string Clarifier()
-    {
-        return EquipmentClarifier;
+        InitImage("EquipmentImages/", GetDisplayNameWithClarifier());
+        InitDtlImage("EquipmentImages/", GetDisplayNameWithClarifier());
     }
 }

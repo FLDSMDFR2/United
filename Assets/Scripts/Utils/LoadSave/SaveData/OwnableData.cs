@@ -29,4 +29,11 @@ public class OwnableData
     public int VillainLosses;
     [SerializeField]
     public float VillainRating;
+
+    [SerializeField]
+    public int CompanionWins;
+    [SerializeField]
+    public int CompanionLosses;
+    [SerializeField]
+    public float CompanionRating;
 }

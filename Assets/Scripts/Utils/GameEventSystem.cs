@@ -6,7 +6,7 @@ public class GameEventSystem : MonoBehaviour
     public delegate void UIEvent();
     public delegate void UIEvent_SearchSelected(Searchable searchable);
     public delegate void UIEvent_CharacterSelected(Character character);
-    public delegate void UIEvent_CharacterWinLoseSelected(Character character, bool isHero);
+    public delegate void UIEvent_CharacterWinLoseSelected(Character character, CharacterType type);
     public delegate void UIEvent_BoxSelected(Box box, bool isForGameBuild);
     public delegate void UIEvent_GameBuildUpdatePopup(GameSystems gameSystems);
     public delegate void UIEvent_BuildGamePopup(BuildGameData data);
@@ -33,9 +33,9 @@ public class GameEventSystem : MonoBehaviour
     {
         UI_CharacterSelected?.Invoke(character);
     }
-    public static void UI_OnCharacterWinLoseSelected(Character character, bool isHero)
+    public static void UI_OnCharacterWinLoseSelected(Character character, CharacterType type)
     {
-        UI_CharacterWinLoseSelected?.Invoke(character, isHero);
+        UI_CharacterWinLoseSelected?.Invoke(character, type);
     }
     public static void UI_OnCloseCharacterWinLose()
     {

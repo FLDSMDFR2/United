@@ -1238,7 +1238,7 @@ public class UI_FullGameBuild : UI_Generation
             else
             {
                 modesDropDownMap[index] = gameMode;
-                displayList.Add(gameMode.DisplayNameWithClarifier());
+                displayList.Add(gameMode.GetDisplayNameWithClarifier());
                 index++;
             }
         }
@@ -1259,7 +1259,7 @@ public class UI_FullGameBuild : UI_Generation
         foreach (var gameChallenge in challenges)
         {
             challengesDropDownMap[index] = gameChallenge;
-            displayList.Add(gameChallenge.DisplayNameWithClarifier());
+            displayList.Add(gameChallenge.GetDisplayNameWithClarifier());
             index++;
         }
 
@@ -1277,7 +1277,7 @@ public class UI_FullGameBuild : UI_Generation
         foreach (var villain in villains)
         {
             villainsDropDownMap[index] = villain;
-            displayList.Add(villain.DisplayNameWithClarifier());
+            displayList.Add(villain.GetDisplayNameWithClarifier());
             index++;
         }
 
@@ -1297,7 +1297,7 @@ public class UI_FullGameBuild : UI_Generation
         foreach (var team in teams)
         {
             teamsDropDownMap[index] = team;
-            displayList.Add(team.DisplayNameWithClarifier());
+            displayList.Add(team.GetDisplayNameWithClarifier());
             index++;
         }
 

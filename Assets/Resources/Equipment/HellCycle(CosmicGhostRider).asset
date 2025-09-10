@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Hell Cycle
+  Clarifier: (Cosmic Ghost Rider)
   MainImage: {fileID: 21300000, guid: bf40a4619e12bb64096c526b699eaf2a, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 50
     Default: 1

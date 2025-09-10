@@ -85,6 +85,8 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         inTransition = true;
         if (IsIndexOutOfBounds(endIndex)) endIndex = currentIndex;
 
+        Tabs[endIndex].ContentPanel.SetActive(true);
+
         var time = 0f;
         var tabDif = currentIndex - endIndex;
         var seconds = Mathf.Clamp(Mathf.Abs(tabDif), 1, 99) * TransitionSecondsPerTab;
@@ -99,7 +101,8 @@ public class UITabController : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         }
 
         tabpanelLocation = TabPanelParent.transform.position;
-        currentIndex = endIndex;
+        if (currentIndex != endIndex) Tabs[currentIndex].ContentPanel.SetActive(false);
+        currentIndex = endIndex;   
         inTransition = false;
     }
 

@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Deck Of Cards
+  Clarifier: (Gambit)
   MainImage: {fileID: 21300000, guid: 96293e84d0c577d42ac1300cc9ade2d9, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 50
     Default: 1

@@ -316,12 +316,17 @@ public class UI_Filter : Loadable, IDialog
     #region IDialog
     public virtual void Open()
     {
+        this.gameObject.SetActive(true);
         LeanTween.move(this.gameObject, openPos, 0.2f);
     }
     public virtual void Close()
     {
         GameEventSystem.UI_OnCloseFilterPopup();
-        LeanTween.move(this.gameObject, closePos, 0.2f);
+        LeanTween.move(this.gameObject, closePos, 0.2f).setOnComplete(CloseComplete);
+    }
+    public virtual void CloseComplete()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

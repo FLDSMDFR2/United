@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Demogoblin & Doppelganger
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: 550ecf7f9ed58d140858dbc8fa411ee0, type: 3}
   AutoGetMainImage: 1
   DtlImageNames:
@@ -28,6 +30,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 54
     Default: 1
@@ -43,6 +46,7 @@ MonoBehaviour:
   HeroSymblesAttack: 0
   HeroSymblesWild: 0
   HeroSpecialCards: 0
+  HeroStartingHandCards: 0
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
@@ -55,6 +59,15 @@ MonoBehaviour:
   VillainWins: 0
   VillainLosses: 0
   VillainRating: 0
+  CompanionSymblesMove: 0
+  CompanionSymblesHeroic: 0
+  CompanionSymblesAttack: 0
+  CompanionSymblesWild: 0
+  CompanionSpecialCards: 0
+  CompanionStartingHandCards: 0
+  CompanionWins: 0
+  CompanionLosses: 0
+  CompanionRating: 0
   Dtls: 
   Comments: 
   GameDtl:

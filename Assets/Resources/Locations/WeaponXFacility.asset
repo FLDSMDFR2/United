@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Weapon X Facility
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: cfec02be1d58e8544beb1f80fd23a511, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 03000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 20
     Default: 1

@@ -16,23 +16,11 @@ public class Mode : BoxOwnable
     {
         base.Init();
 
-        InitImage("ModeImages/", DisplayNameWithClarifier());
-        InitDtlImage("ModeImages/", DisplayNameWithClarifier());
+        InitImage("ModeImages/", GetDisplayNameWithClarifier());
+        InitDtlImage("ModeImages/", GetDisplayNameWithClarifier());
     }
-    public override string DisplayName()
+    public override string GetDisplayName()
     {
         return ModeTag.ToFriendlyString();
-    }
-    public override string DisplayNameWithClarifier()
-    {
-        return DisplayName() + " " + Clarifier();
-    }
-    public override string SearchName()
-    {
-        return DisplayNameWithClarifier();
-    }
-    public override string Clarifier()
-    {
-        return "";
     }
 }

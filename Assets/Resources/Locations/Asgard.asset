@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Asgard
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: 0f9d1b30e24938e4fbdc2748502484f9, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 02000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 7
     Default: 1

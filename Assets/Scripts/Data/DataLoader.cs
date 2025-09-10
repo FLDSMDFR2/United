@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using static UnityEditor.FilePathAttribute;
 
 public class DataLoader : Loadable
 {
@@ -105,7 +103,7 @@ public class DataLoader : Loadable
 
         foreach (var box in allBoxes)
         {
-            if (box.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, box.DisplayNameWithClarifier() + "Missing Id");
+            if (box.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, box.GetDisplayNameWithClarifier() + "Missing Id");
 
             box.Init();
 
@@ -121,7 +119,7 @@ public class DataLoader : Loadable
 
         foreach (var character in allCharacters)
         {
-            if (character.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, character.DisplayNameWithClarifier() + "Missing Id");
+            if (character.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, character.GetDisplayNameWithClarifier() + "Missing Id");
 
             character.Init();
 
@@ -171,8 +169,8 @@ public class DataLoader : Loadable
                 //skip if not for this system
                 if (equipment.GameSystem != character.GameSystem) continue;
 
-                // skip not for villain
-                if (equipment.AnyHero && character.Type == CharacterType.Villain) continue;
+                // skip not Hero or Anti-Hero
+                if (equipment.AnyHero && (character.Type != CharacterType.Hero && character.Type != CharacterType.AntiHero)) continue;
 
                 // if for any hero add it
                 if (equipment.Characters.Count <= 0 && equipment.AnyHero)
@@ -190,7 +188,7 @@ public class DataLoader : Loadable
 
         foreach (var location in allLocations)
         {
-            if (location.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, location.DisplayNameWithClarifier() + "Missing Id");
+            if (location.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, location.GetDisplayNameWithClarifier() + "Missing Id");
 
             location.Init();
 
@@ -204,7 +202,7 @@ public class DataLoader : Loadable
 
         foreach (var challenges in allChallenges)
         {
-            if (challenges.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, challenges.DisplayNameWithClarifier() + "Missing Id");
+            if (challenges.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, challenges.GetDisplayNameWithClarifier() + "Missing Id");
 
             challenges.Init();
 
@@ -218,7 +216,7 @@ public class DataLoader : Loadable
 
         foreach (var mode in allModes)
         {
-            if (mode.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, mode.DisplayNameWithClarifier() + "Missing Id");
+            if (mode.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, mode.GetDisplayNameWithClarifier() + "Missing Id");
 
             mode.Init();
 
@@ -232,7 +230,7 @@ public class DataLoader : Loadable
 
         foreach (var team in allTeams)
         {
-            if (team.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, team.DisplayNameWithClarifier() + "Missing Id");
+            if (team.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, team.GetDisplayNameWithClarifier() + "Missing Id");
 
             team.Init();
 
@@ -248,7 +246,7 @@ public class DataLoader : Loadable
 
         foreach (var equipment in allEquipment)
         {
-            if (equipment.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, equipment.DisplayNameWithClarifier() + "Missing Id");
+            if (equipment.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, equipment.GetDisplayNameWithClarifier() + "Missing Id");
 
             equipment.Init();
 
@@ -262,7 +260,7 @@ public class DataLoader : Loadable
 
         foreach (var campaigns in allCampaigns)
         {
-            if (campaigns.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, campaigns.DisplayNameWithClarifier() + "Missing Id");
+            if (campaigns.ID == 0) TraceManager.WriteTrace(TraceChannel.Main, TraceType.error, campaigns.GetDisplayNameWithClarifier() + "Missing Id");
 
             campaigns.Init();
 

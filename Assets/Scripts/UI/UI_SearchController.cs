@@ -123,7 +123,7 @@ public class UI_SearchController : Loadable
         foreach (var searchObj in fullSearchContent)
         {
             if (!string.IsNullOrEmpty(searchText))
-                if (!(searchObj.SearchName()).ToLower().Contains(searchText.ToLower())) continue;
+                if (!(searchObj.GetSearchName()).ToLower().Contains(searchText.ToLower())) continue;
 
             if (!Filter.CheckFilter(searchObj)) continue;
 
@@ -136,20 +136,39 @@ public class UI_SearchController : Loadable
 
         if (sort.IsAscending)
         {
-            if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortString(sort.Type)).ToArray();
-            else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
-                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
-                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses || sort.Type == SortTypes.HeroStartingHandCards) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
-            else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortFloat(sort.Type)).ToArray();
+            if (IsSortString(sort.Type)) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortString(sort.Type)).ToArray();
+            else if (IsSortInt(sort.Type)) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortInt(sort.Type)).ToArray();
+            else if (IsSortFloat(sort.Type)) sortedDisplay = searchToDisplay.OrderBy(s => s.GetSortFloat(sort.Type)).ToArray();
         }
         else
         {
-            if (sort.Type == SortTypes.Name) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortString(sort.Type)).ToArray();
-            else if (sort.Type == SortTypes.HeroMoveIcons || sort.Type == SortTypes.HeroAttackIcons || sort.Type == SortTypes.HeroHeroicIcons ||
-                sort.Type == SortTypes.HeroWildIcons || sort.Type == SortTypes.HeroSpecailCards || sort.Type == SortTypes.HeroWins || sort.Type == SortTypes.HeroLosses
-                || sort.Type == SortTypes.VillainWins || sort.Type == SortTypes.VillainLosses || sort.Type == SortTypes.HeroStartingHandCards) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
-            else if (sort.Type == SortTypes.HeroRating || sort.Type == SortTypes.VillainRating) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortFloat(sort.Type)).ToArray();
+            if (IsSortString(sort.Type)) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortString(sort.Type)).ToArray();
+            else if (IsSortInt(sort.Type)) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortInt(sort.Type)).ToArray();
+            else if (IsSortFloat(sort.Type)) sortedDisplay = searchToDisplay.OrderByDescending(s => s.GetSortFloat(sort.Type)).ToArray();
         }
+    }
+    protected virtual bool IsSortString(SortTypes type)
+    {
+        if (type == SortTypes.Name) return true;
+
+        return false;
+    }
+    protected virtual bool IsSortInt(SortTypes type)
+    {
+        if (type == SortTypes.HeroMoveIcons || type == SortTypes.HeroAttackIcons || type == SortTypes.HeroHeroicIcons ||
+                type == SortTypes.HeroWildIcons || type == SortTypes.HeroSpecailCards || type == SortTypes.HeroWins || type == SortTypes.HeroLosses ||
+                type == SortTypes.VillainWins || type == SortTypes.VillainLosses || type == SortTypes.HeroStartingHandCards ||
+                type == SortTypes.CompanionMoveIcons || type == SortTypes.CompanionAttackIcons || type == SortTypes.CompanionHeroicIcons ||
+                type == SortTypes.CompanionWildIcons || type == SortTypes.CompanionSpecailCards || type == SortTypes.CompanionWins || type == SortTypes.CompanionLosses ||
+                type == SortTypes.CompanionStartingHandCards) return true;
+
+        return false;
+    }
+    protected virtual bool IsSortFloat(SortTypes type)
+    {
+        if (type == SortTypes.HeroRating || type == SortTypes.VillainRating || type == SortTypes.CompanionRating) return true;
+
+        return false;
     }
 
     protected virtual void CreateNewDtl()

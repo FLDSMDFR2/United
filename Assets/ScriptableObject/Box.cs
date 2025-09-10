@@ -21,26 +21,16 @@ public class Box : BoxOwnable
     {
         base.Init();
 
-        InitImage("BoxImages/", DisplayNameWithClarifier());
-        InitDtlImage("BoxImages/", DisplayNameWithClarifier());
+        InitImage("BoxImages/", GetDisplayNameWithClarifier());
+        InitDtlImage("BoxImages/", GetDisplayNameWithClarifier());
         ResetLists();
     }
-    public override string DisplayName()
+
+    public override string GetDisplayName()
     {
         return BoxTag.ToFriendlyString();
     }
-    public override string DisplayNameWithClarifier()
-    {
-        return DisplayName() + " " + Clarifier();
-    }
-    public override string SearchName()
-    {
-        return DisplayNameWithClarifier();
-    }
-    public override string Clarifier()
-    {
-        return "";
-    }
+
     public virtual void ResetLists()
     {
         Characters.Clear();

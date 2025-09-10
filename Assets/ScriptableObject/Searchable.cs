@@ -5,6 +5,9 @@ using UnityEngine;
 public class Searchable : Ownable
 {
     [Header("Searchable")]
+    public string DisplayName;
+    public string Clarifier;
+
     public Sprite MainImage;
     public bool AutoGetMainImage = true;
     public List<string> DtlImageNames;
@@ -94,7 +97,7 @@ public class Searchable : Ownable
 
     protected virtual void InitSort()
     {
-        sort[SortTypes.Name] = SearchName();
+        sort[SortTypes.Name] = GetSearchName();
     }
 
     public override void SetOwned(bool owned)
@@ -111,22 +114,23 @@ public class Searchable : Ownable
         RaiseOnOwnableUpdate();
     }
 
-    public virtual string DisplayName()
+    public virtual string GetDisplayName()
     {
-        return "";
+        return DisplayName;
     }
-    public virtual string DisplayNameWithClarifier()
+    public virtual string GetDisplayNameWithClarifier()
     {
-        return "";
+        return GetDisplayName() + " " + GetClarifier();
     }
-    public virtual string SearchName()
+    public virtual string GetSearchName()
     {
-        return "";
+        return GetDisplayNameWithClarifier();
     }
-    public virtual string Clarifier()
+    public virtual string GetClarifier()
     {
-        return "";
+        return Clarifier;
     }
+
     public virtual Dictionary<string, List<string>> Filter()
     {
         return filter;

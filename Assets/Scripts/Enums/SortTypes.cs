@@ -9,13 +9,23 @@ public enum SortTypes
     VillainWins,
     VillainLosses,
     VillainRating,
+    CompanionWins,
+    CompanionLosses,
+    CompanionRating,
     HeroMoveIcons,
     HeroAttackIcons,
     HeroHeroicIcons,
     HeroWildIcons, 
     HeroSpecailCards,
-    HeroStartingHandCards
+    HeroStartingHandCards,
+    CompanionMoveIcons,
+    CompanionAttackIcons,
+    CompanionHeroicIcons,
+    CompanionWildIcons,
+    CompanionSpecailCards,
+    CompanionStartingHandCards,
 }
+
 public static class SortTypesExtensions
 {
     public static string ToFriendlyString(this SortTypes num)
@@ -38,6 +48,12 @@ public static class SortTypesExtensions
                 return "VILLAIN LOSSSES";
             case SortTypes.VillainRating:
                 return "VILLAIN RATING";
+            case SortTypes.CompanionWins:
+                return "COMPANION WINS";
+            case SortTypes.CompanionLosses:
+                return "COMPANION LOSSSES";
+            case SortTypes.CompanionRating:
+                return "COMPANION RATING";
             case SortTypes.HeroMoveIcons:
                 return "HERO MOVE ICONS";
             case SortTypes.HeroAttackIcons:
@@ -50,6 +66,18 @@ public static class SortTypesExtensions
                 return "HERO SPECAIL CARDS";
             case SortTypes.HeroStartingHandCards:
                 return "HERO STARTING HAND CARDS";
+            case SortTypes.CompanionMoveIcons:
+                return "COMPANION MOVE ICONS";
+            case SortTypes.CompanionAttackIcons:
+                return "COMPANION ATTACK ICONS";
+            case SortTypes.CompanionHeroicIcons:
+                return "COMPANION HEROIC ICONS";
+            case SortTypes.CompanionWildIcons:
+                return "COMPANION WILD ICONS";
+            case SortTypes.CompanionSpecailCards:
+                return "COMPANION SPECAIL CARDS";
+            case SortTypes.CompanionStartingHandCards:
+                return "COMPANION STARTING HAND CARDS";
             default:
                 return "";
         }

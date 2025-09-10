@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Omnibeam
+  Clarifier: (Iron Man)
   MainImage: {fileID: 21300000, guid: a69a88a425a35fd4bb9dcb35fd8c4c05, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 50
     Default: 1

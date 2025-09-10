@@ -15,6 +15,7 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
 
     [Header("Type Tag")]
     public UI_Tag TypeTag;
+    public Color TypeTagColor;
 
     [Header("Images")]
     public Image Image;
@@ -70,11 +71,11 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
     public virtual void ApplyData()
     {
         SystemType.SetTagDisplay(ColorManager.GetColor(data.GameSystem, out bool darkText), data.GameSystem.ToFriendlyString(), false);
-        TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
+        TypeTag.SetTagDisplay(TypeTagColor, data.GetType().ToString(), false);
         Owned.SetActive(data.Owned);
         Image.sprite = data.GetDisplayImage();
-        Clarifier.text = data.Clarifier();
-        Name.text = data.DisplayName();
+        Clarifier.text = data.GetClarifier();
+        Name.text = data.GetDisplayName();
         ExclusiveLabel.gameObject.SetActive(data.IsExclusive);
         SetFavoriteButton();
         SetSeasonTags();
@@ -118,7 +119,7 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
         for (int i = 0; i < lowCount; i++)
         {
             var box = DataLoader.GetBoxByTag(boxes[i].Box);
-            BoxTags[i].SetTagDisplay(box.BoxColor, box.DisplayNameWithClarifier(), false);
+            BoxTags[i].SetTagDisplay(box.BoxColor, box.GetDisplayNameWithClarifier(), false);
             BoxTags[i].gameObject.SetActive(true);
         }
 
@@ -222,7 +223,7 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
             foreach (var item in ownables[key])
             {
                 var dtl = Instantiate(DtlItemPrefab, CollectionView.transform).GetComponent<UI_DtlItem>();
-                dtl.SetData(item.GetDisplayImage(), item.DisplayNameWithClarifier());
+                dtl.SetData(item.GetDisplayImage(), item.GetDisplayNameWithClarifier());
                 displayedDtlItems.Add(dtl);
             }
         }
@@ -248,22 +249,24 @@ public class UI_SearchDetailController : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
-        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime);
-        StartCoroutine(OpenDelay());
-        //this.gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
+        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime).setOnComplete(OpenComplete);
     }
 
-    protected virtual IEnumerator OpenDelay()
+    public virtual void OpenComplete()
     {
-        yield return new WaitForSeconds(openTime);
         ScrollRect.verticalNormalizedPosition = 1f;
     }
 
     public virtual void Close()
     {
         ResetData();
-        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime);
-        //this.gameObject.SetActive(false);
+        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime).setOnComplete(CloseComplete);
+    }
+
+    public virtual void CloseComplete()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

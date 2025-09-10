@@ -13,26 +13,9 @@ public class Campaign : BoxOwnable
     {
         base.Init();
 
-        InitImage("CampaignImages/", DisplayNameWithClarifier());
-        InitDtlImage("CampaignImages/", DisplayNameWithClarifier());
+        InitImage("CampaignImages/", GetDisplayNameWithClarifier());
+        InitDtlImage("CampaignImages/", GetDisplayNameWithClarifier());
 
         AddDtlItems("REQUIARED BOXS", RequiaredBoxs);
-    }
-
-    public override string DisplayName()
-    {
-        return Name;
-    }
-    public override string DisplayNameWithClarifier()
-    {
-        return DisplayName() + " " + Clarifier();
-    }
-    public override string SearchName()
-    {
-        return DisplayNameWithClarifier();
-    }
-    public override string Clarifier()
-    {
-        return "";
     }
 }

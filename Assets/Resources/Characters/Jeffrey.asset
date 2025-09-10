@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Jeffrey
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: d1f71db86a39a924ab3b5dc747a1ebf8, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 62
     Default: 1
@@ -35,11 +38,12 @@ MonoBehaviour:
   Type: 4
   Sex: 1
   Teams: 01000000
-  HeroSymblesMove: 2
+  HeroSymblesMove: 0
   HeroSymblesHeroic: 0
-  HeroSymblesAttack: 1
+  HeroSymblesAttack: 0
   HeroSymblesWild: 0
-  HeroSpecialCards: 3
+  HeroSpecialCards: 0
+  HeroStartingHandCards: 0
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
@@ -52,6 +56,15 @@ MonoBehaviour:
   VillainWins: 0
   VillainLosses: 0
   VillainRating: 0
+  CompanionSymblesMove: 2
+  CompanionSymblesHeroic: 0
+  CompanionSymblesAttack: 1
+  CompanionSymblesWild: 0
+  CompanionSpecialCards: 3
+  CompanionStartingHandCards: 0
+  CompanionWins: 0
+  CompanionLosses: 0
+  CompanionRating: 0
   Dtls: 
   Comments: 
   GameDtl:

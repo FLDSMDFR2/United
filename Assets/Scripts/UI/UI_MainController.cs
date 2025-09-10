@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -158,14 +157,14 @@ public class UI_MainController : MonoBehaviour
 
     protected virtual void ShowBuildIncludsDisplay(GameSystems gameSystems)
     {
-        if (displayStates[BuildIncludsDisplay].Dialog != null && displayStates[BuildIncludsDisplay].Dialog is UI_AllBoxDisplayController)
-            ((UI_AllBoxDisplayController)displayStates[BuildIncludsDisplay].Dialog).SetData(gameSystems);
-
         if (displayStates.ContainsKey(BuildIncludsDisplay)) displayStates[BuildIncludsDisplay].NewState = true;
 
         displayStack.Push(BuildIncludsDisplay);
 
         UpdateDisplay();
+
+        if (displayStates[BuildIncludsDisplay].Dialog != null && displayStates[BuildIncludsDisplay].Dialog is UI_AllBoxDisplayController)
+            ((UI_AllBoxDisplayController)displayStates[BuildIncludsDisplay].Dialog).SetData(gameSystems);
     }
 
     protected virtual void ShowGeneratedBuildDisplay(BuildGameData data)
@@ -225,10 +224,10 @@ public class UI_MainController : MonoBehaviour
         UpdateDisplay();
     }
 
-    protected virtual void ShowWinLose(Character character, bool isHero)
+    protected virtual void ShowWinLose(Character character, CharacterType type)
     {
         if (displayStates[CharacterWinLose].Dialog != null && displayStates[CharacterWinLose].Dialog is UI_CharacterWinLose)
-            ((UI_CharacterWinLose)displayStates[CharacterWinLose].Dialog).SetData(character, isHero);
+            ((UI_CharacterWinLose)displayStates[CharacterWinLose].Dialog).SetData(character, type);
 
         if (displayStates.ContainsKey(CharacterWinLose)) displayStates[CharacterWinLose].NewState = true;
 
@@ -282,9 +281,9 @@ public class UI_MainController : MonoBehaviour
     {
         ShowGeneratedBuildDisplay(data);
     }
-    private void GameEventSystem_UI_CharacterWinLoseSelected(Character character, bool isHero)
+    private void GameEventSystem_UI_CharacterWinLoseSelected(Character character, CharacterType type)
     {
-        ShowWinLose(character, isHero);
+        ShowWinLose(character, type);
     }
     protected virtual void GameEventSystem_UI_ShowFilterPopup()
     {

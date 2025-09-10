@@ -25,13 +25,14 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 03000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 32
     Default: 1
     Owned: 0
     IncludeInGameBuild: 1
   BoxTag: 32
-  BoxColor: {r: 0.85882354, g: 0.8627451, b: 0.87058824, a: 1}
+  BoxColor: {r: 0.85882354, g: 0.8627451, b: 0.87058824, a: 0.50980395}
   IsDarkText: 0
   Characters:
   - {fileID: 11400000, guid: 8e15ce3efba58fc47aeb3b34481e5885, type: 2}

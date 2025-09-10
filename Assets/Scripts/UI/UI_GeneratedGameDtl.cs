@@ -108,7 +108,7 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
                 Instantiate(BoxHeader, GroupView.transform).GetComponent<UI_Header>().SetData(EquipmentHeaderColor, Color.white, "EQUIPMENT");
                 foreach (var e in game.Equipment)
                 {
-                    Instantiate(ChracterUIPrefab, GroupView.transform).GetComponent<UI_SearchDtlCharacter>().SetData(e);
+                    Instantiate(SearchUIPrefab, GroupView.transform).GetComponent<UI_SearchDtl>().SetData(e);
                 }
             }
 
@@ -143,21 +143,23 @@ public class UI_GeneratedGameDtl : MonoBehaviour, IDialog
     #region IDialog
     public virtual void Open()
     {
-        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime);
-        StartCoroutine(OpenDelay());
-        //this.gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
+        LeanTween.scale(this.gameObject, new Vector3(1f, 1f, 1f), openTime).setOnComplete(OpenComplete);
     }
 
-    protected virtual IEnumerator OpenDelay()
+    public virtual void OpenComplete()
     {
-        yield return new WaitForSeconds(openTime);
         GameScrollRect.verticalNormalizedPosition = 1f;
     }
 
     public virtual void Close()
     {
-        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime);
-        //this.gameObject.SetActive(false);
+        LeanTween.scale(this.gameObject, new Vector3(0f, 0f, 0f), closeTime).setOnComplete(CloseComplete);
+    }
+
+    public virtual void CloseComplete()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Goose
+  Clarifier: 
   MainImage: {fileID: 21300000, guid: b78d11c1cf6c94149a4d77267f833796, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 62
     Default: 1
@@ -35,11 +38,12 @@ MonoBehaviour:
   Type: 4
   Sex: 2
   Teams: 01000000
-  HeroSymblesMove: 1
-  HeroSymblesHeroic: 1
+  HeroSymblesMove: 0
+  HeroSymblesHeroic: 0
   HeroSymblesAttack: 0
-  HeroSymblesWild: 1
-  HeroSpecialCards: 3
+  HeroSymblesWild: 0
+  HeroSpecialCards: 0
+  HeroStartingHandCards: 0
   HeroWins: 0
   HeroLosses: 0
   HeroRating: 0
@@ -52,6 +56,15 @@ MonoBehaviour:
   VillainWins: 0
   VillainLosses: 0
   VillainRating: 0
+  CompanionSymblesMove: 1
+  CompanionSymblesHeroic: 1
+  CompanionSymblesAttack: 0
+  CompanionSymblesWild: 1
+  CompanionSpecialCards: 3
+  CompanionStartingHandCards: 0
+  CompanionWins: 0
+  CompanionLosses: 0
+  CompanionRating: 0
   Dtls: 
   Comments: 
   GameDtl:

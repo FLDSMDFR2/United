@@ -16,6 +16,8 @@ MonoBehaviour:
   GameSystem: 2
   Owned: 0
   IncludeInGameBuild: 1
+  DisplayName: Deflector Shields
+  Clarifier: (Iron Man Hulkbuster)
   MainImage: {fileID: 21300000, guid: 4f0b89357d51d2443aa8da314db5cc7a, type: 3}
   AutoGetMainImage: 1
   DtlImageNames: []
@@ -25,6 +27,7 @@ MonoBehaviour:
   AutoGetDtlImages: 1
   Season: 04000000
   IsExclusive: 0
+  IsFavorite: 0
   Boxs:
   - Box: 53
     Default: 1

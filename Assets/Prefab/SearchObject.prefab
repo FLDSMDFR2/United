@@ -2639,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751733247841835430, guid: 94248ae01b159504bb8ccce023bd5cbc, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 20.35
       objectReference: {fileID: 0}
     - target: {fileID: 5751733247841835430, guid: 94248ae01b159504bb8ccce023bd5cbc, type: 3}
       propertyPath: m_RaycastTarget

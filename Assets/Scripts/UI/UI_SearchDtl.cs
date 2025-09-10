@@ -59,8 +59,8 @@ public class UI_SearchDtl : MonoBehaviour
         Favorite.SetActive(data.IsFavorite);
         Image.sprite = data.GetDisplayImage();
         TypeTag.SetTagDisplay(Color.gray, data.GetType().ToString(), false);
-        Clarifier.text = data.Clarifier();
-        Name.text = data.DisplayName();
+        Clarifier.text = data.GetClarifier();
+        Name.text = data.GetDisplayName();
         if (data is BoxOwnable) SetBoxTags(((BoxOwnable)data).Boxs);
         else SetBoxTags(new List<BoxAssociationDtl>());
         SetSeasonTags();
@@ -90,7 +90,7 @@ public class UI_SearchDtl : MonoBehaviour
         for (int i = 0; i < lowCount; i++)
         {
             var box = DataLoader.GetBoxByTag(boxes[i].Box);
-            BoxTags[i].SetTagDisplay(box.BoxColor, box.DisplayNameWithClarifier(), false);
+            BoxTags[i].SetTagDisplay(box.BoxColor, box.GetDisplayNameWithClarifier(), false);
             BoxTags[i].gameObject.SetActive(true);
         }
 

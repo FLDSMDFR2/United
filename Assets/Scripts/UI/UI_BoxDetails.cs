@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,7 +62,7 @@ public class UI_BoxDetails : Loadable, IDialog
         forGameBuild = isForGameBuild;
 
         if (BoxDtlPrefab == null) return;
-        if (boxHeader != null) boxHeader.SetData(box.BoxColor,Color.white,box.DisplayNameWithClarifier());
+        if (boxHeader != null) boxHeader.SetData(box.BoxColor,Color.white,box.GetDisplayNameWithClarifier());
         HideAllDtls();
 
         BuildCharactersForBox();
@@ -369,18 +368,22 @@ public class UI_BoxDetails : Loadable, IDialog
     #region IDialog
     public virtual void Open()
     {
-        LeanTween.move(this.gameObject, openPos, openTime);
-        StartCoroutine(OpenDelay());
+        this.gameObject.SetActive(true);
+        LeanTween.move(this.gameObject, openPos, openTime).setOnComplete(OpenComplete);
     }
 
-    protected virtual IEnumerator OpenDelay()
+    public virtual void OpenComplete()
     {
-        yield return new WaitForSeconds(openTime);
         ScrollRect.verticalNormalizedPosition = 1f;
     }
     public virtual void Close()
     {
-        LeanTween.move(this.gameObject, closePos, closeTime);
+        LeanTween.move(this.gameObject, closePos, closeTime).setOnComplete(CloseComplete);
+    }
+
+    public virtual void CloseComplete()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

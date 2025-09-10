@@ -26,7 +26,7 @@ public class UI_BoxDtl : MonoBehaviour
         referanceIndex = -1;
 
         BoxImage.sprite = data.GetDisplayImage();
-        BoxName.text = data.DisplayNameWithClarifier();
+        BoxName.text = data.GetDisplayNameWithClarifier();
         BackGround.color = BackgroundColor;
 
         var isOn = false;

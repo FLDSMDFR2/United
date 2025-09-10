@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UI_SearchDtlCharacter : UI_SearchDtl
 {
@@ -27,6 +26,12 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
     public TextMeshProUGUI VillainLosses;
     public UI_Rating VillainRating;
 
+    [Header("Companion Win Lose")]
+    public GameObject CompanionWinLoseObject;
+    public TextMeshProUGUI CompanionWins;
+    public TextMeshProUGUI CompanionLosses;
+    public UI_Rating CompanionRating;
+
     [Header("Cards / Symbols")]
     public GameObject CardsAndSymbols;
     public TextMeshProUGUI MoveText;
@@ -47,6 +52,7 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
         SetTeamTags(getData.Teams);
         SetHeroData(getData);
         SetVillainData(getData);
+        SetCompanionData(getData);
         SetCardsAndSymbols(getData);
     }
 
@@ -77,7 +83,7 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
         for (int i = 0; i < lowCount; i++)
         {
             var team = DataLoader.GetTeamByTag(teams[i]);
-            TeamTags[i].SetTagDisplay(team.TeamColor, team.DisplayNameWithClarifier(), false);
+            TeamTags[i].SetTagDisplay(team.TeamColor, team.GetDisplayNameWithClarifier(), false);
             TeamTags[i].gameObject.SetActive(true);
         }
 
@@ -120,6 +126,20 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
         VillainRating.SetRating(data.VillainRating);
     }
 
+    protected virtual void SetCompanionData(Character data)
+    {
+        if (data.Type != CharacterType.Companion)
+        {
+            CompanionWinLoseObject.SetActive(false);
+            return;
+        }
+
+        CompanionWinLoseObject.SetActive(true);
+        CompanionWins.text = data.CompanionWins.ToString();
+        CompanionLosses.text = data.CompanionLosses.ToString();
+        CompanionRating.SetRating(data.CompanionRating);
+    }
+
     protected virtual void SetCardsAndSymbols(Character data)
     {
         if (data.Type == CharacterType.Villain)
@@ -128,13 +148,25 @@ public class UI_SearchDtlCharacter : UI_SearchDtl
             return;
         }
 
-        MoveText.text = data.HeroSymblesMove.ToString();
-        HeroicText.text = data.HeroSymblesHeroic.ToString();
-        AttackText.text = data.HeroSymblesAttack.ToString();
-        WildText.text = data.HeroSymblesWild.ToString();
-        SpecialCards.text = data.HeroSpecialCards.ToString();
-        StartingHandCards.text = data.HeroStartingHandCards.ToString();
-
+        if (data.Type == CharacterType.Hero || data.Type == CharacterType.AntiHero)
+        {
+            MoveText.text = data.HeroSymblesMove.ToString();
+            HeroicText.text = data.HeroSymblesHeroic.ToString();
+            AttackText.text = data.HeroSymblesAttack.ToString();
+            WildText.text = data.HeroSymblesWild.ToString();
+            SpecialCards.text = data.HeroSpecialCards.ToString();
+            StartingHandCards.text = data.HeroStartingHandCards.ToString();
+        }
+        else if (data.Type == CharacterType.Companion)
+        {
+            MoveText.text = data.CompanionSymblesMove.ToString();
+            HeroicText.text = data.CompanionSymblesHeroic.ToString();
+            AttackText.text = data.CompanionSymblesAttack.ToString();
+            WildText.text = data.CompanionSymblesWild.ToString();
+            SpecialCards.text = data.CompanionSpecialCards.ToString();
+            StartingHandCards.text = data.CompanionStartingHandCards.ToString();
+        }
+        
         CardsAndSymbols.SetActive(true);
     }
 
